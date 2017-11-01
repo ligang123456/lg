@@ -1,0 +1,108 @@
+
+  <view class="container">
+    <view class="logo">
+        <text class="music" bindtap="music">{{music}}</text>
+        <text class="vedio" bindtap="video">{{video}}</text>
+        <text class="radio" bindtap="radio">{{radio}}</text>
+    </view>
+    
+    <view class="menue">
+      <view class="person">
+          <image class="ppic" src="{{ppic}}"/>
+          <text class="personal">{{personal}}</text>
+      </view>
+      <view class="day">
+           <image class="dpic" src="{{dpic}}"/>
+           <text class="everyday">{{everyday}}</text>
+      </view>
+      <view class="list" bindtap="playlist">
+          <image class="lpic" src="{{lpic}}"/>
+          <text class="playlist">{{playlist}}</text>
+      </view>
+      <view class="board">
+          <image class="bpic" src="{{bpic}}"/>
+          <text class="leaderboard">{{leaderboard}}</text>
+      </view>
+    </view>
+    <view class="body">
+     <view class="reco">   
+       <view class="rec">  
+        <text class="recommend">{{recommend}}</text>
+        <image class="pic" src="{{pic}}"/>
+       </view> 
+       <view class="rup">
+         <view class="ru_left">
+             <image class="rulpic" src="{{rulpic}}"/>
+             <text class="rul_text">{{rul_text}}</text>
+         </view>
+         <view class="ru_middle"/>
+         <view class="ru_right"/>    
+       </view>  
+       <view class="rdown">
+         <view class="rd_left"/>
+         <view class="rd_middle"/>
+         <view class="rd_right"/>   
+       </view>
+     </view>
+
+     <view class="news">
+       <view class="new">   
+        <text class="newmusic">{{newmusic}}</text>
+        <image class="pic" src="{{pic}}"/>
+       </view>
+       <view class="nup">
+         <view class="nu_left">
+             <image class="nulpic" src="{{rulpic}}"/>
+             <text class="nul_text">{{rul_text}}</text>
+         </view>
+         <view class="nu_middle"/>
+         <view class="nu_right"/>    
+       </view>  
+       <view class="ndown">
+         <view class="nd_left"/>
+         <view class="nd_middle"/>
+         <view class="nd_right"/>   
+       </view>
+     </view>  
+
+     <view class="mv">
+       <view class="mmain">   
+        <text class="tmv">{{tmv}}</text>
+        <image class="pic" src="{{pic}}"/>
+       </view>
+       <view class="mup">
+         <view class="mu_left">
+             <image class="mulpic" src="{{rulpic}}"/>
+             <text class="mul_text">{{rul_text}}</text>
+         </view>
+         <view class="mu_middle"/>
+         <view class="mu_right"/>    
+       </view>  
+       <view class="mdown">
+         <view class="md_left"/>
+         <view class="md_middle"/>
+         <view class="md_right"/>   
+       </view>
+     </view> 
+
+     <view class="anch">
+       <view class="anc">   
+        <text class="anchor">{{anchor}}</text>
+        <image class="pic" src="{{pic}}"/>
+       </view>
+       <view class="aup">
+         <view class="au_left">
+             <image class="aulpic" src="{{rulpic}}"/>
+             <text class="aul_text">{{rul_text}}</text>
+         </view>
+         <view class="au_middle"/>
+         <view class="au_right"/>    
+       </view>  
+       <view class="adown">
+         <view class="ad_left"/>
+         <view class="ad_middle"/>
+         <view class="ad_right"/>   
+       </view>
+     </view>  
+    </view>
+  </view>

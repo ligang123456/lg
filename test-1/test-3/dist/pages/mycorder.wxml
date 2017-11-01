@@ -1,0 +1,8 @@
+
+  <view class="container">
+    <view class="move">
+        <image class="pic1" src="{{pic1}}"/>
+        <text class="a">{{a}}</text>
+        <image class="pic2" src="{{pic2}}"/>
+    </view>
+  </view>

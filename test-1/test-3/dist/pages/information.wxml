@@ -1,0 +1,22 @@
+
+  <view class="container">
+    <view class="move">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block  wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="mepic"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="title">
+      <text class="ta">{{ta}}</text>
+      <text class="tb">{{tb}}</text>
+      <text class="tc">{{tc}}</text>
+      <text class="td">{{td}}</text>
+    </view>
+    <view class="titleb"/>
+    <view class="main">
+
+    </view>
+  </view>

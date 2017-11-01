@@ -1,0 +1,20 @@
+
+    <view>
+        <view class="container">
+            <view class="main">
+                <image class="mapic" src="{{mapic}}"/>
+                <text class="price">{{price}}</text>
+                <text class="title">{{title}}</text>
+            </view>
+            <view class="attribute">
+                <text class="numbers">{{numbers}}</text>
+                <text class="subtraction" bindtap="subtraction" value="{{number ? '' : number}}">{{subtraction}}</text>
+                <text class="number">{{number}}</text>
+                <text class="add" bindtap="add" value="{{add ? '' : number}}">{{add}}</text>
+            </view>
+            <view class="menue">
+                <text class="ta">{{ta}}</text>
+                <text class="tb">{{tb}}</text>
+            </view>
+        </view>
+    </view>

@@ -1,0 +1,11 @@
+
+.mynickname {
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+}
+
+.prompting {
+    margin-top: 10px;
+    color: silver;
+    font-size: 13px;
+}

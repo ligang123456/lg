@@ -1,0 +1,327 @@
+<style>
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: salmon;
+  padding: 0.625rem;
+}
+
+.mpic {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: silver;
+  font-size: 0.81rem;
+  padding: 0.3rem 0;
+}
+
+.main image {
+  width: 1.875rem;
+  height: 1.875rem;
+  padding: 0.3rem 0;
+}
+
+.address,
+.order,
+.cart,
+.collect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mysaddress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mycorder,
+.mycart,
+.mycollect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2.5rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+}
+.mynickname,
+.mycode,
+.mypay,
+.mygoods,
+.myappraise,
+.mynews {
+  display: flex;
+  border-bottom: 1px solid silver;
+  width: 100%;
+  padding: 0.7rem 0;
+}
+
+.myfeedback {
+  display: flex;
+  border-top: 0.7rem solid silver;
+  /* width: 100%; */
+  background-color: seashell;
+  padding: 0.7rem;
+}
+.mynpic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.mnickname {
+  color: silver;
+  font-size: 0.9375rem;
+}
+.nickname{padding: 0 10rem 0 0.625rem}
+.code{padding: 0 10rem 0 0.625rem}
+.goods{padding: 0 12rem 0 0.9375rem}
+.appraise{padding: 0 12rem 0 0.625rem}
+.news{padding: 0 11rem 0 0.625rem}
+.pay{padding: 0 12rem 0 0.625rem}
+.feedback {padding: 0 11rem 0 0.625rem}
+.mycpic {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.mcpic {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.myppic {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mppic {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.mygpic {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.mgpic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.myapic {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.mapic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.mynepic {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mnepic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.myfpic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.mfpic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+</style>
+
+<template>
+  <view class="person">
+    <view class="logo">
+      <image class="mpic" src="{{mpic}}"></image>
+    </view>
+    <view class="main">
+      <view class="mysaddress" @tap="mysaddress">
+        <image class="apic" src="{{apic}}"></image>
+        <text class="address" style="color:{{acolor}}">{{address}}</text>
+      </view>
+      <view class="mycorder" @tap="mycorder">
+        <image class="opic" src="{{opic}}"></image>
+        <text class="order" style="color:{{ocolor}}">{{order}}</text>
+      </view>
+      <view class="mycart" @tap="mycart">
+        <image class="cpic" src="{{cpic}}"></image>
+        <text class="cart" style="color:{{ccolor}}">{{cart}}</text>
+      </view>
+      <view class="mycollect" @tap="mycollect">
+        <image class="copic" src="{{copic}}"></image>
+        <text class="collect" style="color:{{cocolor}}">{{collect}}</text>
+      </view>
+    </view>
+    <view class="body">
+      <view class="mynickname" @tap = "mynickname">
+          <image class="mynpic" src="{{mynpic}}"></image>
+          <text class="nickname">{{nickname}}</text>
+          <text class="mnickname">{{mnickname}}</text>
+      </view>
+      <view class="mycode" @tap = "mycode">
+        <image class="mycpic" src="{{mycpic}}"></image>
+        <text class="code">{{code}}</text>
+        <image class="mcpic" src="{{mcpic}}"></image>
+      </view>
+      <view class="mypay" @tap = "mypay">
+        <image class="myppic" src="{{myppic}}"></image>
+        <text class="pay">{{pay}}</text>
+        <image class="mppic" src="{{mppic}}"></image>
+      </view>
+      <view class="mygoods" @tap = "mygoods">
+        <image class="mygpic" src="{{mygpic}}"></image>
+        <text class="goods">{{goods}}</text>
+        <image class="mgpic" src="{{mgpic}}"></image>
+      </view>
+      <view class="myappraise" @tap = "myappraise">
+        <image class="myapic" src="{{myapic}}"></image>
+        <text class="appraise">{{appraise}}</text>
+        <image class="mapic" src="{{mapic}}"></image>
+      </view>
+      <view class="mynews" @tap = "mynews">
+        <image class="mynepic" src="{{mynepic}}"></image>
+        <text class="news">{{news}}</text>
+        <image class="mnepic" src="{{mnepic}}"></image>
+      </view>
+    </view>
+    <view class="myfeedback" @tap = "myfeedback">
+      <image class="myfpic" src="{{myfpic}}"></image>
+      <text class="feedback">{{feedback}}</text>
+      <image class="mfpic" src="{{mfpic}}"></image>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '个人',
+    navigationBarBackgroundColor: 'silver'
+  }
+  data = {
+    apic: '../images/address.png',
+    opic: '../images/corder.png',
+    cpic: '../images/cart.png',
+    copic: '../images/collect.png',
+    address: '收货地址',
+    order: '我的订单',
+    cart: '购物车',
+    collect: '收藏',
+    acolor: '#13227a',
+    ocolor: '#13227a',
+    ccolor: '#13227a',
+    cocolor: '#13227a',
+    mpic: '../images/head.jpeg',
+    nickname: '昵称',
+    code: '二维码名片',
+    pay: '待付款',
+    goods: '待收货',
+    appraise: '待评价',
+    news: '我的消息',
+    feedback: '意见反馈',
+    mynpic: '../images/nickname.png',
+    mycpic: '../images/rcode.png',
+    myppic: '../images/pay.png',
+    mygpic: '../images/goods.png',
+    myapic: '../images/appraise.png',
+    mynepic: '../images/news.png',
+    myfpic: '../images/feedback.png',
+    mppic: '../images/more.png',
+    mgpic: '../images/more.png',
+    mapic: '../images/more.png',
+    mnepic: '../images/more.png',
+    mfpic: '../images/more.png',
+    mcpic: '../images/Wechat1.jpeg',
+    mnickname: 'Bea'
+  }
+  methods = {
+    mysaddress() {
+      wepy.navigateTo({
+        url: '../pages/mysadderss'
+      })
+    },
+    mycorder() {
+      wepy.navigateTo({
+        url: '../pages/mycorder'
+      })
+    },
+    mycart() {
+      wepy.navigateTo({
+        url: '../pages/mycart'
+      })
+    },
+    mycollect() {
+      wepy.navigateTo({
+        url: '../pages/mycollect'
+      })
+    },
+    mynickname() {
+      wepy.navigateTo({
+        url: '../pages/mynickname'
+      })
+    },
+    mycode() {
+      wepy.navigateTo({
+        url: '../pages/mycode'
+      })
+    },
+    mypay() {
+      wepy.navigateTo({
+        url: '../pages/mypay'
+      })
+    },
+    mygoods() {
+      wepy.navigateTo({
+        url: '../pages/mygoods'
+      })
+    },
+    myappraise() {
+      wepy.navigateTo({
+        url: '../pages/myappraise'
+      })
+    },
+    mynews() {
+      wepy.navigateTo({
+        url: '../pages/mynews'
+      })
+    },
+    myfeedback() {
+      wepy.navigateTo({
+        url: '../pages/myfeedback'
+      })
+    }
+  }
+
+  onShow() {
+    let self = this
+    self.mnickname = self.$parent.globalData.nickName
+  }
+}
+</script>

@@ -1,0 +1,40 @@
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:salmon;
+}
+</style>
+
+<template>
+  <view class="container">
+    <view class="move">
+        <image class="mepic" src = "{{item}}"></image>
+    </view>
+    <view class="title">
+      <text class = "ta">{{ta}}</text>
+      <text class = "tb">{{tb}}</text>
+      <text class = "tc">{{tc}}</text>
+    </view>
+    <view class="titleb"></view>
+    <view class="main">
+
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '收藏'
+  }
+  data = {
+    item: '../images/收藏.png'
+  }
+  methods = {}
+  onLoad() {}
+}
+</script>

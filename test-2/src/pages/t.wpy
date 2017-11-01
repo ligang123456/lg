@@ -1,0 +1,67 @@
+<style lang="less">
+.rotate-360{
+  animation: rotate 10s linear infinite;
+}
+.rotate-360-paused{
+  animation: rotate 10s linear infinite;
+  animation-play-state: paused;
+}
+@keyframes rotate
+{
+  0%   {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+.container{
+  background-image: url(http://img5.imgtn.bdimg.com/it/u=3435509739,602925644&fm=27&gp=0.jpg)
+}
+
+// .pic{
+//   width: 220px;
+//     height: 220px;
+//     border-radius: 50%;
+//     margin-top: 30px;
+//     border: 25px solid rgba(66, 66, 66, 0.3);
+//     animation: rotate 10s linear infinite;
+// }
+.rotate-disk{
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 25px solid rgba(66, 66, 66, 0.3);
+}
+
+</style>
+<template>
+  <view class="container">
+    <view class="rotate-disk" @tap="pause">
+     <!-- <view class="pic" animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx;"></view> -->
+     <image class="pic {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}" src="../images/head.jpeg"></image>
+    </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: 'music'
+  }
+  data = {
+    pauseStatus: true
+  }
+  methods = {
+  }
+
+  onLoad() {
+    let self = this
+    self.pauseStatus = true
+    setTimeout(function() {
+      self.pauseStatus = false
+      self.setData({pauseStatus: false})
+    }, 5000)
+  }
+}
+</script>

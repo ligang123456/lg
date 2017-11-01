@@ -1,0 +1,176 @@
+
+  <view class="container">
+    <view class="logo">
+        <text class="music" bindtap="music">{{music}}</text>
+        <text class="vedio" bindtap="video">{{video}}</text>
+        <text class="radio" bindtap="radio">{{radio}}</text>
+    </view>
+    <view class="move">
+      <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block  wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="mepic"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="menue">
+      <view class="person">
+          <image class="ppic" src="{{ppic}}"/>
+          <text class="personal">{{personal}}</text>
+      </view>
+      <view class="day">
+           <image class="dpic" src="{{dpic}}"/>
+           <text class="everyday">{{everyday}}</text>
+      </view>
+      <view class="list" bindtap="playlist">
+          <image class="lpic" src="{{lpic}}"/>
+          <text class="playlist">{{playlist}}</text>
+      </view>
+      <view class="board">
+          <image class="bpic" src="{{bpic}}"/>
+          <text class="leaderboard">{{leaderboard}}</text>
+      </view>
+    </view>
+    <view class="body">
+     <view class="reco">   
+       <view class="rec">  
+        <text class="recommend">{{recommend}}</text>
+        <image class="pic" src="{{pic}}"/>
+       </view> 
+       <view class="rup">
+         <view class="ru_left">
+             <image class="rulpic" src="{{rulpic}}"/>
+             <text class="rul_text">{{rul_text}}</text>
+         </view>
+         <view class="ru_middle">
+             <image class="rumpic" src="{{rumpic}}"/>
+             <text class="rum_text">{{rum_text}}</text>
+         </view>
+         <view class="ru_right">
+             <image class="rurpic" src="{{rurpic}}"/>
+             <text class="rur_text">{{rur_text}}</text>    
+         </view>    
+       </view>  
+       <view class="rdown">
+         <view class="rd_left">
+             <image class="rdlpic" src="{{rdlpic}}"/>
+             <text class="rdl_text">{{rdl_text}}</text>
+         </view>
+         <view class="rd_middle">
+             <image class="rdmpic" src="{{rdmpic}}"/>
+             <text class="rdm_text">{{rdm_text}}</text>
+         </view>
+         <view class="rd_right">
+             <image class="rdrpic" src="{{rdrpic}}"/>
+             <text class="rdr_text">{{rdr_text}}</text>    
+         </view>   
+       </view>
+     </view>
+
+     <view class="news">
+       <view class="new">   
+        <text class="newmusic">{{newmusic}}</text>
+        <image class="pic" src="{{pic}}"/>
+       </view>
+       <view class="nup">
+         <view class="nu_left">
+             <image class="nulpic" src="{{nulpic}}"/>
+             <text class="nul_text">{{nul_text}}</text>
+         </view>
+         <view class="nu_middle">
+             <image class="numpic" src="{{numpic}}"/>
+             <text class="num_text">{{num_text}}</text>
+         </view>
+         <view class="nu_right">
+             <image class="nurpic" src="{{nurpic}}"/>
+             <text class="nur_text">{{nur_text}}</text>
+         </view>    
+       </view>  
+       <view class="ndown">
+         <view class="nd_left">
+             <image class="ndlpic" src="{{ndlpic}}"/>
+             <text class="ndl_text">{{ndl_text}}</text>
+         </view>
+         <view class="nd_middle">
+             <image class="ndmpic" src="{{ndmpic}}"/>
+             <text class="ndm_text">{{ndm_text}}</text>
+         </view>
+         <view class="nd_right">
+             <image class="ndrpic" src="{{ndrpic}}"/>
+             <text class="ndr_text">{{ndr_text}}</text>
+         </view>   
+       </view>
+     </view>  
+
+     <view class="mv">
+       <view class="mmain">   
+        <text class="tmv">{{tmv}}</text>
+        <image class="pic" src="{{pic}}"/>
+       </view>
+       <view class="mup">
+         <view class="mu_left">
+             <image class="mulpic" src="{{mulpic}}"/>
+             <text class="mul_text">{{mul_text}}</text>
+         </view>
+         <view class="mu_middle">
+             <image class="mumpic" src="{{mumpic}}"/>
+             <text class="mum_text">{{mum_text}}</text>
+         </view>
+         <view class="mu_right">
+             <image class="murpic" src="{{murpic}}"/>
+             <text class="mur_text">{{mur_text}}</text>
+         </view>    
+       </view>  
+       <view class="mdown">
+         <view class="md_left">
+             <image class="mdlpic" src="{{mdlpic}}"/>
+             <text class="mdl_text">{{mdl_text}}</text>
+         </view>
+         <view class="md_middle">
+             <image class="mdmpic" src="{{mdmpic}}"/>
+             <text class="mdm_text">{{mdm_text}}</text>
+         </view>
+         <view class="md_right">
+             <image class="mdrpic" src="{{mdrpic}}"/>
+             <text class="mdr_text">{{mdr_text}}</text>    
+         </view>   
+       </view>
+     </view> 
+
+     <view class="anch">
+       <view class="anc">   
+        <text class="anchor">{{anchor}}</text>
+        <image class="pic" src="{{pic}}"/>
+       </view>
+       <view class="aup">
+         <view class="au_left">
+             <image class="aulpic" src="{{aulpic}}"/>
+             <text class="aul_text">{{aul_text}}</text>
+         </view>
+         <view class="au_middle">
+             <image class="aumpic" src="{{aumpic}}"/>
+             <text class="aum_text">{{aum_text}}</text>
+         </view>
+         <view class="au_right">
+             <image class="aurpic" src="{{aurpic}}"/>
+             <text class="aur_text">{{aur_text}}</text>    
+         </view>    
+       </view>  
+       <view class="adown">
+         <view class="ad_left">
+             <image class="adlpic" src="{{adlpic}}"/>
+             <text class="adl_text">{{adl_text}}</text>
+         </view>
+         <view class="ad_middle">
+             <image class="admpic" src="{{admpic}}"/>
+             <text class="adm_text">{{adm_text}}</text>
+         </view>
+         <view class="ad_right">
+             <image class="adrpic" src="{{adrpic}}"/>
+             <text class="adr_text">{{adr_text}}</text>    
+         </view>   
+       </view>
+     </view>  
+    </view>
+  </view>

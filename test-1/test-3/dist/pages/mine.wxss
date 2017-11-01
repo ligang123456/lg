@@ -1,0 +1,156 @@
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: salmon;
+  padding: 0.625rem;
+}
+
+.mpic {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: silver;
+  font-size: 0.81rem;
+  padding: 0.3rem 0;
+}
+
+.main image {
+  width: 1.875rem;
+  height: 1.875rem;
+  padding: 0.3rem 0;
+}
+
+.address,
+.order,
+.cart,
+.collect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mysaddress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mycorder,
+.mycart,
+.mycollect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2.5rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+}
+.mynickname,
+.mycode,
+.mypay,
+.mygoods,
+.myappraise,
+.mynews {
+  display: flex;
+  border-bottom: 1px solid silver;
+  width: 100%;
+  padding: 0.7rem 0;
+}
+
+.myfeedback {
+  display: flex;
+  border-top: 0.7rem solid silver;
+  /* width: 100%; */
+  background-color: seashell;
+  padding: 0.7rem;
+}
+.mynpic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.mnickname {
+  color: silver;
+  font-size: 0.9375rem;
+}
+.nickname{padding: 0 10rem 0 0.625rem}
+.code{padding: 0 10rem 0 0.625rem}
+.goods{padding: 0 12rem 0 0.9375rem}
+.appraise{padding: 0 12rem 0 0.625rem}
+.news{padding: 0 11rem 0 0.625rem}
+.pay{padding: 0 12rem 0 0.625rem}
+.feedback {padding: 0 11rem 0 0.625rem}
+.mycpic {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.mcpic {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.myppic {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mppic {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.mygpic {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.mgpic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.myapic {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.mapic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.mynepic {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mnepic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.myfpic {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.mfpic {
+  width: 1.25rem;
+  height: 1.25rem;
+}

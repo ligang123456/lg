@@ -1,0 +1,158 @@
+<style lang="less">
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(http://img4.imgtn.bdimg.com/it/u=163844659,2212480365&fm=27&gp=0.jpg);
+    //border: 10px solid silver;
+    padding: 0;
+    margin: 0px;
+    background-color: red;
+}
+.buttom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+.pic{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-top: 30px;
+    border: 25px solid rgba(66, 66, 66, 0.3);
+    //animation: rotate 10s linear infinite;
+}
+.rotate-360{
+  animation: rotate 10s linear infinite;
+}
+.rotate-360-paused{
+  animation: rotate 10s linear infinite;
+  animation-play-state: paused;
+}
+@keyframes rotate
+{
+  0%   {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+.play{
+    width: 100%;
+    margin-bottom: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.apic{
+    width: 35px;
+    height: 35px;
+    margin-left: 35px;
+}
+.buttom{
+    margin-top: 60px;
+    border: 3px solid seashell;
+    padding: 0;
+    //width: 100%;
+}
+.collect{
+    width: 33px;
+    height: 33px;
+    //margin-top: 10px;
+    margin-left: 35px;
+}
+.progress{
+    width: 80%;
+    color: silver;
+    margin-top: 10px;
+}
+audio{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.cycle{
+    width: 35px;
+    height: 35px;
+}
+.forward,.backward{
+    width: 15px;
+    height: 15px;
+    margin-left: 35px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 8px;
+}
+</style>
+<template>
+  <view class="container">
+      <view class="title" style="margin-top:20px">此时此刻</view>
+      <image class="pic {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}" src="{{pic}}"></image>
+   <view class="buttom">
+       <view class="collect"></view>  
+       <view class="progress">
+         <progress percent="0"/>
+       </view> 
+    <view class="play">
+     <audio  src="{{src}}" id="myAudio">
+         <image class="cycle" src="../images/random.png"></image>
+         <image class="forward" src="../images/forward.png"></image>
+         <image class="apic" src="{{play ? '../images/pause.png' : apic}}" @tap="onReady"></image>
+         <image class="backward" src="../images/backward.png"></image>
+         <image class="collect" src="{{collect ? '../images/collects.png' : copic}}" @tap="collect"></image>
+     </audio>
+    </view>
+   </view> 
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: 'music'
+  }
+  data = {
+    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
+    pic: 'http://img5.imgtn.bdimg.com/it/u=3435509739,602925644&fm=27&gp=0.jpg',
+    apic: '../images/play.png',
+    copic: '../images/collect.png',
+    play: false,
+    collect: false
+  }
+  methods = {
+    collect() {
+      let self = this
+      self.collect = !self.collect
+    }
+  }
+  onReady(e) {
+    let self = this
+    self.play = !self.play
+    if (self.play) {
+        // 使用 wx.createAudioContext 获取 audio 上下文 context
+      this.audioCtx = wepy.createAudioContext('myAudio')
+      // this.audioCtx.setSrc('http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46')
+      this.audioCtx.play()
+      self.pauseStatus = false
+    } else {
+      this.audioCtx.pause()
+      self.pauseStatus = true
+    }
+  }
+  onLoad() {
+    let self = this
+    self.pauseStatus = true
+    setTimeout(function() {
+      self.pauseStatus = false
+      self.setData({pauseStatus: false})
+    }, 2000)
+  }
+}
+</script>

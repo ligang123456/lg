@@ -1,0 +1,75 @@
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  height: 40px;
+  width: 100%;
+  background-color: salmon; 
+}
+.name{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid silver;
+  margin-top:5px;
+  margin-left: -60px;
+  height: 40px;
+}
+.number,.region,.address{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid silver;
+  margin-top:5px;
+  margin-left: -45px;
+  height: 40px;
+}
+input{
+  margin-left: 30px;
+}
+</style>
+
+<template>
+  <view class="container">
+    <view class="logo"></view>
+    <view class="name">
+      <text class="myname">{{myname}}</text>
+      <input placeholder="姓名" />
+    </view>
+    <view class="number">
+      <text class="mynumber">{{mynumber}}</text>
+      <input placeholder="11位手机号码" />
+    </view>
+    <view class="region">
+      <text class="myregion">{{myregion}}</text>
+      <input placeholder="地区信息" />
+    </view>
+    <view class="address">
+      <text class="myaddress">{{myaddress}}</text>
+      <input placeholder="街道门牌信息" />
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '收货地址'
+  }
+  data = {
+    myname: '收货人',
+    mynumber: '手机号码',
+    myregion: '地区信息',
+    myaddress: '详细地址'
+  }
+  methods = {}
+  onLoad() { }
+}
+</script>

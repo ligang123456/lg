@@ -1,0 +1,155 @@
+<style>
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menue {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+    font-size: 15px;
+    width: 100%;
+}
+
+.mapic {
+    height: 250px;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ta,
+.tb {
+    border: 1px solid silver;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 5px;
+}
+
+.price {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: -200px;
+}
+
+.title {
+    margin-top: 15px;
+}
+
+.attribute {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -90px;
+}
+
+.attribute text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers {
+    margin-top: 50px;
+    margin-left: 0px;
+}
+
+.subtraction {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 45px;
+    border: 1px solid silver;
+}
+
+.number {
+    margin-top: 50px;
+    width: 70px;
+    border: 1px solid silver;
+}
+
+.add {
+    margin-top: 50px;
+    width: 45px;
+    border: 1px solid silver;
+}
+</style>
+
+<template>
+    <view>
+        <view class="container">
+            <view class="main">
+                <image class="mapic" src="{{mapic}}"></image>
+                <text class="price">{{price}}</text>
+                <text class="title">{{title}}</text>
+            </view>
+            <view class="attribute">
+                <text class="numbers">{{numbers}}</text>
+                <text class="subtraction" @tap="subtraction" value="{{number ? '' : number}}">{{subtraction}}</text>
+                <text class="number">{{number}}</text>
+                <text class="add" @tap="add" value="{{add ? '' : number}}">{{add}}</text>
+            </view>
+            <view class="menue">
+                <text class="ta">{{ta}}</text>
+                <text class="tb">{{tb}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: 'kla'
+  }
+  data = {
+    mapic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
+    ta: '加入购物车',
+    tb: '立即购买',
+    price: '¥3999',
+    title: '2017最新款韩式婚纱2017最新款韩式婚纱2017最新款韩式婚纱2017最新款韩式婚纱',
+    numbers: '数量',
+    subtraction: '-',
+    number: 0,
+    add: '+'
+  }
+  methods = {
+    subtraction() {
+      let self = this
+      if (self.number) {
+        self.number--
+      } else {
+        self.number = 0
+      }
+    },
+    add() {
+      let self = this
+      if (self.add) {
+        self.number++
+      } else {
+        self.number = 0
+      }
+    }
+  }
+  onLoad() { }
+}
+</script>

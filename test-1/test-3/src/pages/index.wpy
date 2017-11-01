@@ -1,0 +1,272 @@
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: silver;
+  /* width: 100%; */
+  padding: 0;
+}
+
+.logo {
+  margin-top: 0.125rem;
+  width: 60%;
+  border: 1px solid silver;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.spic {
+  position: flex;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -1.2rem;
+  margin-left: 14rem;
+  border: 1px solid #989898;
+}
+input{
+  border: 1px solid #989898;
+}
+text {
+  color: aqua;
+}
+
+.move {
+  display: fixed;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 8.5rem; */
+  /* margin-top: 0.05rem; */
+  margin-top: 0.625rem;
+  padding: 0;
+}
+.mepic{
+  width: 100%;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.625rem;
+  font-size: 0.625rem;
+  background-color: sienna;
+  padding: 0.625rem;
+  margin-bottom: 0;
+  /* width: 100%; */
+}
+.left{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid silver;
+  padding: 0.625rem 0.625rem 0 0.625rem;
+  background-color: silver;
+}
+.right{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid silver;
+  padding: 0.3125rem 0.625rem 0.375rem 0.625rem;
+  background-color: silver;
+}
+
+.ktext {
+  position: absolute;
+  margin-top: 3.3rem;
+  margin-left: -7.8rem;
+}
+
+.ctext {
+  position: absolute;
+  margin-top: 3.3rem;
+  margin-left: -7.8rem;
+}
+
+.etext {
+  position: absolute;
+  margin-top: 3.3rem;
+  margin-left: -8.5rem;
+}
+
+.ftext {
+  position: absolute;
+  margin-top: 3.3rem;
+  margin-left: -8.8rem;
+}
+
+.kpic {
+  width: 8.375rem;
+  height: 6.25rem;
+  /* margin: 0.625rem; */
+  border: 1px solid silver;
+}
+
+.cpic {
+  width: 8.375rem;
+  height: 6.25rem;
+  /* margin-top: 1rem; */
+  /* margin-left: 0.625rem; */
+  border: 1px solid silver;
+}
+
+.epic {
+  width: 8.375rem;
+  height: 6.25rem;
+  margin-left: 0.625rem;
+  border: 1px solid silver;
+}
+
+.fpic {
+  width: 8.375rem;
+  height: 6.25rem;
+  margin-left: 0.625rem;
+  border: 1px solid silver;
+}
+
+.titlea {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.titleb {
+  font-size: 0.625rem;
+}
+</style>
+
+<template>
+<scroll-view style="height: 550px; background-color: silver;">
+   <view class="container">
+    <view class="logo">
+      <input placeholder="🔍 请输入搜索内容" />
+      <image class="spic" src="{{spic}}"></image>
+    </view>
+    <view class="move">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="mepic" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="titlea">米兰新娘婚纱 ~ Sweet</view>
+    <view class="titleb">Milan wedding wedding dress </view>
+    <view class="main">
+     <view class="left"> 
+      <view class="Korean" @tap = "Korean">
+        <image class="kpic" src="http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg"></image>
+        <text class="ktext">韩式婚纱/wedding photo</text>
+      </view>
+      <view class="euramerican" @tap = "euramerican">
+        <image class="epic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2563212303,2386777870&fm=27&gp=0.jpg"></image>
+        <text class="etext">欧式婚纱/wedding photo</text>
+      </view>
+     </view>
+     <view class="right">
+      <view class="China" @tap = "China">
+        <image class="cpic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1050848129,653593312&fm=27&gp=0.jpg"></image>
+        <text class="ctext">中式婚纱/wedding photo</text>
+      </view>
+      <view class="fresh" @tap = "fresh">
+        <image class="fpic" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1330062990,4245696189&fm=27&gp=0.jpg"></image>
+        <text class="ftext">小清新婚纱/wedding photo</text>
+      </view>
+     </view> 
+    </view>
+  </view>
+  </scroll-view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: 'MILAN 畅享幸福'
+  }
+  data = {
+    imgUrls: [
+      'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2269117905,883006692&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2685210028,3457372075&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1943435865,804430348&fm=27&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3960877383,1051484866&fm=27&gp=0.jpg',
+      'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1453502849,2727599889&fm=27&gp=0.jpg',
+      'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1161813563,3069512331&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2650753610,2725677441&fm=27&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2563212303,2386777870&fm=27&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=301638266,118195273&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1195195877,3732307103&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2977108417,4066448308&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2808921144,383870039&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1710119994,1785422236&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1039723149,4180689354&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1444888880,1040714602&fm=27&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1050848129,653593312&fm=27&gp=0.jpg',
+      'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3061289273,1862940451&fm=11&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2792928026,4035569877&fm=27&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=400619145,2816616768&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1887976017,3134824751&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4109140288,4045698816&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=691853908,3835353995&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1461531979,3090219501&fm=11&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1330062990,4245696189&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4064038270,1595400132&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=897783695,942150829&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=67229818,1333284618&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3155610230,438529439&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=122757271,1438254285&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2372960960,3959808633&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=994154604,1342887172&fm=27&gp=0.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: '3000',
+    duration: '300',
+    spic: '../images/search.png'
+  }
+  methods = {
+    Korean() {
+      wepy.navigateTo({
+        url: '../pages/Korean'
+      })
+    },
+    China() {
+      wepy.navigateTo({
+        url: '../pages/China'
+      })
+    },
+    euramerican() {
+      wepy.navigateTo({
+        url: '../pages/euramerican'
+      })
+    },
+    fresh() {
+      wepy.navigateTo({
+        url: '../pages/fresh'
+      })
+    }
+  }
+  onLoad() {
+    let self = this
+    wepy.request({
+      url: 'http://127.0.0.1/user',
+      method: 'GET',
+      successs: function(res){
+        self.text = res.data
+        self.setData({
+          text res.data
+        })
+      }
+    })
+  }
+}
+</script>

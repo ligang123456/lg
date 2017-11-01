@@ -1,0 +1,66 @@
+<style>
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+.menue{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+    font-size: 15px;
+    width: 100%;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.ta,.tb{
+    border: 1px solid silver;
+    padding: 5px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+</style>
+
+<template>
+     <view>
+     <view class="container">
+        <view class="main">
+            <image class="mapic" src="{{mapic}}"></image>
+            <text class="price">{{price}}</text>
+            <text class="title">{{title}}</text>
+        </view>
+        <view class="menue">
+            <text class="ta">{{ta}}</text>
+            <text class="tb">{{tb}}</text>
+     </view>
+     </view>  
+     </view> 
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '待评价'
+  }
+  data = {
+  }
+  methods = {}
+  onLoad() { }
+}
+</script>

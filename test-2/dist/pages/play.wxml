@@ -1,0 +1,20 @@
+
+  <view class="container">
+      <view class="title" style="margin-top:20px">此时此刻</view>
+      <image class="pic {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}" src="{{pic}}"/>
+   <view class="buttom">
+       <view class="collect"/>  
+       <view class="progress">
+         <progress percent="0"/>
+       </view> 
+    <view class="play">
+     <audio src="{{src}}" id="myAudio">
+         <image class="cycle" src="../images/random.png"/>
+         <image class="forward" src="../images/forward.png"/>
+         <image class="apic" src="{{play ? '../images/pause.png' : apic}}" bindtap="onReady"/>
+         <image class="backward" src="../images/backward.png"/>
+         <image class="collect" src="{{collect ? '../images/collects.png' : copic}}" bindtap="collect"/>
+     </audio>
+    </view>
+   </view> 
+  </view>

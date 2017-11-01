@@ -1,0 +1,14 @@
+
+     <view>
+     <view class="container">
+        <view class="main">
+            <image class="mapic" src="{{mapic}}"/>
+            <text class="price">{{price}}</text>
+            <text class="title">{{title}}</text>
+        </view>
+        <view class="menue">
+            <text class="ta">{{ta}}</text>
+            <text class="tb">{{tb}}</text>
+     </view>
+     </view>  
+     </view>

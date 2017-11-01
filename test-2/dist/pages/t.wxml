@@ -1,0 +1,7 @@
+
+  <view class="container">
+    <view class="rotate-disk" bindtap="pause">
+     <!-- <view class="pic" animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx;"></view> -->
+     <image class="pic {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}" src="../images/head.jpeg"/>
+    </view>
+    </view>

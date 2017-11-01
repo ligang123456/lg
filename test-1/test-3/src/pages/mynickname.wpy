@@ -1,0 +1,38 @@
+<style>
+.mynickname {
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+}
+
+.prompting {
+    margin-top: 10px;
+    color: silver;
+    font-size: 13px;
+}
+</style>
+
+<template>
+    <view class="container">
+        <view class="move">
+            <input class="mynickname" />
+            <text class="prompting">{{prompting}}</text>
+        </view>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的昵称'
+  }
+  data = {
+    prompting: '好名字可以让别人更容易记住你...'
+  }
+  methods = {}
+  onLoad() {
+    let self = this
+    self.$parent.globalData.nickName = 'Beautiful'
+  }
+}
+</script>

@@ -1,0 +1,12 @@
+
+  <view class="container">
+    <view class="wrap">
+      <view class="logo">
+      <image class="lpic" src="{{lpic}}"/>
+      </view>
+      <view class="menue">
+        <text class="mine">我的音乐站</text>
+        <text class="collect">收集歌曲</text>
+      </view>
+    </view>
+  </view>

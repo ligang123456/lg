@@ -1,0 +1,119 @@
+<style lang="less">
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+</style>
+
+<template>
+  <view class="menue">
+    <view class="city" @tap="home">
+      <image class="hpic" src="{{hpic}}"></image>
+      <text class="home" style="color:{{chome}}">{{thome}}</text>
+    </view>
+    <view class="person" @tap="mine">
+      <image class="ppic" src="{{ppic}}"></image>
+      <text class="mine" style="color:{{cmine}}">个人</text>
+    </view>
+  </view>
+</template>
+
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/index',
+      'pages/mine',
+      'pages/information',
+      'pages/compangy',
+      'pages/mysadderss',
+      'pages/mycorder',
+      'pages/mycart',
+      'pages/mycollect',
+      'pages/Korean',
+      'pages/China',
+      'pages/euramerican',
+      'pages/fresh',
+      'pages/mynickname',
+      'pages/mycode',
+      'pages/kla',
+      'pages/mypay',
+      'pages/mygoods',
+      'pages/myappraise',
+      'pages/mynews',
+      'pages/myfeedback'
+    ],
+    tabBar: {
+      color: 'black',
+      selectedColor: '#1296db',
+      backgroundColor: 'silver',
+      list: [{
+        pagePath: 'pages/index',
+        text: '首页',
+        iconPath: './images/ahome.png',
+        selectedIconPath: './images/bhome.png'
+      },
+      {
+        pagePath: 'pages/mine',
+        text: '个人',
+        iconPath: './images/aexpression.png',
+        selectedIconPath: './images/bexpression.png'
+      }]
+    },
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: 'silver',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    }
+  }
+
+  globalData = {
+    userInfo: null,
+    nickName: 'Beautiful'
+  }
+
+  constructor() {
+    super()
+    this.use('requestfix')
+  }
+
+  onLaunch() {
+    this.testAsync()
+  }
+
+  sleep(s) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promise resolved')
+      }, s * 1000)
+    })
+  }
+
+  async testAsync() {
+    const data = await this.sleep(3)
+    console.log(data)
+  }
+
+  getUserInfo(cb) {
+    const that = this
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo
+    }
+    wepy.getUserInfo({
+      success(res) {
+        that.globalData.userInfo = res.userInfo
+        cb && cb(res.userInfo)
+      }
+    })
+  }
+}
+</script>

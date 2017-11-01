@@ -1,0 +1,36 @@
+
+  <view class="container">
+    <view class="logo">
+      <image class="lpic" src="{{lpic}}"/>
+      <view class="menue">
+        <text class="title">今日推荐</text>
+       <view class="sharing"> 
+        <text class="mine">关注</text>
+        <text class="collect">分享</text>
+       </view> 
+      </view>
+    </view>
+
+     <view class="main">
+      <view class="body">
+      <view class="play">
+          <audio src="{{src}}" id="myAudio">
+            <image class="ppic" src="{{play ? '../images/lpause.png' : ppic}}" bindtap="on">></image>
+          </audio>
+          <text class="ptext">{{ptext}}</text>
+      </view>
+
+       <view class="list">
+         <view class="list_one" bindtap="play">
+          <image class="fpic" src="{{fpic}}"/> 
+          <view class="first"> 
+            <text class="fname">此时此刻</text>
+            <text class="fauthor">许巍</text>
+          </view>
+         </view> 
+       </view>
+      </view>
+      <text class="update" style="font-size:10px;color:silver;margin-top:20px">更新于：1天前</text>
+      </view>
+
+  </view>

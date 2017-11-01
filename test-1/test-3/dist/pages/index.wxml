@@ -1,0 +1,43 @@
+
+<scroll-view style="height: 550px; background-color: silver;">
+   <view class="container">
+    <view class="logo">
+      <input placeholder="🔍 请输入搜索内容"/>
+      <image class="spic" src="{{spic}}"/>
+    </view>
+    <view class="move">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block  wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="mepic"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="titlea">米兰新娘婚纱 ~ Sweet</view>
+    <view class="titleb">Milan wedding wedding dress </view>
+    <view class="main">
+     <view class="left"> 
+      <view class="Korean" bindtap="Korean">
+        <image class="kpic" src="http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg"/>
+        <text class="ktext">韩式婚纱/wedding photo</text>
+      </view>
+      <view class="euramerican" bindtap="euramerican">
+        <image class="epic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2563212303,2386777870&fm=27&gp=0.jpg"/>
+        <text class="etext">欧式婚纱/wedding photo</text>
+      </view>
+     </view>
+     <view class="right">
+      <view class="China" bindtap="China">
+        <image class="cpic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1050848129,653593312&fm=27&gp=0.jpg"/>
+        <text class="ctext">中式婚纱/wedding photo</text>
+      </view>
+      <view class="fresh" bindtap="fresh">
+        <image class="fpic" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1330062990,4245696189&fm=27&gp=0.jpg"/>
+        <text class="ftext">小清新婚纱/wedding photo</text>
+      </view>
+     </view> 
+    </view>
+  </view>
+  </scroll-view>

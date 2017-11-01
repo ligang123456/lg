@@ -1,0 +1,381 @@
+<style lang="less">
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //background-image: url(http://img2.imgtn.bdimg.com/it/u=2674478595,4004461407&fm=27&gp=0.jpg);
+  padding: 0;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-top: 0px;
+  color: black;
+}
+.music {
+  text-align: center;
+  width: 60px;
+}
+.radio{
+  color: #6495ed;
+  text-align: center;
+  width: 60px;
+  border-bottom: 2px solid #6495ed;
+  margin-left: 60px; 
+}
+.vedio {
+  margin-left: 60px;
+}
+.move {
+  display: fixed;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10rem;
+  padding: 0px;
+}
+.mepic {
+  width: 100%;
+}
+.menue {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid silver;
+}
+.person,
+.day,
+.list,
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menue text {
+  font-size: 15px;
+  color: #696969;
+}
+.everyday,
+.playlist,
+.leaderboard {
+  margin-left: 25px;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.reco,
+.news,
+.mv,
+.anch {
+  width: 100%;
+  //border: 1px solid black;
+  border-bottom: 1px solid silver;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rec {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-left: 2px solid black;
+  // margin-left: -179px;
+  margin-left: 1px;
+  height: 15px;
+  border-bottom: 1px solid silver;
+  padding-bottom: 5px;
+}
+.recommend {
+  // margin-left: -80px;
+  margin-left: -220px;
+}
+.pic {
+  width: 21px;
+  height: 21px;
+  margin-left: 5px;
+}
+.new {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-left: 2px solid black;
+  // margin-left: -179px;
+  margin-left: 1px;
+  height: 15px;
+  padding-bottom: 5px;
+}
+.newmusic {
+  // margin-left: -80px;
+  margin-left: -220px;
+}
+.mmain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-left: 2px solid black;
+  // margin-left: -179px;
+  margin-left: 1px;
+  height: 15px;
+  padding-bottom: 5px;
+}
+.tmv {
+  // margin-left: -80px;
+  margin-left: -225px;
+}
+.anc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-left: 2px solid black;
+  // margin-left: -179px;
+  margin-left: 1px;
+  height: 15px;
+  padding-bottom: 5px;
+}
+.anchor {
+  // margin-left: -80px;
+  margin-left: -225px;
+}
+.rup,
+.rdown,
+.nup,
+.ndown,
+.mup,
+.mdown,
+.aup,
+.adown{
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.ru_left,
+.rd_left,
+.nu_left,
+.nd_left,
+.mu_left,
+.md_left,
+.au_left,
+.ad_left{
+  width: 100px;;
+  height: 100px;
+  border: 1px solid black; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+.ru_middle,.ru_right,.rd_middle,.rd_right,
+.nu_middle,.nu_right,.nd_middle,.nd_right,
+.mu_middle,.mu_right,.md_middle,.md_right,
+.au_middle,.au_right,.ad_middle,.ad_right,
+{
+  width: 100px;;
+  height: 100px;
+  border: 1px solid black; 
+  margin-left: 5px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rulpic,.rul_text,
+.nulpic,.nul_text,
+.mulpic,.mul_text,
+.aulpic,.aul_text{
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
+.rul_text,
+.nul_text,
+.mul_text,
+.aul_text{
+    margin-top: 10px;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="logo">
+        <text class="music" @tap="music">{{music}}</text>
+        <text class="vedio" @tap="video">{{video}}</text>
+        <text class="radio" @tap="radio">{{radio}}</text>
+    </view>
+    <view class="move">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="mepic" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="body">
+     <view class="reco">   
+       <view class="rec">  
+        <text class="recommend">{{recommend}}</text>
+        <image class="pic" src="{{pic}}"></image>
+       </view> 
+       <view class="rup">
+         <view class="ru_left">
+             <image class="rulpic" src="{{rulpic}}"></image>
+             <text class="rul_text">{{rul_text}}</text>
+         </view>
+         <view class="ru_middle"></view>
+         <view class="ru_right"></view>    
+       </view>  
+       <view class="rdown">
+         <view class="rd_left"></view>
+         <view class="rd_middle"></view>
+         <view class="rd_right"></view>   
+       </view>
+     </view>
+
+     <view class="news">
+       <view class="new">   
+        <text class="newmusic">{{newmusic}}</text>
+        <image class="pic" src="{{pic}}"></image>
+       </view>
+       <view class="nup">
+         <view class="nu_left">
+             <image class="nulpic" src="{{rulpic}}"></image>
+             <text class="nul_text">{{rul_text}}</text>
+         </view>
+         <view class="nu_middle"></view>
+         <view class="nu_right"></view>    
+       </view>  
+       <view class="ndown">
+         <view class="nd_left"></view>
+         <view class="nd_middle"></view>
+         <view class="nd_right"></view>   
+       </view>
+     </view>  
+
+     <view class="mv">
+       <view class="mmain">   
+        <text class="tmv">{{tmv}}</text>
+        <image class="pic" src="{{pic}}"></image>
+       </view>
+       <view class="mup">
+         <view class="mu_left">
+             <image class="mulpic" src="{{rulpic}}"></image>
+             <text class="mul_text">{{rul_text}}</text>
+         </view>
+         <view class="mu_middle"></view>
+         <view class="mu_right"></view>    
+       </view>  
+       <view class="mdown">
+         <view class="md_left"></view>
+         <view class="md_middle"></view>
+         <view class="md_right"></view>   
+       </view>
+     </view> 
+
+     <view class="anch">
+       <view class="anc">   
+        <text class="anchor">{{anchor}}</text>
+        <image class="pic" src="{{pic}}"></image>
+       </view>
+       <view class="aup">
+         <view class="au_left">
+             <image class="aulpic" src="{{rulpic}}"></image>
+             <text class="aul_text">{{rul_text}}</text>
+         </view>
+         <view class="au_middle"></view>
+         <view class="au_right"></view>    
+       </view>  
+       <view class="adown">
+         <view class="ad_left"></view>
+         <view class="ad_middle"></view>
+         <view class="ad_right"></view>   
+       </view>
+     </view>  
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarBackgroundColor: 'silver',
+    navigationBarTitleText: '音乐站'
+  }
+  data = {
+    music: '音乐',
+    video: '视频',
+    radio: '电台',
+    imgUrls: [
+      'http://img4.imgtn.bdimg.com/it/u=3781499351,911454633&fm=27&gp=0.jpg',
+      'http://img3.imgtn.bdimg.com/it/u=3377977535,954819488&fm=11&gp=0.jpg',
+      'http://img3.imgtn.bdimg.com/it/u=3927128777,297776644&fm=11&gp=0.jpg',
+      'http://img4.imgtn.bdimg.com/it/u=4101404142,3036343052&fm=200&gp=0.jpg',
+      'http://img0.imgtn.bdimg.com/it/u=3216319696,766946696&fm=27&gp=0.jpg',
+      'http://img2.imgtn.bdimg.com/it/u=2152627408,1045174372&fm=27&gp=0.jpg',
+      'http://img3.imgtn.bdimg.com/it/u=3038519150,1823633039&fm=27&gp=0.jpg',
+      'http://img4.imgtn.bdimg.com/it/u=794228708,1763546792&fm=11&gp=0.jpg',
+      'http://img0.imgtn.bdimg.com/it/u=1566099428,815749846&fm=27&gp=0.jpg',
+      'http://img3.imgtn.bdimg.com/it/u=2032553907,2672703874&fm=11&gp=0.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: '5000',
+    duration: '300',
+    recommend: '个性推荐',
+    newmusic: '外语世界',
+    tmv: '美文读物',
+    anchor: '脱口秀',
+    pic: '../images/more.png',
+    rulpic: 'http://img4.imgtn.bdimg.com/it/u=4101404142,3036343052&fm=200&gp=0.jpg',
+    rul_text: ''
+  }
+  methods = {
+    playlist() {
+      wepy.navigateTo({
+        url: '../pages/play'
+      })
+    },
+    music() {
+      wepy.navigateTo({
+        url: '../pages/music'
+      })
+    },
+    video() {
+      wepy.navigateTo({
+        url: '../pages/video'
+      })
+    },
+    radio() {
+      wepy.navigateTo({
+        url: '../pages/radio'
+      })
+    }
+  }
+  }
+</script>

@@ -1,0 +1,57 @@
+<style lang="less">
+.wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #A9A9A9;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.lpic{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.menue{
+  margin-top: 10px;
+}
+.mine{
+  padding-right:10px;
+  margin-left: -20px;
+}
+.collect{
+  border-left: 1px solid silver;
+  padding-left:10px;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="wrap">
+      <view class="logo">
+      <image class="lpic" src="{{lpic}}"></image>
+      </view>
+      <view class="menue">
+        <text class="mine">我的音乐站</text>
+        <text class="collect">收集歌曲</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的'
+  }
+  data = {
+    lpic: '../images/head.jpeg'
+  }
+  methods = {}
+}
+</script>

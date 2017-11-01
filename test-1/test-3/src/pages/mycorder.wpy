@@ -1,0 +1,55 @@
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.move {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+image{
+  width: 30px;
+  height: 30px;
+}
+.pic2{
+  margin-left: 100px;
+}
+.title {
+  display: row;
+  justify-content: center;
+  align-items:center;
+  font-size: 15px;
+}
+</style>
+
+<template>
+  <view class="container">
+    <view class="move">
+        <image class="pic1" src = "{{pic1}}"></image>
+        <text class="a">{{a}}</text>
+        <image class="pic2" src = "{{pic2}}"></image>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的订单'
+  }
+  data = {
+    pic1: '../images/订单-2.png',
+    pic2: '../images/更多.png',
+    a: '我的订单'
+  }
+  methods = {}
+  onLoad() {}
+}
+</script>

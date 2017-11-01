@@ -1,0 +1,61 @@
+
+  <view class="person">
+    <view class="logo">
+      <image class="mpic" src="{{mpic}}"/>
+    </view>
+    <view class="main">
+      <view class="mysaddress" bindtap="mysaddress">
+        <image class="apic" src="{{apic}}"/>
+        <text class="address" style="color:{{acolor}}">{{address}}</text>
+      </view>
+      <view class="mycorder" bindtap="mycorder">
+        <image class="opic" src="{{opic}}"/>
+        <text class="order" style="color:{{ocolor}}">{{order}}</text>
+      </view>
+      <view class="mycart" bindtap="mycart">
+        <image class="cpic" src="{{cpic}}"/>
+        <text class="cart" style="color:{{ccolor}}">{{cart}}</text>
+      </view>
+      <view class="mycollect" bindtap="mycollect">
+        <image class="copic" src="{{copic}}"/>
+        <text class="collect" style="color:{{cocolor}}">{{collect}}</text>
+      </view>
+    </view>
+    <view class="body">
+      <view class="mynickname" bindtap="mynickname">
+          <image class="mynpic" src="{{mynpic}}"/>
+          <text class="nickname">{{nickname}}</text>
+          <text class="mnickname">{{mnickname}}</text>
+      </view>
+      <view class="mycode" bindtap="mycode">
+        <image class="mycpic" src="{{mycpic}}"/>
+        <text class="code">{{code}}</text>
+        <image class="mcpic" src="{{mcpic}}"/>
+      </view>
+      <view class="mypay" bindtap="mypay">
+        <image class="myppic" src="{{myppic}}"/>
+        <text class="pay">{{pay}}</text>
+        <image class="mppic" src="{{mppic}}"/>
+      </view>
+      <view class="mygoods" bindtap="mygoods">
+        <image class="mygpic" src="{{mygpic}}"/>
+        <text class="goods">{{goods}}</text>
+        <image class="mgpic" src="{{mgpic}}"/>
+      </view>
+      <view class="myappraise" bindtap="myappraise">
+        <image class="myapic" src="{{myapic}}"/>
+        <text class="appraise">{{appraise}}</text>
+        <image class="mapic" src="{{mapic}}"/>
+      </view>
+      <view class="mynews" bindtap="mynews">
+        <image class="mynepic" src="{{mynepic}}"/>
+        <text class="news">{{news}}</text>
+        <image class="mnepic" src="{{mnepic}}"/>
+      </view>
+    </view>
+    <view class="myfeedback" bindtap="myfeedback">
+      <image class="myfpic" src="{{myfpic}}"/>
+      <text class="feedback">{{feedback}}</text>
+      <image class="mfpic" src="{{mfpic}}"/>
+    </view>
+  </view>

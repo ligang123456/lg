@@ -1,0 +1,30 @@
+<style>
+.mycode{
+  width: 100%;
+}
+.codepic{
+  width: 100%;
+}
+</style>
+
+<template>
+    <view class="container">
+        <view class="mycode">
+            <image class="codepic" src = "{{codepic}}"></image>
+        </view>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '二维码名片'
+  }
+  data = {
+    codepic: '../images/Wechat2.jpeg'
+  }
+  methods = {}
+  onLoad() { }
+}
+</script>

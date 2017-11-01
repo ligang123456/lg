@@ -1,0 +1,99 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #989898;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+image {
+  width: 140px;
+  height: 150px;
+}
+
+.kla,
+.klb,
+.klc,
+.kld,
+.kra,
+.krb,
+.krc,
+.krd {
+  width: 8.75rem;
+  margin-top: 1rem;
+  margin-left: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.lacollect,
+.lbcollect,
+.lccollect,
+.ldcollect,
+.racollect,
+.rbcollect,
+.rccollect,
+.rdcollect {
+  width: 15px;
+  height: 15px;
+  margin-left: 100px;
+  margin-top: -12px;
+}
+
+.lanumber,
+.lbnumber,
+.lcnumber,
+.ldnumber,
+.ranumber,
+.rbnumber,
+.rcnumber,
+.rdnumber {
+  font-size: 10px;
+  color: silver;
+  margin-left: 60px;
+}
+
+.laintroduce,
+.lbintroduce,
+.lcintroduce,
+.ldintroduce,
+.raintroduce,
+.rbintroduce,
+.rcintroduce,
+.rdintroduce {
+  font-size: 12px;
+  color: #B8B8B8;
+  margin-top: 5px;
+}
+
+.laprice,
+.lbprice,
+.lcprice,
+.ldprice,
+.raprice,
+.rbprice,
+.rcprice,
+.rdprice {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-left: -80px;
+}

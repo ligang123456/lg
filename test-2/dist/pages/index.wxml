@@ -1,0 +1,18 @@
+
+  <view class="container">
+    <view class="move">
+      <image class="mpic" src="{{mpic}}"/>
+    </view>
+    <view class="menue">
+      <text class="a"/>
+      <text class="b">{{b}}</text>
+      <text class="c">{{c}}</text>
+      <text class="d">{{d}}</text>
+    </view>
+    <view class="bottom">
+       <audio src="{{src}}" id="myAudio" name="{{name}}" author="{{author}}">
+         <image class="pic" src="{{pic}}" bindtap="onReady"/>
+         <image class="apic" bindtap="onReady" src="{{rpic ? '../images/暂停.png' : apic}}"/>
+     </audio>
+    </view>
+  </view>

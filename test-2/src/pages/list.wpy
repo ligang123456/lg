@@ -1,0 +1,172 @@
+<style lang="less">
+.container {
+  background-color: #fffafa;
+}
+.body {
+  //border: 1px solid black;
+  width: 90%;
+  background-color: #ffffff;
+  //height: 500px;
+}
+.main {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.logo {
+  // width: 100%;
+  padding: 10px;
+  display: flex;
+}
+.sharing {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.lpic {
+  width: 100px;
+  height: 100px;
+}
+.ppic {
+  width: 25px;
+  height: 25px;
+}
+audio {
+  //margin-top: -2px;
+  padding-left: 10px;
+}
+.ptext {
+  margin-left: 10px;
+}
+.menue {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  //   margin-top: 30px;
+  // padding-left: 10px;
+}
+.mine {
+  // padding-right: 10px;
+  //margin-left: 20px;
+}
+.collect {
+  border-left: 1px solid silver;
+  // padding-left: 10px;
+}
+.play {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  //border: 1px solid black;
+}
+.list {
+  display: flex;
+  width: 100%;
+}
+.list_one {
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid silver;
+}
+.first {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+.fpic {
+  width: 40px;
+  height: 40px;
+}
+.fname{
+  font-size: 15px;
+}
+.fauthor {
+  font-size: 13px;
+  color: silver;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="logo">
+      <image class="lpic" src="{{lpic}}"></image>
+      <view class="menue">
+        <text class="title">今日推荐</text>
+       <view class="sharing"> 
+        <text class="mine">关注</text>
+        <text class="collect">分享</text>
+       </view> 
+      </view>
+    </view>
+
+     <view class="main">
+      <view class="body">
+      <view class="play">
+          <audio  src="{{src}}" id="myAudio">
+            <image class="ppic" src="{{play ? '../images/lpause.png' : ppic}}" @tap="on">></image>
+          </audio>
+          <text class="ptext">{{ptext}}</text>
+      </view>
+
+       <view class="list">
+         <view class="list_one" @tap="play">
+          <image class="fpic" src="{{fpic}}"></image> 
+          <view class="first"> 
+            <text class="fname">此时此刻</text>
+            <text class="fauthor">许巍</text>
+          </view>
+         </view> 
+       </view>
+      </view>
+      <text class="update" style="font-size:10px;color:silver;margin-top:20px">更新于：1天前</text>
+      </view>
+
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '歌单',
+    navigationBarBackgroundColor: '#FFFAFA'
+  }
+  data = {
+    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
+    lpic:
+      'http://img4.imgtn.bdimg.com/it/u=4101404142,3036343052&fm=200&gp=0.jpg',
+    play: false,
+    ppic: '../images/lplay.png',
+    fpic:
+      'http://img4.imgtn.bdimg.com/it/u=4101404142,3036343052&fm=200&gp=0.jpg',
+    ptext: '播放全部'
+  }
+  methods = {
+    play() {
+      wepy.navigateTo({
+        url: '../pages/play'
+      })
+    }
+  }
+
+  on(e) {
+    let self = this
+    self.play = !self.play
+    if (self.play) {
+        // 使用 wx.createAudioContext 获取 audio 上下文 context
+      this.audioCtx = wepy.createAudioContext('myAudio')
+      // this.audioCtx.setSrc('http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46')
+      this.audioCtx.play()
+    } else {
+      this.audioCtx.pause()
+    }
+  }
+}
+</script>
