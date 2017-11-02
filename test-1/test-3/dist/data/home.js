@@ -1,0 +1,16 @@
+'use strict';
+
+module.exports = [{
+  h_pic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
+  h_text: '韩式婚纱/wedding photo'
+}, {
+  h_pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2563212303,2386777870&fm=27&gp=0.jpg',
+  h_text: '欧式婚纱/wedding photo'
+}, {
+  h_pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1050848129,653593312&fm=27&gp=0.jpg',
+  h_text: '中式婚纱/wedding photo'
+}, {
+  h_pic: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1330062990,4245696189&fm=27&gp=0.jpg',
+  h_text: '小清新婚纱/wedding photo'
+}];
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvbWUuanMiXSwibmFtZXMiOlsibW9kdWxlIiwiZXhwb3J0cyIsImhfcGljIiwiaF90ZXh0Il0sIm1hcHBpbmdzIjoiOztBQUFBQSxPQUFPQyxPQUFQLEdBQWlCLENBQ2Y7QUFDRUMsU0FBTyx1RUFEVDtBQUVFQyxVQUFRO0FBRlYsQ0FEZSxFQUlaO0FBQ0RELFNBQU8sZ0dBRE47QUFFREMsVUFBUTtBQUZQLENBSlksRUFPWjtBQUNERCxTQUFPLCtGQUROO0FBRURDLFVBQVE7QUFGUCxDQVBZLEVBVVo7QUFDREQsU0FBTyxnR0FETjtBQUVEQyxVQUFRO0FBRlAsQ0FWWSxDQUFqQiIsImZpbGUiOiJob21lLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSBbXG4gIHtcbiAgICBoX3BpYzogJ2h0dHA6Ly9pbWcxLmltZ3RuLmJkaW1nLmNvbS9pdC91PTI1NTMzMjIzODEsMjkyNTMxMjc2MCZmbT0yNyZncD0wLmpwZycsXG4gICAgaF90ZXh0OiAn6Z+p5byP5ama57qxL3dlZGRpbmcgcGhvdG8nXG4gIH0sIHtcbiAgICBoX3BpYzogJ2h0dHBzOi8vc3MzLmJkc3RhdGljLmNvbS83MGNGdjhTaF9RMVlueEdrcG9XSzFIRjZoaHkvaXQvdT0yNTYzMjEyMzAzLDIzODY3Nzc4NzAmZm09MjcmZ3A9MC5qcGcnLFxuICAgIGhfdGV4dDogJ+asp+W8j+Wpmue6sS93ZWRkaW5nIHBob3RvJ1xuICB9LCB7XG4gICAgaF9waWM6ICdodHRwczovL3NzMy5iZHN0YXRpYy5jb20vNzBjRnY4U2hfUTFZbnhHa3BvV0sxSEY2aGh5L2l0L3U9MTA1MDg0ODEyOSw2NTM1OTMzMTImZm09MjcmZ3A9MC5qcGcnLFxuICAgIGhfdGV4dDogJ+S4reW8j+Wpmue6sS93ZWRkaW5nIHBob3RvJ1xuICB9LCB7XG4gICAgaF9waWM6ICdodHRwczovL3NzMS5iZHN0YXRpYy5jb20vNzBjRnVYU2hfUTFZbnhHa3BvV0sxSEY2aGh5L2l0L3U9MTMzMDA2Mjk5MCw0MjQ1Njk2MTg5JmZtPTI3JmdwPTAuanBnJyxcbiAgICBoX3RleHQ6ICflsI/muIXmlrDlqZrnurEvd2VkZGluZyBwaG90bydcbiAgfVxuXVxuIl19

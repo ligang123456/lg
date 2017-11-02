@@ -5,29 +5,28 @@
   justify-content: center;
   align-items: center;
   background-color: silver;
-  /* width: 100%; */
   padding: 0;
 }
 
 .logo {
   margin-top: 0.125rem;
-  width: 60%;
-  border: 1px solid silver;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .spic {
-  position: flex;
+  display: fixed;
+  top: 0;
   width: 1rem;
   height: 1rem;
-  margin-top: -1.2rem;
-  margin-left: 14rem;
+  margin-left: 1rem;
   border: 1px solid #989898;
 }
 input{
-  border: 1px solid #989898;
+  display: fixed;
+  top: 0;
+  border: 1px solid black;
 }
 text {
   color: aqua;
@@ -39,8 +38,6 @@ text {
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* height: 8.5rem; */
-  /* margin-top: 0.05rem; */
   margin-top: 0.625rem;
   padding: 0;
 }
@@ -49,88 +46,26 @@ text {
 }
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0.625rem;
   font-size: 0.625rem;
   background-color: sienna;
-  padding: 0.625rem;
-  margin-bottom: 0;
-  /* width: 100%; */
+  /* margin: 10px; */
+  /* padding: 10px; */
 }
-.left{
+.htext {
+  position: absolute;
+  margin-top: -3.3rem;
+  margin-left: 0.5rem;
+  /* z-index:  */
+}
+.hpic {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid silver;
-  padding: 0.625rem 0.625rem 0 0.625rem;
-  background-color: silver;
-}
-.right{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid silver;
-  padding: 0.3125rem 0.625rem 0.375rem 0.625rem;
-  background-color: silver;
-}
-
-.ktext {
-  position: absolute;
-  margin-top: 3.3rem;
-  margin-left: -7.8rem;
-}
-
-.ctext {
-  position: absolute;
-  margin-top: 3.3rem;
-  margin-left: -7.8rem;
-}
-
-.etext {
-  position: absolute;
-  margin-top: 3.3rem;
-  margin-left: -8.5rem;
-}
-
-.ftext {
-  position: absolute;
-  margin-top: 3.3rem;
-  margin-left: -8.8rem;
-}
-
-.kpic {
   width: 8.375rem;
   height: 6.25rem;
-  /* margin: 0.625rem; */
   border: 1px solid silver;
+  /* padding: 10px;  */
+  /* padding-top: 10px; */
+  /* margin: 0 10px; */
 }
-
-.cpic {
-  width: 8.375rem;
-  height: 6.25rem;
-  /* margin-top: 1rem; */
-  /* margin-left: 0.625rem; */
-  border: 1px solid silver;
-}
-
-.epic {
-  width: 8.375rem;
-  height: 6.25rem;
-  margin-left: 0.625rem;
-  border: 1px solid silver;
-}
-
-.fpic {
-  width: 8.375rem;
-  height: 6.25rem;
-  margin-left: 0.625rem;
-  border: 1px solid silver;
-}
-
 .titlea {
   font-size: 0.8rem;
   margin-top: 10px;
@@ -139,10 +74,23 @@ text {
 .titleb {
   font-size: 0.625rem;
 }
+.flex-photo {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+.Korean{
+  padding: 10px;
+  border: 1px solid silver;
+}
 </style>
 
 <template>
-<scroll-view style="height: 550px; background-color: silver;">
+<scroll-view style="height: px; background-color: silver;">
    <view class="container">
     <view class="logo">
       <input placeholder="🔍 请输入搜索内容" />
@@ -160,33 +108,20 @@ text {
 
     <view class="titlea">米兰新娘婚纱 ~ Sweet</view>
     <view class="titleb">Milan wedding wedding dress </view>
-    <view class="main">
-     <view class="left"> 
-      <view class="Korean" @tap = "Korean">
-        <image class="kpic" src="http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg"></image>
-        <text class="ktext">韩式婚纱/wedding photo</text>
-      </view>
-      <view class="euramerican" @tap = "euramerican">
-        <image class="epic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2563212303,2386777870&fm=27&gp=0.jpg"></image>
-        <text class="etext">欧式婚纱/wedding photo</text>
-      </view>
-     </view>
-     <view class="right">
-      <view class="China" @tap = "China">
-        <image class="cpic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1050848129,653593312&fm=27&gp=0.jpg"></image>
-        <text class="ctext">中式婚纱/wedding photo</text>
-      </view>
-      <view class="fresh" @tap = "fresh">
-        <image class="fpic" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1330062990,4245696189&fm=27&gp=0.jpg"></image>
-        <text class="ftext">小清新婚纱/wedding photo</text>
-      </view>
-     </view> 
+    <view class="flex-photo">
+      <view  class="main" wx:for="{{home}}" wx:key="index">
+        <view class="Korean" @tap = "Korean" data-index="{{index}}">
+          <image class="hpic" src="{{item.h_pic}}"></image>
+          <text class="htext">{{item.h_text}}</text>
+        </view>
+    </view>    
     </view>
   </view>
   </scroll-view>
 </template>
 
 <script>
+import home from '../data/home.js'
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
@@ -231,42 +166,67 @@ export default class Index extends wepy.page {
     autoplay: true,
     interval: '3000',
     duration: '300',
-    spic: '../images/search.png'
+    spic: '../images/search.png',
+    home: '',
+    height: 0,
+    width: 0
   }
   methods = {
-    Korean() {
-      wepy.navigateTo({
-        url: '../pages/Korean'
-      })
-    },
-    China() {
-      wepy.navigateTo({
-        url: '../pages/China'
-      })
-    },
-    euramerican() {
-      wepy.navigateTo({
-        url: '../pages/euramerican'
-      })
-    },
-    fresh() {
-      wepy.navigateTo({
-        url: '../pages/fresh'
-      })
+    Korean(e) {
+      var item = e.currentTarget.dataset.index
+      console.log(e, 'item')
+      switch (item) {
+        case 0 : wepy.navigateTo({
+          url: '../pages/Korean'
+        }); break
+        case 1 : wepy.navigateTo({
+          url: '../pages/euramerican'
+        }); break
+        case 2 : wepy.navigateTo({
+          url: '../pages/China'
+        }); break
+        case 3 : wepy.navigateTo({
+          url: '../pages/fresh'
+        }); break
+      }
     }
+    // China() {
+    //   wepy.navigateTo({
+    //     url: '../pages/China'
+    //   })
+    // },
+    // euramerican() {
+    //   wepy.navigateTo({
+    //     url: '../pages/euramerican'
+    //   })
+    // },
+    // fresh() {
+    //   wepy.navigateTo({
+    //     url: '../pages/fresh'
+    //   })
+    // }
   }
   onLoad() {
     let self = this
-    wepy.request({
-      url: 'http://127.0.0.1/user',
-      method: 'GET',
-      successs: function(res){
-        self.text = res.data
-        self.setData({
-          text res.data
-        })
+    self.home = home
+    wepy.getSystemInfo({
+      successs(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
       }
     })
+    console.log(self.width, 'width')
+    console.log(self.height, 'height')
+    // wepy.request({
+    //   url: 'http://127.0.0.1/user',
+    //   method: 'GET',
+    //   successs: function(res){
+    //     self.text = res.data
+    //     self.setData({
+    //       text res.data
+    //     })
+    //   }
+    // })
   }
 }
 </script>

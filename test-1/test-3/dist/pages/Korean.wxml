@@ -1,13 +1,13 @@
 
   <view class="container">
     <view class="left">
-      <view class="kla">
-        <image class="lapic" src="{{lapic}}" bindtap="lapic"/>
-        <text class="laintroduce">2017韩式婚纱</text>
-        <text class="laprice">¥3999</text>
-        <text class="lanumber">{{lanumber}}</text>
-        <image class="lacollect" src="{{lacollect ? '../images/bcollect.png' : notcollect}}" bindtap="lacollect"/>
-      </view>
+      <!-- <view class="kla" wx:for="{{korean}}" wx:key="index">
+        <image class="lapic" src="{{item.k_pic}}" bindtap="lapic"></image>
+        <text class="laintroduce">{{item.k_int}}</text>
+        <text class="laprice">{{item.k_price}}</text>
+        <text class="lanumber">{{item.k_number}}</text>
+        <image class="lacollect" src="{{lacollect ? '../images/bcollect.png' : notcollect}}" bindtap="lacollect"></image>
+      </view> -->
       <view class="klb">
         <image class="lbpic" src="{{lbpic}}" bindtap="lbpic"/>
         <text class="lbintroduce">2017韩式婚纱</text>
