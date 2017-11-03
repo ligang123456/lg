@@ -32,8 +32,6 @@ export default class extends wepy.app {
     pages: [
       'pages/index',
       'pages/mine',
-      'pages/information',
-      'pages/compangy',
       'pages/mysadderss',
       'pages/mycorder',
       'pages/mycart',
@@ -45,6 +43,7 @@ export default class extends wepy.app {
       'pages/mynickname',
       'pages/mycode',
       'pages/kla',
+      'pages/klb',
       'pages/mypay',
       'pages/mygoods',
       'pages/myappraise',

@@ -5,15 +5,21 @@
   justify-content: center;
   align-items: center;
   background-color: silver;
-  padding: 0;
+  /* height: 90%; */
 }
-
+template{
+  height: 500px;
+}
 .logo {
-  margin-top: 0.125rem;
+  /* margin-top: 0.125rem; */
+  /* position: fixed;
+  top: 10px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 6%;
+  z-index: 100;
 }
 .spic {
   display: fixed;
@@ -38,8 +44,10 @@ text {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 0.625rem;
+  /* margin-top: 0.625rem; */
   padding: 0;
+  margin: 0;
+  height: 26%;
 }
 .mepic{
   width: 100%;
@@ -48,8 +56,8 @@ text {
   display: flex;
   font-size: 0.625rem;
   background-color: sienna;
-  /* margin: 10px; */
-  /* padding: 10px; */
+   border: 1px solid;
+  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round;
 }
 .htext {
   position: absolute;
@@ -62,6 +70,8 @@ text {
   width: 8.375rem;
   height: 6.25rem;
   border: 1px solid silver;
+  /* border: 3px solid;
+  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round; */
   /* padding: 10px;  */
   /* padding-top: 10px; */
   /* margin: 0 10px; */
@@ -69,10 +79,12 @@ text {
 .titlea {
   font-size: 0.8rem;
   margin-top: 10px;
+  height: 5%;
 }
 
 .titleb {
   font-size: 0.625rem;
+  height: 3%;
 }
 .flex-photo {
   display: flex;
@@ -82,6 +94,8 @@ text {
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  height: 50.8%;
+  width: 100%;
 }
 .Korean{
   padding: 10px;

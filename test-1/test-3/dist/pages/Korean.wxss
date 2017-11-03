@@ -1,99 +1,70 @@
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #383838;
-  background-size: 100% 100%;
 }
 
-.left {
+.k_goods {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.photo{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  border: 3px solid;
+  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round;
 }
-
-.right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 0.625rem;
-}
-
 image {
   width: 8.75rem;
   height: 9.375rem;
 }
 
-.kla,
-.klb,
-.klc,
-.kld,
-.kra,
-.krb,
-.krc,
-.krd {
-  width: 8.75rem;
-  margin-top: 1rem;
-  margin-left: 0.15rem;
+.kgoods {
+  /* width: 8.75rem; */
+  /* margin-top: 1rem; */
+  /* margin-left: 0.625rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  border: 1px solid silver;
+  /* border: 3px solid;
+  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round; */
+  margin: 7px;
+  background-color: #ffffff;
 }
 
-.lacollect,
-.lbcollect,
-.lccollect,
-.ldcollect,
-.racollect,
-.rbcollect,
-.rccollect,
-.rdcollect {
+.k_collect {
   width: 0.9375rem;
   height: 0.9375rem;
   margin-left: 6.25rem;
   margin-top: -0.75rem;
 }
 
-.lanumber,
-.lbnumber,
-.lcnumber,
-.ldnumber,
-.ranumber,
-.rbnumber,
-.rcnumber,
-.rdnumber {
+.k_number {
   font-size: 0.625rem;
   color: silver;
   margin-left: 3.75rem;
 }
 
-.laintroduce,
-.lbintroduce,
-.lcintroduce,
-.ldintroduce,
-.raintroduce,
-.rbintroduce,
-.rcintroduce,
-.rdintroduce {
+.k_introduce {
   font-size: 0.75rem;
   color: #B8B8B8;
   margin-top: 0.312rem;
 }
 
-.laprice,
-.lbprice,
-.lcprice,
-.ldprice,
-.raprice,
-.rbprice,
-.rcprice,
-.rdprice {
+.k_price {
   font-size: 0.9375rem;
   margin-top: 0.9375rem;
   margin-left: -5rem;

@@ -1,10 +1,10 @@
 
     <view>
-        <view class="container" id="index">
+        <view class="container">
             <view class="main">
-                <image class="mapic" src="{{image}}"/>
-                <text class="title">{{title}}</text>
+                <image class="mapic" src="{{mapic}}"/>
                 <text class="price">{{price}}</text>
+                <text class="title">{{title}}</text>
             </view>
             <view class="attribute">
                 <text class="numbers">{{numbers}}</text>

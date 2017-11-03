@@ -95,11 +95,11 @@
 
 <template>
     <view>
-        <view class="container">
+        <view class="container" id="index">
             <view class="main">
-                <image class="mapic" src="{{mapic}}"></image>
-                <text class="price">{{price}}</text>
+                <image class="mapic" src="{{image}}"></image>
                 <text class="title">{{title}}</text>
+                <text class="price">{{price}}</text>
             </view>
             <view class="attribute">
                 <text class="numbers">{{numbers}}</text>
@@ -125,12 +125,13 @@ export default class Index extends wepy.page {
     mapic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
     ta: '加入购物车',
     tb: '立即购买',
-    price: '¥3999',
-    title: '2017最新款韩式婚纱2017最新款韩式婚纱2017最新款韩式婚纱2017最新款韩式婚纱',
+    price: '',
+    title: '',
     numbers: '数量',
     subtraction: '-',
     number: 0,
-    add: '+'
+    add: '+',
+    image: ''
   }
   methods = {
     subtraction() {
@@ -150,6 +151,12 @@ export default class Index extends wepy.page {
       }
     }
   }
-  onLoad() { }
+  onLoad(data) {
+    let self = this
+    self.title = data.title.k_int
+    self.image = data.title.k_pic
+    self.price = data.title.k_price
+    console.log(data.title, '22222')
+  }
 }
 </script>

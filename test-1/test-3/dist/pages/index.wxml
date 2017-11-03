@@ -1,6 +1,7 @@
 
-<scroll-view style="height: px; background-color: silver;">
-   <view class="container">
+<!-- <scroll-view style="height: 550px; background-color: silver;"> -->
+  <view>
+   <view class="container" style="height: {{height}}px; width: {{width}}px">
     <view class="logo">
       <input placeholder="🔍 请输入搜索内容"/>
       <image class="spic" src="{{spic}}"/>
@@ -23,7 +24,8 @@
           <image class="hpic" src="{{item.h_pic}}"/>
           <text class="htext">{{item.h_text}}</text>
         </view>
-    </view>    
+      </view>    
+    </view>
     </view>
   </view>
-  </scroll-view>
+  <!-- </scroll-view> -->

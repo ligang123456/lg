@@ -1,0 +1,93 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menue {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+    font-size: 15px;
+    width: 100%;
+}
+
+.mapic {
+    height: 250px;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ta,
+.tb {
+    border: 1px solid silver;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 5px;
+}
+
+.price {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: -200px;
+}
+
+.title {
+    margin-top: 15px;
+}
+
+.attribute {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -90px;
+}
+
+.attribute text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers {
+    margin-top: 50px;
+    margin-left: 0px;
+}
+
+.subtraction {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 45px;
+    border: 1px solid silver;
+}
+
+.number {
+    margin-top: 50px;
+    width: 70px;
+    border: 1px solid silver;
+}
+
+.add {
+    margin-top: 50px;
+    width: 45px;
+    border: 1px solid silver;
+}
