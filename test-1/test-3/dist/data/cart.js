@@ -1,0 +1,77 @@
+'use strict';
+
+module.exports = [{
+  pic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
+  int: '2017韩式婚纱',
+  price: '¥3999',
+  number: 0,
+  subtraction: '-',
+  add: '+',
+  check_pic: '../images/circle.png',
+  delete_pic: '../images/delete.png',
+  checkpic: false
+}, {
+  pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2269117905,883006692&fm=27&gp=0.jpg',
+  int: '2017韩式婚纱',
+  price: '¥3999',
+  number: 0,
+  subtraction: '-',
+  add: '+',
+  check_pic: '../images/circle.png',
+  delete_pic: '../images/delete.png'
+}, {
+  pic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2685210028,3457372075&fm=27&gp=0.jpg',
+  int: '2017韩式婚纱',
+  price: '¥3999',
+  number: 0,
+  subtraction: '-',
+  add: '+',
+  check_pic: '../images/circle.png',
+  delete_pic: '../images/delete.png'
+}, {
+  pic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1943435865,804430348&fm=27&gp=0.jpg',
+  int: '2017韩式婚纱',
+  price: '¥3999',
+  number: 0,
+  subtraction: '-',
+  add: '+',
+  check_pic: '../images/circle.png',
+  delete_pic: '../images/delete.png'
+}, {
+  pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3960877383,1051484866&fm=27&gp=0.jpg',
+  int: '2017韩式婚纱',
+  price: '¥3999',
+  number: 0,
+  subtraction: '-',
+  add: '+',
+  check_pic: '../images/circle.png',
+  delete_pic: '../images/delete.png'
+}, {
+  pic: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1453502849,2727599889&fm=27&gp=0.jpg',
+  int: '2017韩式婚纱',
+  price: '¥3999',
+  number: 0,
+  subtraction: '-',
+  add: '+',
+  check_pic: '../images/circle.png',
+  delete_pic: '../images/delete.png'
+}, {
+  pic: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1161813563,3069512331&fm=27&gp=0.jpg',
+  int: '2017韩式婚纱',
+  price: '¥3999',
+  number: 0,
+  subtraction: '-',
+  add: '+',
+  check_pic: '../images/circle.png',
+  delete_pic: '../images/delete.png'
+}, {
+  pic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2650753610,2725677441&fm=27&gp=0.jpg',
+  int: '2017韩式婚纱',
+  price: '¥3999',
+  number: 0,
+  subtraction: '-',
+  add: '+',
+  check_pic: '../images/circle.png',
+  delete_pic: '../images/delete.png'
+}];
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhcnQuanMiXSwibmFtZXMiOlsibW9kdWxlIiwiZXhwb3J0cyIsInBpYyIsImludCIsInByaWNlIiwibnVtYmVyIiwic3VidHJhY3Rpb24iLCJhZGQiLCJjaGVja19waWMiLCJkZWxldGVfcGljIiwiY2hlY2twaWMiXSwibWFwcGluZ3MiOiI7O0FBQUFBLE9BQU9DLE9BQVAsR0FBaUIsQ0FDZjtBQUNFQyxPQUFLLHVFQURQO0FBRUVDLE9BQUssVUFGUDtBQUdFQyxTQUFPLE9BSFQ7QUFJRUMsVUFBUSxDQUpWO0FBS0VDLGVBQWEsR0FMZjtBQU1FQyxPQUFLLEdBTlA7QUFPRUMsYUFBVyxzQkFQYjtBQVFFQyxjQUFZLHNCQVJkO0FBU0VDLFlBQVU7QUFUWixDQURlLEVBV1o7QUFDRFIsT0FBSywrRkFESjtBQUVEQyxPQUFLLFVBRko7QUFHREMsU0FBTyxPQUhOO0FBSURDLFVBQVEsQ0FKUDtBQUtEQyxlQUFhLEdBTFo7QUFNREMsT0FBSyxHQU5KO0FBT0RDLGFBQVcsc0JBUFY7QUFRREMsY0FBWTtBQVJYLENBWFksRUFvQlo7QUFDRFAsT0FBSyxnR0FESjtBQUVEQyxPQUFLLFVBRko7QUFHREMsU0FBTyxPQUhOO0FBSURDLFVBQVEsQ0FKUDtBQUtEQyxlQUFhLEdBTFo7QUFNREMsT0FBSyxHQU5KO0FBT0RDLGFBQVcsc0JBUFY7QUFRREMsY0FBWTtBQVJYLENBcEJZLEVBNkJaO0FBQ0RQLE9BQUssK0ZBREo7QUFFREMsT0FBSyxVQUZKO0FBR0RDLFNBQU8sT0FITjtBQUlEQyxVQUFRLENBSlA7QUFLREMsZUFBYSxHQUxaO0FBTURDLE9BQUssR0FOSjtBQU9EQyxhQUFXLHNCQVBWO0FBUURDLGNBQVk7QUFSWCxDQTdCWSxFQXNDWjtBQUNEUCxPQUFLLGdHQURKO0FBRURDLE9BQUssVUFGSjtBQUdEQyxTQUFPLE9BSE47QUFJREMsVUFBUSxDQUpQO0FBS0RDLGVBQWEsR0FMWjtBQU1EQyxPQUFLLEdBTko7QUFPREMsYUFBVyxzQkFQVjtBQVFEQyxjQUFZO0FBUlgsQ0F0Q1ksRUErQ1o7QUFDRFAsT0FBSyxnR0FESjtBQUVEQyxPQUFLLFVBRko7QUFHREMsU0FBTyxPQUhOO0FBSURDLFVBQVEsQ0FKUDtBQUtEQyxlQUFhLEdBTFo7QUFNREMsT0FBSyxHQU5KO0FBT0RDLGFBQVcsc0JBUFY7QUFRREMsY0FBWTtBQVJYLENBL0NZLEVBd0RaO0FBQ0RQLE9BQUssZ0dBREo7QUFFREMsT0FBSyxVQUZKO0FBR0RDLFNBQU8sT0FITjtBQUlEQyxVQUFRLENBSlA7QUFLREMsZUFBYSxHQUxaO0FBTURDLE9BQUssR0FOSjtBQU9EQyxhQUFXLHNCQVBWO0FBUURDLGNBQVk7QUFSWCxDQXhEWSxFQWlFWjtBQUNEUCxPQUFLLGdHQURKO0FBRURDLE9BQUssVUFGSjtBQUdEQyxTQUFPLE9BSE47QUFJREMsVUFBUSxDQUpQO0FBS0RDLGVBQWEsR0FMWjtBQU1EQyxPQUFLLEdBTko7QUFPREMsYUFBVyxzQkFQVjtBQVFEQyxjQUFZO0FBUlgsQ0FqRVksQ0FBakIiLCJmaWxlIjoiY2FydC5qcyIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gW1xuICB7XG4gICAgcGljOiAnaHR0cDovL2ltZzEuaW1ndG4uYmRpbWcuY29tL2l0L3U9MjU1MzMyMjM4MSwyOTI1MzEyNzYwJmZtPTI3JmdwPTAuanBnJyxcbiAgICBpbnQ6ICcyMDE36Z+p5byP5ama57qxJyxcbiAgICBwcmljZTogJ8KlMzk5OScsXG4gICAgbnVtYmVyOiAwLFxuICAgIHN1YnRyYWN0aW9uOiAnLScsXG4gICAgYWRkOiAnKycsXG4gICAgY2hlY2tfcGljOiAnLi4vaW1hZ2VzL2NpcmNsZS5wbmcnLFxuICAgIGRlbGV0ZV9waWM6ICcuLi9pbWFnZXMvZGVsZXRlLnBuZycsXG4gICAgY2hlY2twaWM6IGZhbHNlXG4gIH0sIHtcbiAgICBwaWM6ICdodHRwczovL3NzMy5iZHN0YXRpYy5jb20vNzBjRnY4U2hfUTFZbnhHa3BvV0sxSEY2aGh5L2l0L3U9MjI2OTExNzkwNSw4ODMwMDY2OTImZm09MjcmZ3A9MC5qcGcnLFxuICAgIGludDogJzIwMTfpn6nlvI/lqZrnurEnLFxuICAgIHByaWNlOiAnwqUzOTk5JyxcbiAgICBudW1iZXI6IDAsXG4gICAgc3VidHJhY3Rpb246ICctJyxcbiAgICBhZGQ6ICcrJyxcbiAgICBjaGVja19waWM6ICcuLi9pbWFnZXMvY2lyY2xlLnBuZycsXG4gICAgZGVsZXRlX3BpYzogJy4uL2ltYWdlcy9kZWxldGUucG5nJ1xuICB9LCB7XG4gICAgcGljOiAnaHR0cHM6Ly9zczEuYmRzdGF0aWMuY29tLzcwY0Z2WFNoX1ExWW54R2twb1dLMUhGNmhoeS9pdC91PTI2ODUyMTAwMjgsMzQ1NzM3MjA3NSZmbT0yNyZncD0wLmpwZycsXG4gICAgaW50OiAnMjAxN+mfqeW8j+Wpmue6sScsXG4gICAgcHJpY2U6ICfCpTM5OTknLFxuICAgIG51bWJlcjogMCxcbiAgICBzdWJ0cmFjdGlvbjogJy0nLFxuICAgIGFkZDogJysnLFxuICAgIGNoZWNrX3BpYzogJy4uL2ltYWdlcy9jaXJjbGUucG5nJyxcbiAgICBkZWxldGVfcGljOiAnLi4vaW1hZ2VzL2RlbGV0ZS5wbmcnXG4gIH0sIHtcbiAgICBwaWM6ICdodHRwczovL3NzMS5iZHN0YXRpYy5jb20vNzBjRnZYU2hfUTFZbnhHa3BvV0sxSEY2aGh5L2l0L3U9MTk0MzQzNTg2NSw4MDQ0MzAzNDgmZm09MjcmZ3A9MC5qcGcnLFxuICAgIGludDogJzIwMTfpn6nlvI/lqZrnurEnLFxuICAgIHByaWNlOiAnwqUzOTk5JyxcbiAgICBudW1iZXI6IDAsXG4gICAgc3VidHJhY3Rpb246ICctJyxcbiAgICBhZGQ6ICcrJyxcbiAgICBjaGVja19waWM6ICcuLi9pbWFnZXMvY2lyY2xlLnBuZycsXG4gICAgZGVsZXRlX3BpYzogJy4uL2ltYWdlcy9kZWxldGUucG5nJ1xuICB9LCB7XG4gICAgcGljOiAnaHR0cHM6Ly9zczMuYmRzdGF0aWMuY29tLzcwY0Z2OFNoX1ExWW54R2twb1dLMUhGNmhoeS9pdC91PTM5NjA4NzczODMsMTA1MTQ4NDg2NiZmbT0yNyZncD0wLmpwZycsXG4gICAgaW50OiAnMjAxN+mfqeW8j+Wpmue6sScsXG4gICAgcHJpY2U6ICfCpTM5OTknLFxuICAgIG51bWJlcjogMCxcbiAgICBzdWJ0cmFjdGlvbjogJy0nLFxuICAgIGFkZDogJysnLFxuICAgIGNoZWNrX3BpYzogJy4uL2ltYWdlcy9jaXJjbGUucG5nJyxcbiAgICBkZWxldGVfcGljOiAnLi4vaW1hZ2VzL2RlbGV0ZS5wbmcnXG4gIH0sIHtcbiAgICBwaWM6ICdodHRwczovL3NzMi5iZHN0YXRpYy5jb20vNzBjRnZuU2hfUTFZbnhHa3BvV0sxSEY2aGh5L2l0L3U9MTQ1MzUwMjg0OSwyNzI3NTk5ODg5JmZtPTI3JmdwPTAuanBnJyxcbiAgICBpbnQ6ICcyMDE36Z+p5byP5ama57qxJyxcbiAgICBwcmljZTogJ8KlMzk5OScsXG4gICAgbnVtYmVyOiAwLFxuICAgIHN1YnRyYWN0aW9uOiAnLScsXG4gICAgYWRkOiAnKycsXG4gICAgY2hlY2tfcGljOiAnLi4vaW1hZ2VzL2NpcmNsZS5wbmcnLFxuICAgIGRlbGV0ZV9waWM6ICcuLi9pbWFnZXMvZGVsZXRlLnBuZydcbiAgfSwge1xuICAgIHBpYzogJ2h0dHBzOi8vc3MyLmJkc3RhdGljLmNvbS83MGNGdm5TaF9RMVlueEdrcG9XSzFIRjZoaHkvaXQvdT0xMTYxODEzNTYzLDMwNjk1MTIzMzEmZm09MjcmZ3A9MC5qcGcnLFxuICAgIGludDogJzIwMTfpn6nlvI/lqZrnurEnLFxuICAgIHByaWNlOiAnwqUzOTk5JyxcbiAgICBudW1iZXI6IDAsXG4gICAgc3VidHJhY3Rpb246ICctJyxcbiAgICBhZGQ6ICcrJyxcbiAgICBjaGVja19waWM6ICcuLi9pbWFnZXMvY2lyY2xlLnBuZycsXG4gICAgZGVsZXRlX3BpYzogJy4uL2ltYWdlcy9kZWxldGUucG5nJ1xuICB9LCB7XG4gICAgcGljOiAnaHR0cHM6Ly9zczEuYmRzdGF0aWMuY29tLzcwY0Z2WFNoX1ExWW54R2twb1dLMUhGNmhoeS9pdC91PTI2NTA3NTM2MTAsMjcyNTY3NzQ0MSZmbT0yNyZncD0wLmpwZycsXG4gICAgaW50OiAnMjAxN+mfqeW8j+Wpmue6sScsXG4gICAgcHJpY2U6ICfCpTM5OTknLFxuICAgIG51bWJlcjogMCxcbiAgICBzdWJ0cmFjdGlvbjogJy0nLFxuICAgIGFkZDogJysnLFxuICAgIGNoZWNrX3BpYzogJy4uL2ltYWdlcy9jaXJjbGUucG5nJyxcbiAgICBkZWxldGVfcGljOiAnLi4vaW1hZ2VzL2RlbGV0ZS5wbmcnXG4gIH1cbl1cbiJdfQ==

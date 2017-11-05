@@ -203,6 +203,14 @@ export default class Index extends wepy.page {
 
   }
   methods = {
+    lagoods(e) {
+      let self = this
+      const index = e.currentTarget.id
+      wepy.navigateTo({
+        url: `./kla`
+      })
+      console.log(self.korean[index], '111111')
+    }
     lacollect() {
       let self = this
       self.lacollect = !self.lacollect

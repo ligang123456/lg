@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:salmon;
+  /* background-color:salmon; */
 }
 </style>
 
@@ -15,7 +15,7 @@
     </view>
     <view class="title">
       <text class = "ta">{{ta}}</text>
-      <text class = "tb">{{tb}}</text>
+      <text class = "tb">没有收藏@~</text>
       <text class = "tc">{{tc}}</text>
     </view>
     <view class="titleb"></view>

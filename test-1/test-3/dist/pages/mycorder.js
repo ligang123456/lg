@@ -36,9 +36,9 @@ var Index = function (_wepy$page) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '我的订单'
     }, _this.data = {
-      pic1: '../images/订单-2.png',
-      pic2: '../images/更多.png',
-      a: '我的订单'
+      // pic1: '../images/订单-2.png',
+      // pic2: '../images/更多.png',
+      a: '还没有订单@####~~~'
     }, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -53,4 +53,4 @@ var Index = function (_wepy$page) {
 
 Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/mycorder'));
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm15Y29yZGVyLmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJwaWMxIiwicGljMiIsImEiLCJtZXRob2RzIiwicGFnZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQ0E7Ozs7Ozs7Ozs7OztJQUNxQkEsSzs7Ozs7Ozs7Ozs7Ozs7b0xBQ25CQyxNLEdBQVM7QUFDUEMsOEJBQXdCO0FBRGpCLEssUUFHVEMsSSxHQUFPO0FBQ0xDLFlBQU0sb0JBREQ7QUFFTEMsWUFBTSxrQkFGRDtBQUdMQyxTQUFHO0FBSEUsSyxRQUtQQyxPLEdBQVUsRTs7Ozs7NkJBQ0QsQ0FBRTs7OztFQVZzQixlQUFLQyxJOztrQkFBbkJSLEsiLCJmaWxlIjoibXljb3JkZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB3ZXB5IGZyb20gJ3dlcHknXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBJbmRleCBleHRlbmRzIHdlcHkucGFnZSB7XG4gIGNvbmZpZyA9IHtcbiAgICBuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0OiAn5oiR55qE6K6i5Y2VJ1xuICB9XG4gIGRhdGEgPSB7XG4gICAgcGljMTogJy4uL2ltYWdlcy/orqLljZUtMi5wbmcnLFxuICAgIHBpYzI6ICcuLi9pbWFnZXMv5pu05aSaLnBuZycsXG4gICAgYTogJ+aIkeeahOiuouWNlSdcbiAgfVxuICBtZXRob2RzID0ge31cbiAgb25Mb2FkKCkge31cbn1cbiJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm15Y29yZGVyLmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJhIiwibWV0aG9kcyIsInBhZ2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNBOzs7Ozs7Ozs7Ozs7SUFDcUJBLEs7Ozs7Ozs7Ozs7Ozs7O29MQUNuQkMsTSxHQUFTO0FBQ1BDLDhCQUF3QjtBQURqQixLLFFBR1RDLEksR0FBTztBQUNMO0FBQ0E7QUFDQUMsU0FBRztBQUhFLEssUUFLUEMsTyxHQUFVLEU7Ozs7OzZCQUNELENBQUU7Ozs7RUFWc0IsZUFBS0MsSTs7a0JBQW5CTixLIiwiZmlsZSI6Im15Y29yZGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+aIkeeahOiuouWNlSdcbiAgfVxuICBkYXRhID0ge1xuICAgIC8vIHBpYzE6ICcuLi9pbWFnZXMv6K6i5Y2VLTIucG5nJyxcbiAgICAvLyBwaWMyOiAnLi4vaW1hZ2VzL+abtOWkmi5wbmcnLFxuICAgIGE6ICfov5jmsqHmnInorqLljZVAIyMjI35+fidcbiAgfVxuICBtZXRob2RzID0ge31cbiAgb25Mb2FkKCkge31cbn1cbiJdfQ==

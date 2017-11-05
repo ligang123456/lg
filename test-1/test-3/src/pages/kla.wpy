@@ -60,7 +60,6 @@
     align-items: center;
     margin-left: -90px;
 }
-
 .attribute text {
     display: flex;
     flex-direction: row;
@@ -157,6 +156,8 @@ export default class Index extends wepy.page {
     self.image = data.title.k_pic
     self.price = data.title.k_price
     console.log(data.title, '22222')
+    console.log(data.image, '图片')
+    console.log(data.price, '价格')
   }
 }
 </script>

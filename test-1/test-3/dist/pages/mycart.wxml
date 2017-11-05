@@ -1,15 +1,36 @@
 
   <view class="container">
-    <view class="move">
-        <image class="mepic" src="{{item}}"/>
+    <view class="main">
+      <view class="kgoods"  wx:for="{{cart}}" wx:key="index">
+        <image class="check_pic" src="{{item.checkpic}}" id="{{index}}" bindtap="check_pic"/>
+        <image class="pic" src="{{item.pic}}" id="{{index}}" bindtap="lagoods"/>
+        <view class="box_a">
+          <text class="introduce">{{item.int}}</text>
+          <text class="price">{{item.price}}</text>
+        </view>
+        <view class="box_b">
+          <text class="subtraction" bindtap="subtraction" value="{{item.number ? '' : number}}" id="{{index}}">{{item.subtraction}}</text>
+          <text class="number">{{item.number}}</text>
+          <text class="add" bindtap="add" value="{{item.add ? '' : number}}" id="{{index}}">{{item.add}}</text>
+          <image class="delete_pic" src="{{item.delete_pic}}"/>
+        </view>
+      </view>
     </view>
     <view class="title">
       <text class="ta">{{ta}}</text>
-      <text class="tb">{{tb}}</text>
+      <text class="tb">空空如也@~</text>
       <text class="tc">{{tc}}</text>
     </view>
-    <view class="titleb"/>
-    <view class="main">
-
+    <view class="menue">
+      <view class="check">
+        <image class="cpic" src="{{cpic}}" id="{{index}}" bindtap="cpic"/>
+        <text class="c_text">{{c_text}}</text>
+      </view>
+      <view class="sub_a">
+       <text class="sub_anumber">合计: ¥ {{sub_anumber}}</text>
+      </view>
+      <view class="sub_b">
+       <text class="sub_bnumber">结算: ( {{sub_bnumber}} )</text>
+      </view>
     </view>
   </view>

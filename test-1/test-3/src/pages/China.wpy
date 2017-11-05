@@ -103,6 +103,7 @@ image {
   <view class="container">
     <view class="left">
       <view class="kla">
+        <!-- <navigator></navigator> 页面跳转的方法之一-->
         <image class="lapic" src="{{lapic}}" @tap="lapic"></image>
         <text class="laintroduce">2017韩式婚纱</text>
         <text class="laprice">¥3999</text>

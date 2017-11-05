@@ -60,7 +60,6 @@
     align-items: center;
     margin-left: -90px;
 }
-
 .attribute text {
     display: flex;
     flex-direction: row;

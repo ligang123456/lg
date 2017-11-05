@@ -45,9 +45,9 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '我的订单'
   }
   data = {
-    pic1: '../images/订单-2.png',
-    pic2: '../images/更多.png',
-    a: '我的订单'
+    // pic1: '../images/订单-2.png',
+    // pic2: '../images/更多.png',
+    a: '还没有订单@####~~~'
   }
   methods = {}
   onLoad() {}

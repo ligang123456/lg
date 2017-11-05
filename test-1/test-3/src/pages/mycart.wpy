@@ -4,36 +4,254 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:salmon;
+  background-color: seashell;
+  /* background-color:salmon; */
+}
+.kgoods{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 10px;
+  border: 1px solid silver;
+  padding: 3px;
+}
+image{
+  /* display: flex; */
+  width: 90px;
+  height: 90px;
+}
+.check_pic{
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+}
+.number {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 20px;
+  font-size: 0.625rem;
+  /* color: silver; */
+  border: 1px solid silver;
+  margin-left: 5px;
 }
 
+.introduce {
+  font-size: 0.75rem;
+  color: #B8B8B8;
+  margin-top: 1.25rem;
+}
+
+.price {
+  font-size: 0.9375rem;
+  margin-top: 10px;
+}
+.box_a{
+ display: flex;
+ flex-direction: column;
+ margin-left: 10px;
+}
+.box_b{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.add{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  border: 1px solid silver;
+}
+.subtraction{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  border: 1px solid silver;
+}
+.menue{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: seashell;
+}
+.check{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* width: 80px; */
+  height: 30px;
+  border: 1px solid silver;
+  flex: 1;
+  padding: 5px 105px 5px 0;
+  font-size: 15px;
+}
+.sub_a{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* width: 80px; */
+  height: 30px;
+  border: 1px solid silver;
+  flex: 1;
+  padding: 5px;
+  font-size: 15px;
+}
+.sub_b{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* width: 80px; */
+  height: 30px;
+  border: 1px solid silver;
+  background-color: orangered;
+  flex: 1;
+  padding: 5px;
+  font-size: 15px;
+}
+.cpic{
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+}
+.delete_pic{
+  width: 15px;
+  height: 15px;
+  margin:5px;
+}
 </style>
 
 <template>
   <view class="container">
-    <view class="move">
-        <image class="mepic" src = "{{item}}"></image>
+    <view class="main">
+      <view class="kgoods" wx:for="{{cart}}" wx:key="index">
+        <image class="check_pic" src="{{item.checkpic}}" id="{{index}}" @tap="check_pic"></image>
+        <image class="pic" src="{{item.pic}}" id="{{index}}" @tap="lagoods"></image>
+        <view class="box_a">
+          <text class="introduce">{{item.int}}</text>
+          <text class="price">{{item.price}}</text>
+        </view>
+        <view class="box_b">
+          <text class="subtraction" @tap="subtraction" value="{{item.number ? '' : number}}" id="{{index}}">{{item.subtraction}}</text>
+          <text class="number">{{item.number}}</text>
+          <text class="add" @tap="add" value="{{item.add ? '' : number}}" id="{{index}}">{{item.add}}</text>
+          <image class="delete_pic" src="{{item.delete_pic}}"></image>
+        </view>
+      </view>
     </view>
     <view class="title">
       <text class = "ta">{{ta}}</text>
-      <text class = "tb">{{tb}}</text>
+      <text class = "tb">空空如也@~</text>
       <text class = "tc">{{tc}}</text>
     </view>
-    <view class="titleb"></view>
-    <view class="main">
-
+    <view class="menue">
+      <view class="check">
+        <image class="cpic" src="{{cpic}}" id="{{index}}" @tap="cpic" ></image>
+        <text class="c_text">{{c_text}}</text>
+      </view>
+      <view class="sub_a">
+       <text class="sub_anumber">合计: ¥ {{sub_anumber}}</text>
+      </view>
+      <view class="sub_b">
+       <text class="sub_bnumber">结算: ( {{sub_bnumber}} )</text>
+      </view>
     </view>
   </view>
 </template>
 
 <script>
+import cart from '../data/cart.js'
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: '购物车'
   }
-  data = {}
-  methods = {}
-  onLoad() {}
+  data = {
+    cart: [],
+    subtraction: '-',
+    add: '+',
+    cpic: '../images/circle.png',
+    c_text: '全选',
+    sub_anumber: 0.0,
+    sub_bnumber: 0
+    // cpic: false
+  }
+  methods = {
+    collect(e) {
+      let self = this
+      let index = e.currentTarget.id
+      self.korean[index].acollect = !self.korean[index].acollect
+      // self.lacollect = '../images/收藏-选中.png'
+      if (self.korean[index].acollect) {
+        self.korean[index].k_number++
+      } else {
+        self.korean[index].k_number--
+      }
+    },
+
+    add(e) {
+      let self = this
+      let index = e.currentTarget.id
+      // self.cart[index].add = !self.cart[index].add
+      // self.lacollect = '../images/收藏-选中.png'
+      if (self.cart[index].add) {
+        self.korean[index].number++
+      } else {
+        self.cart[index].number = 0
+      }
+    },
+    subtraction(e) {
+      let self = this
+      let index = e.currentTarget.id
+      self.cpic = !self.cpic
+      if (self.cart[index].subtraction) {
+        self.korean[index].number--
+      } else {
+        self.korean[index].number = 0
+      }
+    },
+    cpic(e) {
+      let self = this
+      // let index = e.currentTarget.id
+      self.cpic = '../images/check.png'
+      for (var i = 0; i < cart.length; i++) {
+        self.cart[i].check_pic = '../images/check.png'
+      }
+    },
+    check_pic(e) {
+      let self = this
+      let index = e.currentTarget.id
+      self.cart[index] = !self.cart[index]
+      if (self.cart[index]) {
+        self.cart[index].check_pic = '../images/check.png'
+      } else {
+        self.cart[index].check_pic = '../images/circle.png'
+      }
+    }
+  }
+  onLoad() {
+    let self = this
+    self.cart = cart
+  }
 }
 </script>
