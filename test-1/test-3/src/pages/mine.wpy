@@ -275,7 +275,7 @@ export default class Index extends wepy.page {
     },
     mysaddress() {
       wepy.navigateTo({
-        url: '../pages/addmyaddress'
+        url: '../pages/myadderss'
       })
     },
     mycorder() {
