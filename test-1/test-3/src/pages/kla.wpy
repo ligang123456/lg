@@ -107,8 +107,8 @@
                 <text class="add" @tap="add" value="{{add ? '' : number}}">{{add}}</text>
             </view>
             <view class="menue">
-                <text class="ta">{{ta}}</text>
-                <text class="tb">{{tb}}</text>
+                <text class="ta" @tap="add_cart">{{ta}}</text>
+                <text class="tb" @tap="pay">{{tb}}</text>
             </view>
         </view>
     </view>
@@ -148,7 +148,31 @@ export default class Index extends wepy.page {
       } else {
         self.number = 0
       }
+    },
+    add_cart() {
+      wepy.showToast({
+        title: '加入成功'
+        // icon: 'success'
+        // duration: 2000
+      })
+    },
+    // 显示操作菜单
+    pay() {
+      wepy.showActionSheet({
+        itemList: ['A', 'B', 'C'],
+        success: function(res) {
+          if (!res.cancel) {
+            console.log(res.tapIndex)
+          }
+        }
+      })
     }
+    // 动态改变当前页面标题
+    // pay() {
+    //   wepy.setNavigationBarTitle({
+    //     title: '当前页面'
+    //   })
+    // }
   }
   onLoad(data) {
     let self = this

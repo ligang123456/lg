@@ -1,7 +1,7 @@
 
   <view class="person">
     <view class="logo">
-      <image class="mpic" src="{{mpic}}"/>
+      <image class="mpic" src="{{mpic}}" bindtap="mpic"/>
     </view>
     <view class="main">
       <view class="mysaddress" bindtap="mysaddress">

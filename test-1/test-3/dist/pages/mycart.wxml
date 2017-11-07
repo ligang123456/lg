@@ -2,17 +2,19 @@
   <view class="container">
     <view class="main">
       <view class="kgoods"  wx:for="{{cart}}" wx:key="index">
-        <image class="check_pic" src="{{item.checkpic}}" id="{{index}}" bindtap="check_pic"/>
+        <image class="checkpic" src="{{item.check_pic ? '../images/check.png' : circlepic}}" id="{{index}}" bindtap="check_pic"/>
         <image class="pic" src="{{item.pic}}" id="{{index}}" bindtap="lagoods"/>
         <view class="box_a">
           <text class="introduce">{{item.int}}</text>
           <text class="price">{{item.price}}</text>
         </view>
         <view class="box_b">
+         <view class="box_c">
           <text class="subtraction" bindtap="subtraction" value="{{item.number ? '' : number}}" id="{{index}}">{{item.subtraction}}</text>
           <text class="number">{{item.number}}</text>
           <text class="add" bindtap="add" value="{{item.add ? '' : number}}" id="{{index}}">{{item.add}}</text>
-          <image class="delete_pic" src="{{item.delete_pic}}"/>
+         </view>
+         <image class="delete_pic" src="{{item.delete_pic}}" bindtap="delete_pic"/>
         </view>
       </view>
     </view>
@@ -23,7 +25,7 @@
     </view>
     <view class="menue">
       <view class="check">
-        <image class="cpic" src="{{cpic}}" id="{{index}}" bindtap="cpic"/>
+        <image class="cpic" src="{{cpic ? '../images/check.png' : circlepic}}" id="{{index}}" bindtap="cpic"/>
         <text class="c_text">{{c_text}}</text>
       </view>
       <view class="sub_a">

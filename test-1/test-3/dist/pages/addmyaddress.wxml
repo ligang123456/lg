@@ -1,0 +1,21 @@
+
+  <view class="container">
+    <!-- <view class="logo"></view>
+    <view class="name">
+      <text class="myname">{{myname}}</text>
+      <input placeholder="姓名" />
+    </view>
+    <view class="number">
+      <text class="mynumber">{{mynumber}}</text>
+      <input placeholder="11位手机号码" />
+    </view>
+    <view class="region">
+      <text class="myregion">{{myregion}}</text>
+      <input placeholder="地区信息" />
+    </view>
+    <view class="address">
+      <text class="myaddress">{{myaddress}}</text>
+      <input placeholder="街道门牌信息" />
+    </view> -->
+    <view class="address" bindtap="address">添加收货地址</view>
+  </view>

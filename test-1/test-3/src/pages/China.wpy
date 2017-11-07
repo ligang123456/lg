@@ -1,288 +1,149 @@
-  <style>
+<style>
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #686868;
+  background-color: #383838;
 }
 
-.left {
+.c_goods {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.photo{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  border: 3px solid;
+  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round;
 }
-
-.right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-}
-
 image {
-  width: 140px;
-  height: 150px;
+  width: 8.75rem;
+  height: 9.375rem;
 }
 
-.kla,
-.klb,
-.klc,
-.kld,
-.kra,
-.krb,
-.krc,
-.krd {
-  width: 8.75rem;
-  margin-top: 1rem;
-  margin-left: 0.15rem;
+.cgoods {
+  /* width: 8.75rem; */
+  /* margin-top: 1rem; */
+  /* margin-left: 0.625rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  border: 1px solid silver;
+  /* border: 3px solid;
+  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round; */
+  margin: 7px;
+  background-color: #ffffff;
 }
 
-.lacollect,
-.lbcollect,
-.lccollect,
-.ldcollect,
-.racollect,
-.rbcollect,
-.rccollect,
-.rdcollect {
-  width: 15px;
-  height: 15px;
-  margin-left: 100px;
-  margin-top: -12px;
+.c_collect {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  margin-left: 6.25rem;
+  margin-top: -0.75rem;
 }
 
-.lanumber,
-.lbnumber,
-.lcnumber,
-.ldnumber,
-.ranumber,
-.rbnumber,
-.rcnumber,
-.rdnumber {
-  font-size: 10px;
+.c_number {
+  font-size: 0.625rem;
   color: silver;
-  margin-left: 60px;
+  margin-left: 3.75rem;
 }
 
-.laintroduce,
-.lbintroduce,
-.lcintroduce,
-.ldintroduce,
-.raintroduce,
-.rbintroduce,
-.rcintroduce,
-.rdintroduce {
-  font-size: 12px;
+.c_introduce {
+  font-size: 0.75rem;
   color: #B8B8B8;
-  margin-top: 5px;
+  margin-top: 0.312rem;
 }
 
-.laprice,
-.lbprice,
-.lcprice,
-.ldprice,
-.raprice,
-.rbprice,
-.rcprice,
-.rdprice {
-  font-size: 15px;
-  margin-top: 15px;
-  margin-left: -80px;
+.c_price {
+  font-size: 0.9375rem;
+  margin-top: 0.9375rem;
+  margin-left: -5rem;
 }
 </style>
 
 <template>
   <view class="container">
-    <view class="left">
-      <view class="kla">
-        <!-- <navigator></navigator> 页面跳转的方法之一-->
-        <image class="lapic" src="{{lapic}}" @tap="lapic"></image>
-        <text class="laintroduce">2017韩式婚纱</text>
-        <text class="laprice">¥3999</text>
-        <text class="lanumber">{{lanumber}}</text>
-        <image class="lacollect" src="{{lacollect ? '../images/bcollect.png' : notcollect}}" @tap="lacollect"></image>
+    <view class="photo">
+    <view class="c_goods">
+      <view class="cgoods" wx:for="{{china}}" wx:key="index">
+        <image class="c_pic" src="{{item.c_pic}}" id="{{index}}" @tap="lagoods"></image>
+        <text class="c_introduce">{{item.c_int}}</text>
+        <text class="c_price">{{item.c_price}}</text>
+        <text class="c_number">{{item.c_number}}</text>
+        <image class="c_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" @tap="collect"></image>
       </view>
-      <view class="klb">
-        <image class="lbpic" src="{{lbpic}}" @tap="lbpic"></image>
-        <text class="lbintroduce">2017韩式婚纱</text>
-        <text class="lbprice">¥3999</text>
-        <text class="lbnumber">{{lbnumber}}</text>
-        <image class="lbcollect" src="{{lbcollect ? '../images/bcollect.png' : notcollect}}" @tap="lbcollect"></image>
-      </view>
-      <view class="klc">
-        <image class="lcpic" src="{{lcpic}}" @tap="lcpic"></image>
-        <text class="lcintroduce">2017韩式婚纱</text>
-        <text class="lcprice">¥3999</text>
-        <text class="lcnumber">{{lcnumber}}</text>
-        <image class="lccollect" src="{{lccollect ? '../images/bcollect.png' : notcollect}}" @tap="lccollect"></image>
-      </view>
-      <view class="kld">
-        <image class="ldpic" src="{{ldpic}}" @tap="ldpic"></image>
-        <text class="ldintroduce">2017韩式婚纱</text>
-        <text class="ldprice">¥3999</text>
-        <text class="ldnumber">{{ldnumber}}</text>
-        <image class="ldcollect" src="{{ldcollect ? '../images/bcollect.png' : notcollect}}" @tap="ldcollect"></image>
-      </view>
-    </view>
-    <view class="right">
-      <view class="kra">
-        <image class="rapic" src="{{rapic}}"></image>
-        <text class="raintroduce">2017韩式婚纱</text>
-        <text class="raprice">¥3999</text>
-        <text class="ranumber">{{ranumber}}</text>
-        <image class="racollect" src="{{acollect ? '../images/bcollect.png' : notcollect}}" @tap="racollect"></image>
-      </view>
-      <view class="krb">
-        <image class="rbpic" src="{{rbpic}}"></image>
-        <text class="rbintroduce">2017韩式婚纱</text>
-        <text class="rbprice">¥3999</text>
-        <text class="rbnumber">{{rbnumber}}</text>
-        <image class="rbcollect" src="{{bcollect ? '../images/bcollect.png' : notcollect}}" @tap="rbcollect"></image>
-      </view>
-      <view class="krc">
-        <image class="rcpic" src="{{rcpic}}"></image>
-        <text class="rcintroduce">2017韩式婚纱</text>
-        <text class="rcprice">¥3999</text>
-        <text class="rcnumber">{{rcnumber}}</text>
-        <image class="rccollect" src="{{ccollect ? '../images/bcollect.png' : notcollect}}" @tap="rccollect"></image>
-      </view>
-      <view class="krd">
-        <image class="rdpic" src="{{rdpic}}"></image>
-        <text class="rdintroduce">2017韩式婚纱</text>
-        <text class="rdprice">¥3999</text>
-        <text class="rdnumber">{{rdnumber}}</text>
-        <image class="rdcollect" src="{{dcollect ? '../images/bcollect.png' : notcollect}}" @tap="rdcollect"></image>
-      </view>
-    </view>
+     </view> 
+  </view>
   </view>
 </template>
 
 <script>
+import china from '../data/china.js'
 import wepy from 'wepy'
-export default class Index extends wepy.page {
+export default class Korean extends wepy.page {
   config = {
-    navigationBarTitleText: '中式婚纱/wedding'
+    navigationBarTitleText: '韩式婚纱/wedding'
   }
   data = {
-    lanumber: 0,
-    lbnumber: 0,
-    lcnumber: 0,
-    ldnumber: 0,
-    ranumber: 0,
-    rbnumber: 0,
-    rcnumber: 0,
-    rdnumber: 0,
-    lapic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1050848129,653593312&fm=27&gp=0.jpg',
-    lbpic: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3061289273,1862940451&fm=11&gp=0.jpg',
-    lcpic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2792928026,4035569877&fm=27&gp=0.jpg',
-    ldpic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=400619145,2816616768&fm=27&gp=0.jpg',
-    rapic: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1887976017,3134824751&fm=27&gp=0.jpg',
-    rbpic: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4109140288,4045698816&fm=27&gp=0.jpg',
-    rcpic: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=691853908,3835353995&fm=27&gp=0.jpg',
-    rdpic: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1461531979,3090219501&fm=11&gp=0.jpg',
     notcollect: '../images/acollect.png',
-    racollect: '../images/acollect.png',
-    rbcollect: '../images/acollect.png',
-    rccollect: '../images/acollect.png',
-    rdcollect: '../images/acollect.png',
     lacollect: false,
-    lbcollect: false,
-    lccollect: false,
-    ldcollect: false,
     acollect: false,
-    bcollect: false,
-    ccollect: false,
-    dcollect: false
+    china: []
 
   }
   methods = {
-    lacollect() {
+    collect(e) {
       let self = this
-      self.lacollect = !self.lacollect
+      let index = e.currentTarget.id
+      self.china[index].acollect = !self.china[index].acollect
       // self.lacollect = '../images/收藏-选中.png'
-      if (self.lacollect) {
-        self.lanumber++
+      if (self.china[index].acollect) {
+        self.china[index].c_number++
       } else {
-        self.lanumber--
+        self.china[index].c_number--
       }
     },
-    lbcollect() {
+    lagoods(e) {
+      var item = e.currentTarget.dataset.index
+      console.log(e, 'item')
+      switch (item) {
+        case 0 : wepy.navigateTo({
+          url: '../pages/kla'
+        }); break
+        case 1 : wepy.navigateTo({
+          url: '../pages/klb'
+        }); break
+      }
       let self = this
-      self.lbcollect = !self.lbcollect
-      if (self.lbcollect) {
-        self.lbnumber++
-      } else {
-        self.lbnumber--
-      }
-    },
-    lccollect() {
-      let self = this
-      self.lccollect = !self.lccollect
-      if (self.lccollect) {
-        self.lcnumber++
-      } else {
-        self.lcnumber--
-      }
-    },
-    ldcollect() {
-      let self = this
-      self.ldcollect = !self.ldcollect
-      if (self.ldcollect) {
-        self.ldnumber++
-      } else {
-        self.ldnumber--
-      }
-    },
-    racollect() {
-      let self = this
-      self.acollect = !self.acollect
-      if (self.acollect) {
-        self.ranumber++
-      } else {
-        self.ranumber--
-      }
-    },
-    rbcollect() {
-      let self = this
-      self.bcollect = !self.bcollect
-      if (self.bcollect) {
-        self.rbnumber++
-      } else {
-        self.rbnumber--
-      }
-    },
-    rccollect() {
-      let self = this
-      self.ccollect = !self.ccollect
-      if (self.ccollect) {
-        self.rcnumber++
-      } else {
-        self.rcnumber--
-      }
-    },
-    rdcollect() {
-      let self = this
-      self.dcollect = !self.dcollect
-      if (self.dcollect) {
-        self.rdnumber++
-      } else {
-        self.rdnumber--
-      }
-    },
-    lapic() {
+      const index = e.currentTarget.id
       wepy.navigateTo({
-        url: '../pages/kla'
+        url: `./kla?image=${china[index].c_pic}&title=${china[index].c_int}&price=${china[index].c_price}`
       })
+      console.log(self.china[index], '111111')
     }
+    // lagoods(e) {
+    //   let self = this
+    //   const index = e.currentTarget.id
+    //   wepy.navigateTo({
+    //     url: `./kla`
+    //   })
+    //   console.log(self.korean[index], '111111')
+    // }
   }
-  onLoad() { }
+  onLoad() {
+    let self = this
+    self.china = china
+    console.log(self.korean, 'aaaaaaaaaa')
+  }
 }
 </script>

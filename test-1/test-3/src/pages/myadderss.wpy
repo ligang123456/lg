@@ -49,6 +49,11 @@ input{
     <view class="region">
       <text class="myregion">{{myregion}}</text>
       <input placeholder="地区信息" />
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+           {{region[0]}}，{{region[1]}}，{{region[2]}}
+       </view>
+      </picker>
     </view>
     <view class="address">
       <text class="myaddress">{{myaddress}}</text>
@@ -67,9 +72,23 @@ export default class Index extends wepy.page {
     myname: '收货人',
     mynumber: '手机号码',
     myregion: '地区信息',
-    myaddress: '详细地址'
+    myaddress: '详细地址',
+    region: ['', '']
   }
   methods = {}
-  onLoad() { }
+  onLoad() {
+    // wepy.chooseAddress({
+    //   success: function (res) {
+    //     console.log(res.myname)
+    //     console.log(res.postalCode)
+    //     console.log(res.provinceName)
+    //     console.log(res.cityName)
+    //     console.log(res.countyName)
+    //     console.log(res.detailInfo)
+    //     console.log(res.nationalCode)
+    //     console.log(res.telNumber)
+    //   }
+    // })
+  }
 }
 </script>

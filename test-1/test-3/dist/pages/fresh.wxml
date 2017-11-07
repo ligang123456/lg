@@ -1,63 +1,14 @@
 
   <view class="container">
-    <view class="left">
-      <view class="kla">
-        <image class="lapic" src="{{lapic}}" bindtap="lapic"/>
-        <text class="laintroduce">2017韩式婚纱</text>
-        <text class="laprice">¥3999</text>
-        <text class="lanumber">{{lanumber}}</text>
-        <image class="lacollect" src="{{lacollect ? '../images/bcollect.png' : notcollect}}" bindtap="lacollect"/>
+    <view class="photo">
+    <view class="f_goods">
+      <view class="fgoods"  wx:for="{{fresh}}" wx:key="index">
+        <image class="f_pic" src="{{item.f_pic}}" id="{{index}}" bindtap="lagoods"/>
+        <text class="f_introduce">{{item.f_int}}</text>
+        <text class="f_price">{{item.f_price}}</text>
+        <text class="f_number">{{item.f_number}}</text>
+        <image class="f_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" bindtap="collect"/>
       </view>
-      <view class="klb">
-        <image class="lbpic" src="{{lbpic}}" bindtap="lbpic"/>
-        <text class="lbintroduce">2017韩式婚纱</text>
-        <text class="lbprice">¥3999</text>
-        <text class="lbnumber">{{lbnumber}}</text>
-        <image class="lbcollect" src="{{lbcollect ? '../images/bcollect.png' : notcollect}}" bindtap="lbcollect"/>
-      </view>
-      <view class="klc">
-        <image class="lcpic" src="{{lcpic}}" bindtap="lcpic"/>
-        <text class="lcintroduce">2017韩式婚纱</text>
-        <text class="lcprice">¥3999</text>
-        <text class="lcnumber">{{lcnumber}}</text>
-        <image class="lccollect" src="{{lccollect ? '../images/bcollect.png' : notcollect}}" bindtap="lccollect"/>
-      </view>
-      <view class="kld">
-        <image class="ldpic" src="{{ldpic}}" bindtap="ldpic"/>
-        <text class="ldintroduce">2017韩式婚纱</text>
-        <text class="ldprice">¥3999</text>
-        <text class="ldnumber">{{ldnumber}}</text>
-        <image class="ldcollect" src="{{ldcollect ? '../images/bcollect.png' : notcollect}}" bindtap="ldcollect"/>
-      </view>
-    </view>
-    <view class="right">
-      <view class="kra">
-        <image class="rapic" src="{{rapic}}"/>
-        <text class="raintroduce">2017韩式婚纱</text>
-        <text class="raprice">¥3999</text>
-        <text class="ranumber">{{ranumber}}</text>
-        <image class="racollect" src="{{acollect ? '../images/bcollect.png' : notcollect}}" bindtap="racollect"/>
-      </view>
-      <view class="krb">
-        <image class="rbpic" src="{{rbpic}}"/>
-        <text class="rbintroduce">2017韩式婚纱</text>
-        <text class="rbprice">¥3999</text>
-        <text class="rbnumber">{{rbnumber}}</text>
-        <image class="rbcollect" src="{{bcollect ? '../images/bcollect.png' : notcollect}}" bindtap="rbcollect"/>
-      </view>
-      <view class="krc">
-        <image class="rcpic" src="{{rcpic}}"/>
-        <text class="rcintroduce">2017韩式婚纱</text>
-        <text class="rcprice">¥3999</text>
-        <text class="rcnumber">{{rcnumber}}</text>
-        <image class="rccollect" src="{{ccollect ? '../images/bcollect.png' : notcollect}}" bindtap="rccollect"/>
-      </view>
-      <view class="krd">
-        <image class="rdpic" src="{{rdpic}}"/>
-        <text class="rdintroduce">2017韩式婚纱</text>
-        <text class="rdprice">¥3999</text>
-        <text class="rdnumber">{{rdnumber}}</text>
-        <image class="rdcollect" src="{{dcollect ? '../images/bcollect.png' : notcollect}}" bindtap="rdcollect"/>
-      </view>
-    </view>
+     </view> 
+  </view>
   </view>

@@ -30,9 +30,11 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/test',
       'pages/index',
       'pages/mine',
-      'pages/mysadderss',
+      'pages/myadderss',
+      'pages/addmyaddress',
       'pages/mycorder',
       'pages/mycart',
       'pages/mycollect',
@@ -71,7 +73,8 @@ export default class extends wepy.app {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: 'silver',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'black',
+      enablePullDownRefresh: true // 默认刷新
     }
   }
 

@@ -1,0 +1,48 @@
+function fun(){
+  return <h1>hello</h1>
+}
+function fun(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+class fun extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+function fun() {
+  return (
+    <div className="test">
+      <fun name="a" />
+      <fun name="a" />
+      <fun name="c" />
+    </div>
+  );
+}
+fun() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
+    </div>
+  );
+}
+
+class Boxs extends React.Component {
+  render() {
+    return (
+      <div>
+        <div>组件1</div>
+        <Box />
+      </div>
+    );
+  }
+}
+class Box extends React.Component {
+  render() {
+    return (
+      <div>组件2</div>
+    );
+  }
+}
+}

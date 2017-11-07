@@ -13,8 +13,8 @@
                 <text class="add" bindtap="add" value="{{add ? '' : number}}">{{add}}</text>
             </view>
             <view class="menue">
-                <text class="ta">{{ta}}</text>
-                <text class="tb">{{tb}}</text>
+                <text class="ta" bindtap="add_cart">{{ta}}</text>
+                <text class="tb" bindtap="pay">{{tb}}</text>
             </view>
         </view>
     </view>

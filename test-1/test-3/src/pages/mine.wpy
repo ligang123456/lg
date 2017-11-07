@@ -159,7 +159,7 @@
 <template>
   <view class="person">
     <view class="logo">
-      <image class="mpic" src="{{mpic}}"></image>
+      <image class="mpic" src="{{mpic}}" @tap="mpic"></image>
     </view>
     <view class="main">
       <view class="mysaddress" @tap="mysaddress">
@@ -262,9 +262,20 @@ export default class Index extends wepy.page {
     mnickname: 'Bea'
   }
   methods = {
+    mpic() {
+      wepy.showModal({
+        title: '提示',
+        content: '是否授权？',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      })
+    },
     mysaddress() {
       wepy.navigateTo({
-        url: '../pages/mysadderss'
+        url: '../pages/addmyaddress'
       })
     },
     mycorder() {

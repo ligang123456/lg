@@ -39,8 +39,8 @@ image {
   justify-content: center;
   align-items: center;
   border: 1px solid silver;
-  border: 3px solid;
-  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round;
+  /* border: 3px solid;
+  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round; */
   margin: 7px;
   background-color: #ffffff;
 }
