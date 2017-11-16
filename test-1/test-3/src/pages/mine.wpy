@@ -157,6 +157,7 @@
 </style>
 
 <template>
+ <scroll-view>
   <view class="person">
     <view class="logo">
       <image class="mpic" src="{{mpic}}" @tap="mpic"></image>
@@ -217,6 +218,7 @@
       <image class="mfpic" src="{{mfpic}}"></image>
     </view>
   </view>
+ </scroll-view> 
 </template>
 <script>
 import wepy from 'wepy'
@@ -328,6 +330,15 @@ export default class Index extends wepy.page {
         url: '../pages/myfeedback'
       })
     }
+  }
+
+  onLoad() {
+    wepy.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 1000
+      // image: '../images/ahome.png'
+    })
   }
 
   onShow() {

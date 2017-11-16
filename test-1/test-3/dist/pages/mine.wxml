@@ -1,4 +1,5 @@
 
+ <scroll-view>
   <view class="person">
     <view class="logo">
       <image class="mpic" src="{{mpic}}" bindtap="mpic"/>
@@ -59,3 +60,4 @@
       <image class="mfpic" src="{{mfpic}}"/>
     </view>
   </view>
+ </scroll-view>

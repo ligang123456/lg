@@ -1,0 +1,13 @@
+
+ <view class="wrap">
+  <input placeholder="🔍  请输入搜索内容" bindtap="search"/>
+  <view class="box">搜索历史</view>
+   <view class="flex-photo">
+      <view class="main"  wx:for="{{home}}" wx:key="index">
+        <view class="korean" bindtap="style" data-index="{{index}}">
+          <image class="hpic" src="{{item.pic}}"/>
+          <text class="htext">{{item.title}}</text>
+        </view>
+      </view>    
+    </view>
+ </view>

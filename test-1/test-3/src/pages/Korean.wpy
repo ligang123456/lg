@@ -76,10 +76,10 @@ image {
     <view class="photo">
     <view class="k_goods">
       <view class="kgoods" wx:for="{{korean}}" wx:key="index">
-        <image class="k_pic" src="{{item.k_pic}}" id="{{index}}" @tap="lagoods"></image>
-        <text class="k_introduce">{{item.k_int}}</text>
-        <text class="k_price">{{item.k_price}}</text>
-        <text class="k_number">{{item.k_number}}</text>
+        <image class="k_pic" src="{{item.pic}}" id="{{index}}" @tap="lagoods"></image>
+        <text class="k_introduce">{{item.title}}</text>
+        <text class="k_price">¥ {{item.price}}</text>
+        <text class="k_number">{{item.number}}</text>
         <image class="k_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" @tap="collect"></image>
       </view>
      </view> 
@@ -128,7 +128,7 @@ export default class Korean extends wepy.page {
       let self = this
       const index = e.currentTarget.id
       wepy.navigateTo({
-        url: `./kla?image=${korean[index].k_pic}&title=${korean[index].k_int}&price=${korean[index].k_price}`
+        url: `./kla?image=${korean[index].pic}&title=${korean[index].title}&price=${korean[index].price}`
       })
       console.log(self.korean[index], '111111')
     }
@@ -142,8 +142,26 @@ export default class Korean extends wepy.page {
     // }
   }
   onLoad() {
+    // 加载
+    wepy.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 1000
+      // image: '../images/ahome.png'
+    })
     let self = this
     self.korean = korean
+    wepy.request({
+      url: 'http://127.0.0.1:7001/Korean',
+      method: 'GET',
+      successs: function (res) {
+        self.korean = res.data
+        self.setData({
+          korean: res.data
+        })
+        console.log(res.data)
+      }
+    })
   }
 }
 </script>

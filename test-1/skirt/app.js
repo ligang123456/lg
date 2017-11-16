@@ -26,7 +26,97 @@ module.exports = app => {
       const userSchema = knex.schema.createTableIfNotExists('home', function(table) {
         table.increments();
         table.string('pic').notNullable().defaultTo('');
-        // table.string('movepic').notNullable().defaultTo('');
+        table.string('title').notNullable().defaultTo('');
+        // table.string('uppic').notNullable().defaultTo('');
+        // table.string('downpic').notNullable().defaultTo('');
+        table.timestamp('creat_at').defaultTo(knex.fn.now());
+        table.charset('utf8');
+      });
+      yield app.mysql.query(userSchema.toString());
+      // yield ctx.helper.unique(app, 'user', 'mobile');
+      // yield ctx.helper.unique(app, 'user', 'wechat');
+    }
+
+    const shopping = yield app.mysql.query(knex.schema.hasTable('shopping').toString());
+    if (shopping.length === 0) {
+      const userSchema = knex.schema.createTableIfNotExists('shopping', function(table) {
+        table.increments();
+        table.string('pic').notNullable().defaultTo('');
+        table.string('title').notNullable().defaultTo('');
+        table.integer('price').notNullable().defaultTo(0);
+        table.integer('acollect').notNullable().defaultTo(0);
+        // table.string('uppic').notNullable().defaultTo('');
+        // table.string('downpic').notNullable().defaultTo('');
+        table.timestamp('creat_at').defaultTo(knex.fn.now());
+        table.charset('utf8');
+      });
+      yield app.mysql.query(userSchema.toString());
+      // yield ctx.helper.unique(app, 'user', 'mobile');
+      // yield ctx.helper.unique(app, 'user', 'wechat');
+    }
+
+    const korean = yield app.mysql.query(knex.schema.hasTable('korean').toString());
+    if (korean.length === 0) {
+      const userSchema = knex.schema.createTableIfNotExists('korean', function(table) {
+        table.increments();
+        table.string('pic').notNullable().defaultTo('');
+        table.string('title').notNullable().defaultTo('');
+        table.integer('price').notNullable().defaultTo(0);
+        table.integer('acollect').notNullable().defaultTo(0);
+        // table.string('uppic').notNullable().defaultTo('');
+        // table.string('downpic').notNullable().defaultTo('');
+        table.timestamp('creat_at').defaultTo(knex.fn.now());
+        table.charset('utf8');
+      });
+      yield app.mysql.query(userSchema.toString());
+      // yield ctx.helper.unique(app, 'user', 'mobile');
+      // yield ctx.helper.unique(app, 'user', 'wechat');
+    }
+
+    const china = yield app.mysql.query(knex.schema.hasTable('china').toString());
+    if (china.length === 0) {
+      const userSchema = knex.schema.createTableIfNotExists('china', function(table) {
+        table.increments();
+        table.string('pic').notNullable().defaultTo('');
+        table.string('title').notNullable().defaultTo('');
+        table.integer('price').notNullable().defaultTo(0);
+        table.integer('acollect').notNullable().defaultTo(0);
+        // table.string('uppic').notNullable().defaultTo('');
+        // table.string('downpic').notNullable().defaultTo('');
+        table.timestamp('creat_at').defaultTo(knex.fn.now());
+        table.charset('utf8');
+      });
+      yield app.mysql.query(userSchema.toString());
+      // yield ctx.helper.unique(app, 'user', 'mobile');
+      // yield ctx.helper.unique(app, 'user', 'wechat');
+    }
+
+    const euramerican = yield app.mysql.query(knex.schema.hasTable('euramerican').toString());
+    if (euramerican.length === 0) {
+      const userSchema = knex.schema.createTableIfNotExists('euramerican', function(table) {
+        table.increments();
+        table.string('pic').notNullable().defaultTo('');
+        table.string('title').notNullable().defaultTo('');
+        table.integer('price').notNullable().defaultTo(0);
+        table.integer('acollect').notNullable().defaultTo(0);
+        // table.string('uppic').notNullable().defaultTo('');
+        // table.string('downpic').notNullable().defaultTo('');
+        table.timestamp('creat_at').defaultTo(knex.fn.now());
+        table.charset('utf8');
+      });
+      yield app.mysql.query(userSchema.toString());
+      // yield ctx.helper.unique(app, 'user', 'mobile');
+      // yield ctx.helper.unique(app, 'user', 'wechat');
+    }
+
+    const fresh = yield app.mysql.query(knex.schema.hasTable('fresh').toString());
+    if (fresh.length === 0) {
+      const userSchema = knex.schema.createTableIfNotExists('fresh', function(table) {
+        table.increments();
+        table.string('pic').notNullable().defaultTo('');
+        table.string('int').notNullable().defaultTo('');
+        table.integer('price').notNullable().defaultTo(0);
+        table.integer('acollect').notNullable().defaultTo(0);
         // table.string('uppic').notNullable().defaultTo('');
         // table.string('downpic').notNullable().defaultTo('');
         table.timestamp('creat_at').defaultTo(knex.fn.now());

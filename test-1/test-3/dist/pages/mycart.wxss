@@ -6,28 +6,32 @@
   align-items: center;
   background-color: #FFFFF0	;
   /* background-color:salmon; */
+  padding: 0;
+}
+.main{
+  width: 100%;
+  padding-bottom: 20px;
 }
 .kgoods{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  /* flex-direction: row; */
+  /* justify-content: center; */
   align-items: center;
-  display: flex;
   margin: 10px;
   border: 1px solid silver;
   /* background-color: cornsilk; */
-  padding: 3px;
+  /* padding: 3px; */
 }
-image{
+.pic{
   /* display: flex; */
   width: 90px;
   height: 90px;
   margin-left: 10px;
 }
 .checkpic{
-  width: 15px;
-  height: 15px;
-  margin: 5px;
+  width: 21px;
+  height: 20px;
+  margin-left: 5px;
 }
 .number {
   display: flex;
@@ -45,7 +49,7 @@ image{
 .introduce {
   font-size: 14px;
   color: #B8B8B8;
-  margin-top: 1.25rem;
+  /* margin-top: 0.5rem; */
   /* margin-left: 10px; */
 }
 
@@ -66,15 +70,16 @@ image{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px 10px 5px 0;
 }
 .box_c{
   display: flex;
+  flex: 1;
   /* flex-direction: row; */
   /* justify-content: center; */
   /* align-items: center; */
   /* margin-left: 20px; */
-  margin-top: 60px;
+  margin-top: 20px;
 }
 .add{
   display: flex;
@@ -146,14 +151,14 @@ image{
   font-size: 15px;
 }
 .cpic{
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   margin: 5px;
 }
 .delete_pic{
   width: 30px;
   height: 30px;
   margin-top: 30px;
-  margin-left: 90px;
+  margin-left: 80px;
   /* padding: 10px; */
 }

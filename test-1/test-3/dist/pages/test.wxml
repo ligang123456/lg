@@ -1,0 +1,35 @@
+
+<scroll-view>
+  <view>
+   <view class="container" style="height: {{height}}px; width: {{width}}px">
+    <view class="logo">
+      <input placeholder="🔍 请输入搜索内容"/>
+      <image class="spic" src="{{spic}}"/>
+    </view>
+    <view class="move">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block  wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="mepic"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="titlea">米兰新娘婚纱 ~ Sweet</view>
+    <view class="titleb">Milan wedding wedding dress </view>
+    <view class="flex-photo">
+      <view class="main"  wx:for="{{home}}" wx:key="index">
+        <view class="Korean" bindtap="Korean" data-index="{{index}}">
+          <image class="hpic" src="{{item.pic}}"/>
+          <text class="htext">{{item.title}}</text>
+        </view>
+      </view>    
+    </view>
+    </view>
+    <block wx:for="{{[1, 2, 3]}}">
+  <view> {{index}}: </view>
+  <view> {{item}} </view>
+  </block>
+  </view>
+  </scroll-view>

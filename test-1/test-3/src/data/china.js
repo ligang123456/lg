@@ -1,51 +1,51 @@
 module.exports = [
   {
-    c_pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1050848129,653593312&fm=27&gp=0.jpg',
-    c_int: '2017韩式婚纱',
-    c_price: '¥3999',
-    c_number: 0,
+    pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1050848129,653593312&fm=27&gp=0.jpg',
+    title: '2017韩式婚纱',
+    price: '¥3999',
+    number: 0,
     acollect: ''
   }, {
-    c_pic: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3061289273,1862940451&fm=11&gp=0.jpg',
-    c_int: '2017韩式婚纱',
-    c_price: '¥3999',
-    c_number: 0,
+    pic: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3061289273,1862940451&fm=11&gp=0.jpg',
+    title: '2017韩式婚纱',
+    price: '¥3999',
+    number: 0,
     acollect: ''
   }, {
-    c_pic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2792928026,4035569877&fm=27&gp=0.jpg',
-    c_int: '2017韩式婚纱',
-    c_price: '¥3999',
-    c_number: 0,
+    pic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2792928026,4035569877&fm=27&gp=0.jpg',
+    title: '2017韩式婚纱',
+    price: '¥3999',
+    number: 0,
     acollect: ''
   }, {
-    c_pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=400619145,2816616768&fm=27&gp=0.jpg',
-    c_int: '2017韩式婚纱',
-    c_price: '¥3999',
-    c_number: 0,
+    pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=400619145,2816616768&fm=27&gp=0.jpg',
+    title: '2017韩式婚纱',
+    price: '¥3999',
+    number: 0,
     acollect: ''
   }, {
-    c_pic: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1887976017,3134824751&fm=27&gp=0.jpg',
-    c_int: '2017韩式婚纱',
-    c_price: '¥3999',
-    c_number: 0,
+    pic: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1887976017,3134824751&fm=27&gp=0.jpg',
+    title: '2017韩式婚纱',
+    price: '¥3999',
+    number: 0,
     acollect: ''
   }, {
-    c_pic: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4109140288,4045698816&fm=27&gp=0.jpg',
-    c_int: '2017韩式婚纱',
-    c_price: '¥3999',
-    c_number: 0,
+    pic: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4109140288,4045698816&fm=27&gp=0.jpg',
+    title: '2017韩式婚纱',
+    price: '¥3999',
+    number: 0,
     acollect: ''
   }, {
-    c_pic: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=691853908,3835353995&fm=27&gp=0.jpg',
-    c_int: '2017韩式婚纱',
-    c_price: '¥3999',
-    c_number: 0,
+    pic: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=691853908,3835353995&fm=27&gp=0.jpg',
+    title: '2017韩式婚纱',
+    price: '¥3999',
+    number: 0,
     acollect: ''
   }, {
-    c_pic: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1461531979,3090219501&fm=11&gp=0.jpg',
-    c_int: '2017韩式婚纱',
-    c_price: '¥3999',
-    c_number: 0,
+    pic: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1461531979,3090219501&fm=11&gp=0.jpg',
+    title: '2017韩式婚纱',
+    price: '¥3999',
+    number: 0,
     acollect: ''
   }
 ]

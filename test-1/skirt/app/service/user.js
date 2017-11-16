@@ -35,7 +35,7 @@ module.exports = app => {
     * get() {
       let s;
       try {
-        s = yield app.mysql.select('user');
+        s = yield app.mysql.select('home');
       } catch (y) {
         this.ctx.logger.err(y);
         return false;
@@ -45,7 +45,7 @@ module.exports = app => {
     * select() {
       let res;
       try {
-        res = yield app.mysql.select('usr', {
+        res = yield app.mysql.select('home', {
           where: {
             name: [ 'lg', 'a' ],
           },

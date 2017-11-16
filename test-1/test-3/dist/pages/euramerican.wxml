@@ -3,10 +3,10 @@
     <view class="photo">
     <view class="e_goods">
       <view class="egoods"  wx:for="{{euramerican}}" wx:key="index">
-        <image class="e_pic" src="{{item.e_pic}}" id="{{index}}" bindtap="lagoods"/>
-        <text class="e_introduce">{{item.e_int}}</text>
-        <text class="e_price">{{item.e_price}}</text>
-        <text class="e_number">{{item.e_number}}</text>
+        <image class="e_pic" src="{{item.pic}}" id="{{index}}" bindtap="lagoods"/>
+        <text class="e_introduce">{{item.title}}</text>
+        <text class="e_price">{{item.price}}</text>
+        <text class="e_number">{{item.number}}</text>
         <image class="e_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" bindtap="collect"/>
       </view>
      </view> 

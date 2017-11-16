@@ -1,0 +1,39 @@
+<style>
+input{
+  display: fixed;
+  margin-top: 10px;
+  padding: 3px 10px;
+  color:black;
+  font-size: 15px;
+  border-radius: 20px;
+  border: 1px solid silver;
+}
+.box{
+  display: flex;
+  margin-top: 10px;
+  padding:3px;
+  color:silver;
+  font-size: 15px;
+  border: 1px solid black;
+}
+</style>
+
+<template>
+ <view class="wrap">
+  <input placeholder="🔍  请输入搜索内容" @tap="search" />
+  <view class="box">搜索历史</view>
+   <view class="flex-photo">
+      <view  class="main" wx:for="{{home}}" wx:key="index">
+        <view class="korean" @tap = "style" data-index="{{index}}">
+          <image class="hpic" src="{{item.pic}}"></image>
+          <text class="htext">{{item.title}}</text>
+        </view>
+      </view>    
+    </view>
+ </view>   
+</template>
+
+<script>
+export default {
+}
+</script>

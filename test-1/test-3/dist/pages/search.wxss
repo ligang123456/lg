@@ -1,0 +1,18 @@
+
+input{
+  display: fixed;
+  margin-top: 10px;
+  padding: 3px 10px;
+  color:black;
+  font-size: 15px;
+  border-radius: 20px;
+  border: 1px solid silver;
+}
+.box{
+  display: flex;
+  margin-top: 10px;
+  padding:3px;
+  color:silver;
+  font-size: 15px;
+  border: 1px solid black;
+}

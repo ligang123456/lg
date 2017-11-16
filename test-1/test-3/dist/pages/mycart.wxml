@@ -1,4 +1,5 @@
 
+ <scroll-view>
   <view class="container">
     <view class="main">
       <view class="kgoods"  wx:for="{{cart}}" wx:key="index">
@@ -6,13 +7,13 @@
         <image class="pic" src="{{item.pic}}" id="{{index}}" bindtap="lagoods"/>
         <view class="box_a">
           <text class="introduce">{{item.int}}</text>
-          <text class="price">{{item.price}}</text>
+          <text class="price">¥ {{item.price}}</text>
         </view>
         <view class="box_b">
          <view class="box_c">
-          <text class="subtraction" bindtap="subtraction" value="{{item.number ? '' : number}}" id="{{index}}">{{item.subtraction}}</text>
+          <text class="subtraction" bindtap="subtraction" value="{{item.nsubtraction ? '' : cart[index].number}}" id="{{index}}">{{item.subtraction}}</text>
           <text class="number">{{item.number}}</text>
-          <text class="add" bindtap="add" value="{{item.add ? '' : number}}" id="{{index}}">{{item.add}}</text>
+          <text class="add" bindtap="add" value="{{item.nadd ? '' : cart[index].number}}" id="{{index}}">{{item.add}}</text>
          </view>
          <image class="delete_pic" src="{{item.delete_pic}}" bindtap="delete_pic"/>
         </view>
@@ -36,3 +37,4 @@
       </view>
     </view>
   </view>
+ </scroll-view>

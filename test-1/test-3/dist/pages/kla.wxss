@@ -1,4 +1,87 @@
 
+  /*使屏幕变暗  */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: #000; */
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  /* color: #fff; */
+}
+/*对话框 */
+.commodity_attr_box {
+  /* height: 750rpx; */
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: seashell;
+  /* padding-top: 20rpx; */
+  font-size: 15px;
+  /* opacity: 0.8; */
+}
+.confirm{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    /* position: fixed; */
+    bottom: 0;
+    /* border: 1px solid black; */
+    background-color: orangered;
+}
+.goods_color,.dimension{
+    display: flex;
+    flex-direction: row
+}
+.goods_color text,.dimension text{
+    margin-left: 5px;
+    padding: 5px 0 5px 0;
+    /* height: 20px; */
+    width: 60px;
+    border: 1px solid silver;
+    text-align: center;
+    font-size: 13px;
+}
+.goods_p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.color{
+    color:red;
+    border: 1px solid red;
+}
+.nocolor{
+    color: black;
+    border: 1px solid black;
+}
+.closepic{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+.gtitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+.gpic{
+    /* position: fixed;
+    top: -20px;
+    z-index: 5000; */
+    margin: 10px;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -56,9 +139,10 @@
 .attribute {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-left: -90px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* border: 1px solid black; */
+    margin-left: 5px;
 }
 .attribute text {
     display: flex;
@@ -68,25 +152,28 @@
 }
 
 .numbers {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-left: 0px;
 }
 
 .subtraction {
-    margin-top: 50px;
-    margin-left: 20px;
+    /* margin-top: 10px; */
+    height: 25px;
+    /* margin-left: 10px; */
     width: 45px;
     border: 1px solid silver;
 }
 
 .number {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    height: 25px;
     width: 70px;
     border: 1px solid silver;
 }
 
 .add {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    height: 25px;
     width: 45px;
     border: 1px solid silver;
 }

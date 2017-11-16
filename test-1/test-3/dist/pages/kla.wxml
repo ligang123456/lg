@@ -6,15 +6,45 @@
                 <text class="title">{{title}}</text>
                 <text class="price">{{price}}</text>
             </view>
-            <view class="attribute">
-                <text class="numbers">{{numbers}}</text>
+            <view class="menue">
+                <text class="ta" bindtap="add_cart">{{ta}}</text>
+                <text class="tb" bindtap="showModal">{{tb}}</text>
+            </view>
+            <view class="commodity_screen" bindtap="hideModal"  wx:if="{{showModalStatus}}"/>
+            <view animation="{{animationData}}" class="commodity_attr_box"  wx:if="{{showModalStatus}}">
+              <view class="goods_p">  
+               <image class="gpic" src="{{shopping_pic}}" style="width:100px;height:100px"/>
+               <view class="gtitle">
+                  <text style="font-size:18px;">¥3999</text>
+                  <text style="font-size:13px;">库存 : {{stock}} 件</text>
+                  <text style="font-size:13px;">{{please}}选择 : {{scolor}} {{size}}</text>
+               </view>
+              </view>
+              <image bindtap="hideModal" class="closepic" src="../images/close.png" style="width: 20px;height: 20px"/>
+              <!-- <text style = "font-size:30px;">X</text> -->
+              <view class="box1" style="margin-left:10px;margin-top:20px">颜色:
+                <view class="goods_color">  
+                  <text bindtap="color" style="color:{{color}};border:{{border}}" class="check{{color === false ? 'color' : 'nocolor'}}">白色</text>
+                </view>  
+              </view>
+              <view class="box2" style="margin-left:10px;margin-top:10px">尺寸:
+                <view class="dimension">  
+                  <text>M</text>
+                  <text>L</text>
+                  <text>XL</text>
+                  <text>XXL</text>
+                </view>  
+              </view>
+              <view class="box3" style="margin-left:10px;margin-top:10px">数量:
+               <view class="attribute" style="margin-top:10px">
+                <!-- <text class="numbers">{{numbers}}</text> -->
                 <text class="subtraction" bindtap="subtraction" value="{{number ? '' : number}}">{{subtraction}}</text>
                 <text class="number">{{number}}</text>
                 <text class="add" bindtap="add" value="{{add ? '' : number}}">{{add}}</text>
-            </view>
-            <view class="menue">
-                <text class="ta" bindtap="add_cart">{{ta}}</text>
-                <text class="tb" bindtap="pay">{{tb}}</text>
+               </view>
+              </view>
+
+              <view class="confirm" bindtap="confirm" style="font-size:20px">确认</view>
             </view>
         </view>
     </view>

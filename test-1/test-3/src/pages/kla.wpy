@@ -1,4 +1,87 @@
 <style>
+  /*使屏幕变暗  */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: #000; */
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  /* color: #fff; */
+}
+/*对话框 */
+.commodity_attr_box {
+  /* height: 750rpx; */
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: seashell;
+  /* padding-top: 20rpx; */
+  font-size: 15px;
+  /* opacity: 0.8; */
+}
+.confirm{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    /* position: fixed; */
+    bottom: 0;
+    /* border: 1px solid black; */
+    background-color: orangered;
+}
+.goods_color,.dimension{
+    display: flex;
+    flex-direction: row
+}
+.goods_color text,.dimension text{
+    margin-left: 5px;
+    padding: 5px 0 5px 0;
+    /* height: 20px; */
+    width: 60px;
+    border: 1px solid silver;
+    text-align: center;
+    font-size: 13px;
+}
+.goods_p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.color{
+    color:red;
+    border: 1px solid red;
+}
+.nocolor{
+    color: black;
+    border: 1px solid black;
+}
+.closepic{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+.gtitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+.gpic{
+    /* position: fixed;
+    top: -20px;
+    z-index: 5000; */
+    margin: 10px;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -56,9 +139,10 @@
 .attribute {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-left: -90px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* border: 1px solid black; */
+    margin-left: 5px;
 }
 .attribute text {
     display: flex;
@@ -68,25 +152,28 @@
 }
 
 .numbers {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-left: 0px;
 }
 
 .subtraction {
-    margin-top: 50px;
-    margin-left: 20px;
+    /* margin-top: 10px; */
+    height: 25px;
+    /* margin-left: 10px; */
     width: 45px;
     border: 1px solid silver;
 }
 
 .number {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    height: 25px;
     width: 70px;
     border: 1px solid silver;
 }
 
 .add {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    height: 25px;
     width: 45px;
     border: 1px solid silver;
 }
@@ -100,15 +187,45 @@
                 <text class="title">{{title}}</text>
                 <text class="price">{{price}}</text>
             </view>
-            <view class="attribute">
-                <text class="numbers">{{numbers}}</text>
+            <view class="menue">
+                <text class="ta" @tap="add_cart">{{ta}}</text>
+                <text class="tb" @tap="showModal">{{tb}}</text>
+            </view>
+            <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+            <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+              <view class="goods_p">  
+               <image class = "gpic" src="{{shopping_pic}}" style ="width:100px;height:100px"></image>
+               <view class="gtitle">
+                  <text style="font-size:18px;">¥3999</text>
+                  <text style="font-size:13px;">库存 : {{stock}} 件</text>
+                  <text style="font-size:13px;">{{please}}选择 : {{scolor}} {{size}}</text>
+               </view>
+              </view>
+              <image @tap = "hideModal" class = "closepic" src = "../images/close.png" style = "width: 20px;height: 20px" />
+              <!-- <text style = "font-size:30px;">X</text> -->
+              <view class="box1" style="margin-left:10px;margin-top:20px">颜色:
+                <view class="goods_color">  
+                  <text @tap = "color" style="color:{{color}};border:{{border}}" class = "check{{color === false ? 'color' : 'nocolor'}}">白色</text>
+                </view>  
+              </view>
+              <view class="box2" style="margin-left:10px;margin-top:10px">尺寸:
+                <view class="dimension">  
+                  <text>M</text>
+                  <text>L</text>
+                  <text>XL</text>
+                  <text>XXL</text>
+                </view>  
+              </view>
+              <view class="box3" style="margin-left:10px;margin-top:10px">数量:
+               <view class="attribute" style="margin-top:10px">
+                <!-- <text class="numbers">{{numbers}}</text> -->
                 <text class="subtraction" @tap="subtraction" value="{{number ? '' : number}}">{{subtraction}}</text>
                 <text class="number">{{number}}</text>
                 <text class="add" @tap="add" value="{{add ? '' : number}}">{{add}}</text>
-            </view>
-            <view class="menue">
-                <text class="ta" @tap="add_cart">{{ta}}</text>
-                <text class="tb" @tap="pay">{{tb}}</text>
+               </view>
+              </view>
+
+              <view class="confirm" @tap="confirm" style = "font-size:20px">确认</view>
             </view>
         </view>
     </view>
@@ -121,6 +238,7 @@ export default class Index extends wepy.page {
     navigationBarTitleText: 'kla'
   }
   data = {
+    shopping_pic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
     mapic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
     ta: '加入购物车',
     tb: '立即购买',
@@ -130,7 +248,15 @@ export default class Index extends wepy.page {
     subtraction: '-',
     number: 0,
     add: '+',
-    image: ''
+    image: '',
+    showLoading: true,
+    check: false,
+    color: 'black',
+    border: '1px solid silver',
+    stock: 0,
+    scolor: '颜色',
+    size: '尺寸',
+    please: '请'
   }
   methods = {
     subtraction() {
@@ -156,24 +282,95 @@ export default class Index extends wepy.page {
         // duration: 2000
       })
     },
-    // 显示操作菜单
-    pay() {
-      wepy.showActionSheet({
-        itemList: ['A', 'B', 'C'],
-        success: function(res) {
-          if (!res.cancel) {
-            console.log(res.tapIndex)
-          }
-        }
+    confirm() {
+      console.log('请选择商品规格')
+      wepy.showToast({
+        title: '请选择商品规格',
+        image: '../images/confirm.png'
+        // icon: ''
+        // duration: 2000
       })
+    },
+    color() {
+      let self = this
+      self.check = !self.check
+      if (self.check) {
+        self.border = '1px solid red'
+        self.color = 'red'
+        self.scolor = '"白色"'
+        self.please = '已'
+      } else {
+        self.border = '1px solid sliver'
+        self.color = 'black'
+        self.scolor = '颜色'
+        self.please = '请'
+      }
+    },
+    showModal() {
+    // 显示遮罩层
+    // 实例化一个动画
+      var animation = wepy.createAnimation({
+        duration: 200, // 动画持续时间，单位ms，默认值 400
+        timingFunction: 'linear', // 动画一直较为均匀
+        delay: 0
+      })
+      this.animation = animation
+      animation.translateY(300).step()
+      this.setData({
+        animationData: animation.export(),
+        showModalStatus: true
+      })
+      setTimeout(function () {
+        animation.translateY(0).step()
+        this.setData({
+          animationData: animation.export()
+        })
+      }.bind(this), 200)
+    },
+    hideModal() {
+    // 隐藏遮罩层
+      var animation = wepy.createAnimation({
+        duration: 200,
+        timingFunction: 'linear',
+        delay: 0
+      })
+      this.animation = animation
+      animation.translateY(300).step()
+      this.setData({
+        animationData: animation.export()
+      })
+      setTimeout(function () {
+        animation.translateY(0).step()
+        this.setData({
+          animationData: animation.export(),
+          showModalStatus: false
+        })
+      }.bind(this), 200)
     }
+  }
+    // showLoading() {
+    //   this.setData({
+    //     showLoading: false
+    //   })
+    // }
+    // 显示操作菜单
+    // pay() {
+    //   wepy.showActionSheet({
+    //     itemList: ['A', 'B', 'C'],
+    //     success: function(res) {
+    //       if (!res.cancel) {
+    //         console.log(res.tapIndex)
+    //       }
+    //     }
+    //   })
+    // }
+
     // 动态改变当前页面标题
     // pay() {
     //   wepy.setNavigationBarTitle({
     //     title: '当前页面'
     //   })
     // }
-  }
   onLoad(data) {
     let self = this
     self.title = data.title.k_int

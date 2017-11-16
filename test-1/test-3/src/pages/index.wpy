@@ -7,9 +7,6 @@
   background-color: silver;
   /* height: 90%; */
 }
-template{
-  height: 500px;
-}
 .logo {
   /* position: fixed;
   top: 0px; */
@@ -29,9 +26,14 @@ template{
   border: 1px solid #989898;
 }
 input{
-  display: fixed;
-  top: 0;
-  border: 1px solid black;
+  /* display: flex;
+  margin-top: 0; */
+  border: 1px solid silver;
+  border-radius: 20px;
+  background-color: snow;
+  padding: 3px 5px;
+  color: rebeccapurple;
+  font-size: 15px;
 }
 text {
   color: aqua;
@@ -42,6 +44,7 @@ text {
   /* flex-direction: row; */
   /* justify-content: center;
   align-items: center; */
+  margin-top: 10px;
   width: 100%;
 }
 .mepic{
@@ -88,19 +91,19 @@ text {
   /* height: 50.8%; */
   width: 100%;
 }
-.Korean{
+.korean{
   padding: 10px;
   border: 1px solid silver;
 }
 </style>
 
 <template>
-<!-- <scroll-view style="height: 550px; background-color: silver;"> -->
+<scroll-view>
   <view>
    <view class="container" style="height: {{height}}px; width: {{width}}px">
     <view class="logo">
-      <input placeholder="🔍 请输入搜索内容" />
-      <image class="spic" src="{{spic}}"></image>
+      <input placeholder="🔍 请输入搜索内容" @tap="search" />
+      <!-- <image class="spic" src="{{spic}}" @tap="search"></image> -->
     </view>
     <view class="move">
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
@@ -116,15 +119,15 @@ text {
     <view class="titleb">Milan wedding wedding dress </view>
     <view class="flex-photo">
       <view  class="main" wx:for="{{home}}" wx:key="index">
-        <view class="Korean" @tap = "Korean" data-index="{{index}}">
-          <image class="hpic" src="{{item.h_pic}}"></image>
-          <text class="htext">{{item.h_text}}</text>
+        <view class="korean" @tap = "style" data-index="{{index}}">
+          <image class="hpic" src="{{item.pic}}"></image>
+          <text class="htext">{{item.title}}</text>
         </view>
       </view>    
     </view>
     </view>
   </view>
-  <!-- </scroll-view> -->
+  </scroll-view>
 </template>
 
 <script>
@@ -179,7 +182,12 @@ export default class Index extends wepy.page {
     width: 0
   }
   methods = {
-    Korean(e) {
+    search() {
+      wepy.navigateTo({
+        url: '../pages/search'
+      })
+    },
+    style(e) {
       var item = e.currentTarget.dataset.index
       console.log(e, 'item')
       switch (item) {
@@ -197,25 +205,11 @@ export default class Index extends wepy.page {
         }); break
       }
     }
-    // China() {
-    //   wepy.navigateTo({
-    //     url: '../pages/China'
-    //   })
-    // },
-    // euramerican() {
-    //   wepy.navigateTo({
-    //     url: '../pages/euramerican'
-    //   })
-    // },
-    // fresh() {
-    //   wepy.navigateTo({
-    //     url: '../pages/fresh'
-    //   })
-    // }
   }
   onLoad() {
     let self = this
     self.home = home
+    // 获取系统信息(高度，宽度)
     wepy.getSystemInfo({
       success(res) {
         self.height = res.windowHeight
@@ -224,21 +218,25 @@ export default class Index extends wepy.page {
     })
     console.log(self.width, 'width')
     console.log(self.height, 'height')
+    // 加载
     wepy.showLoading({
       title: '加载中',
       duration: 3000,
       image: '../images/ahome.png'
     })
-    // wepy.request({
-    //   url: 'http://127.0.0.1/user',
-    //   method: 'GET',
-    //   successs: function(res){
-    //     self.text = res.data
-    //     self.setData({
-    //       text res.data
-    //     })
-    //   }
-    // })
+
+    // 连接后台
+    wepy.request({
+      url: 'http://127.0.0.1:7001/user',
+      method: 'GET',
+      success: function(res) {
+        self.home = res.data
+        self.setData({
+          home: res.data
+        })
+        console.log(res.data)
+      }
+    })
   }
 }
 </script>

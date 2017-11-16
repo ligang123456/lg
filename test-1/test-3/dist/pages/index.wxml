@@ -1,10 +1,10 @@
 
-<!-- <scroll-view style="height: 550px; background-color: silver;"> -->
+<scroll-view>
   <view>
    <view class="container" style="height: {{height}}px; width: {{width}}px">
     <view class="logo">
-      <input placeholder="🔍 请输入搜索内容"/>
-      <image class="spic" src="{{spic}}"/>
+      <input placeholder="🔍 请输入搜索内容" bindtap="search"/>
+      <!-- <image class="spic" src="{{spic}}" bindtap="search"></image> -->
     </view>
     <view class="move">
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
@@ -20,12 +20,12 @@
     <view class="titleb">Milan wedding wedding dress </view>
     <view class="flex-photo">
       <view class="main"  wx:for="{{home}}" wx:key="index">
-        <view class="Korean" bindtap="Korean" data-index="{{index}}">
-          <image class="hpic" src="{{item.h_pic}}"/>
-          <text class="htext">{{item.h_text}}</text>
+        <view class="korean" bindtap="style" data-index="{{index}}">
+          <image class="hpic" src="{{item.pic}}"/>
+          <text class="htext">{{item.title}}</text>
         </view>
       </view>    
     </view>
     </view>
   </view>
-  <!-- </scroll-view> -->
+  </scroll-view>

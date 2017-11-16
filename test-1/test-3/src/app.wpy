@@ -31,6 +31,7 @@ export default class extends wepy.app {
   config = {
     pages: [
       'pages/index',
+      'pages/search',
       'pages/mine',
       'pages/myadderss',
       'pages/addmyaddress',

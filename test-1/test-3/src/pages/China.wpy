@@ -76,10 +76,10 @@ image {
     <view class="photo">
     <view class="c_goods">
       <view class="cgoods" wx:for="{{china}}" wx:key="index">
-        <image class="c_pic" src="{{item.c_pic}}" id="{{index}}" @tap="lagoods"></image>
-        <text class="c_introduce">{{item.c_int}}</text>
-        <text class="c_price">{{item.c_price}}</text>
-        <text class="c_number">{{item.c_number}}</text>
+        <image class="c_pic" src="{{item.pic}}" id="{{index}}" @tap="lagoods"></image>
+        <text class="c_introduce">{{item.title}}</text>
+        <text class="c_price">{{item.price}}</text>
+        <text class="c_number">{{item.number}}</text>
         <image class="c_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" @tap="collect"></image>
       </view>
      </view> 
@@ -90,7 +90,7 @@ image {
 <script>
 import china from '../data/china.js'
 import wepy from 'wepy'
-export default class Korean extends wepy.page {
+export default class China extends wepy.page {
   config = {
     navigationBarTitleText: '韩式婚纱/wedding'
   }
@@ -127,7 +127,7 @@ export default class Korean extends wepy.page {
       let self = this
       const index = e.currentTarget.id
       wepy.navigateTo({
-        url: `./kla?image=${china[index].c_pic}&title=${china[index].c_int}&price=${china[index].c_price}`
+        url: `./kla?image=${china[index].pic}&title=${china[index].title}&price=${china[index].price}`
       })
       console.log(self.china[index], '111111')
     }
@@ -141,9 +141,15 @@ export default class Korean extends wepy.page {
     // }
   }
   onLoad() {
+    wepy.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 1000
+      // image: '../images/ahome.png'
+    })
     let self = this
     self.china = china
-    console.log(self.korean, 'aaaaaaaaaa')
+    console.log(self.china, 'aaaaaaaaaa')
   }
 }
 </script>

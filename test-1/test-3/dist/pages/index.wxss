@@ -7,9 +7,6 @@
   background-color: silver;
   /* height: 90%; */
 }
-template{
-  height: 500px;
-}
 .logo {
   /* position: fixed;
   top: 0px; */
@@ -29,9 +26,14 @@ template{
   border: 1px solid #989898;
 }
 input{
-  display: fixed;
-  top: 0;
-  border: 1px solid black;
+  /* display: flex;
+  margin-top: 0; */
+  border: 1px solid silver;
+  border-radius: 20px;
+  background-color: snow;
+  padding: 3px 5px;
+  color: rebeccapurple;
+  font-size: 15px;
 }
 text {
   color: aqua;
@@ -42,6 +44,7 @@ text {
   /* flex-direction: row; */
   /* justify-content: center;
   align-items: center; */
+  margin-top: 10px;
   width: 100%;
 }
 .mepic{
@@ -88,7 +91,7 @@ text {
   /* height: 50.8%; */
   width: 100%;
 }
-.Korean{
+.korean{
   padding: 10px;
   border: 1px solid silver;
 }
