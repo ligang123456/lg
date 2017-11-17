@@ -113,6 +113,7 @@
     align-items: center;
     width: 100%;
 }
+
 .ta,
 .tb {
     border: 1px solid silver;
@@ -126,14 +127,13 @@
 }
 
 .price {
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 30px;
+    margin-top: 20px;
     margin-left: -200px;
 }
 
 .title {
     margin-top: 15px;
-    font-size: 15px;
 }
 
 .attribute {
@@ -182,18 +182,18 @@
 <template>
     <view>
         <view class="container" id="index">
-            <view class="main">
-                <image class="mapic" src="{{image}}"></image>
-                <text class="title">{{title}}</text>
-                <text class="price">¥{{price}}</text>
-            </view>
             <view class="menue">
-                <text class="ta" @tap="showModal_a">{{ta}}</text>
-                <text class="tb" @tap="showModal">{{tb}}</text>
+                <text class="ta" @tap="showModal">{{ta}}</text>
+                <text class="tb">{{tb}}</text>
             </view>
             <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}">
+              <view class="main">
+                <image class="mapic" src="{{image}}"></image>
+                <text class="title">{{title}}</text>
+                <text class="price">{{price}}</text>
             </view>
-            <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus_a}}">
+            </view>
+            <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
               <view class="goods_p">  
                <image class = "gpic" src="{{shopping_pic}}" style ="width:100px;height:100px"></image>
                <view class="gtitle">
@@ -206,43 +206,7 @@
               <!-- <text style = "font-size:30px;">X</text> -->
               <view class="box1" style="margin-left:10px;margin-top:20px">颜色:
                 <view class="goods_color">  
-                  <text @tap = "color_a" style="color:{{a_color}};border:{{a_border}}" class = "check{{color === false ? 'color' : 'nocolor'}}">白色</text>
-                </view>  
-              </view>
-              <view class="box2" style="margin-left:10px;margin-top:10px">尺寸:
-                <view class="dimension">  
-                  <text @tap = "size_M_a" style="color:{{a_M_color}};border:{{a_M_border}}" class = "s_m{{M_color === false ? 'M_color' : 'nocolor'}}">M</text>
-                  <text>L</text>
-                  <text>XL</text>
-                  <text>XXL</text>
-                </view>  
-              </view>
-              <view class="box3" style="margin-left:10px;margin-top:10px">数量:
-               <view class="attribute" style="margin-top:10px">
-                <!-- <text class="numbers">{{numbers}}</text> -->
-                <text class="subtraction" @tap="subtraction" value="{{number ? '' : number}}">{{subtraction}}</text>
-                <text class="number">{{number}}</text>
-                <text class="add" @tap="add" value="{{add ? '' : number}}">{{add}}</text>
-               </view>
-              </view>
-              <view class="confirm" @tap="confirm_a" style = "font-size:20px">确认</view>
-            </view>
-
-
-            <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
-              <view class="goods_p">  
-               <image class = "gpic" src="{{shopping_pic}}" style ="width:100px;height:100px"></image>
-               <view class="gtitle">
-                  <text style="font-size:18px;">¥3999</text>
-                  <text style="font-size:13px;">库存 : {{stock}} 件</text>
-                  <text style="font-size:13px;">{{please}}选择 : {{scolor}} {{size}}</text>
-               </view>
-              </view>
-              <image @tap = "hideModal" class = "closepic" src = "../images/close.png" style = "width: 20px;height: 20px" />
-              <!-- <text style = "font-size:30px;">X</text> -->
-              <view class="box1" style="margin-left:10px;margin-top:20px">颜色:
-                <view class="goods_color">  
-                  <text @tap = "color" style="color:{{color}};border:{{border}}" class = "check{{color === false ? 'color' : 'nocolor'}}">白色</text>
+                  <text @tap = "color" style="color:{{a_color}};border:{{a_border}}" class = "check{{color === false ? 'color' : 'nocolor'}}">白色</text>
                 </view>  
               </view>
               <view class="box2" style="margin-left:10px;margin-top:10px">尺寸:
@@ -257,10 +221,11 @@
                <view class="attribute" style="margin-top:10px">
                 <!-- <text class="numbers">{{numbers}}</text> -->
                 <text class="subtraction" @tap="subtraction" value="{{number ? '' : number}}">{{subtraction}}</text>
-                <text class="number">{{number}}</text>
+                <text class="number">{{a_number}}</text>
                 <text class="add" @tap="add" value="{{add ? '' : number}}">{{add}}</text>
                </view>
               </view>
+
               <view class="confirm" @tap="confirm" style = "font-size:20px">确认</view>
             </view>
         </view>
@@ -274,7 +239,7 @@ export default class Index extends wepy.page {
     navigationBarTitleText: 'kla'
   }
   data = {
-    shopping_pic: 'http://i03.pictn.sogoucdn.com/33e697ad39393d3b',
+    shopping_pic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
     mapic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
     ta: '加入购物车',
     tb: '立即购买',
@@ -282,26 +247,19 @@ export default class Index extends wepy.page {
     title: '',
     numbers: '数量',
     subtraction: '-',
-    number: 1,
+    a_number: 1,
     add: '+',
     image: '',
     showLoading: true,
     check: false,
-    // size_M: false,
-    a_M_color: 'black',
-    a_M_border: '1px solid silver',
-    // size_M: false,
+    size_M: false,
     M_color: 'black',
     M_border: '1px solid silver',
     a_color: 'black',
     a_border: '1px solid silver',
-    color: 'black',
-    border: '1px solid silver',
     stock: 0,
     a_scolor: '颜色',
     a_size: '尺寸',
-    scolor: '颜色',
-    size: '尺寸',
     please: '请'
   }
   methods = {
@@ -324,25 +282,6 @@ export default class Index extends wepy.page {
     //     // duration: 2000
     //   })
     // },
-    confirm_a() {
-      // console.log('请选择商品规格')
-      // wepy.showToast({
-      //   title: '请选择商品规格',
-      //   image: '../images/confirm.png'
-      // })
-      let self = this
-      if (self.a_scolor === '颜色' || self.a_size === '尺寸' || self.number === 0) {
-        wepy.showToast({
-          title: '请选择商品规格',
-          image: '../images/confirm.png'
-        })
-      } else {
-        wepy.showToast({
-          title: '加入成功'
-          // image: '../images/confirm.png'
-        })
-      }
-    },
     confirm() {
       // console.log('请选择商品规格')
       // wepy.showToast({
@@ -350,7 +289,7 @@ export default class Index extends wepy.page {
       //   image: '../images/confirm.png'
       // })
       let self = this
-      if (self.scolor === '颜色' || self.size === '尺寸' || self.number === 0) {
+      if (self.a_scolor === '颜色' || self.a_size === '尺寸') {
         wepy.showToast({
           title: '请选择商品规格',
           image: '../images/confirm.png'
@@ -360,53 +299,20 @@ export default class Index extends wepy.page {
           title: '已选择',
           image: '../images/confirm.png'
         })
-        wepy.navigateTo({
-          url: '../pages/confirm'
-        })
-      }
-    },
-    color_a() {
-      let self = this
-      self.check = !self.check
-      if (self.check) {
-        self.a_border = '1px solid red'
-        self.a_color = 'red'
-        self.a_scolor = '"白色"'
-        // self.please = '已'
-      } else {
-        self.a_border = '1px solid sliver'
-        self.a_color = 'black'
-        self.a_scolor = '颜色'
-        self.please = '请'
-      }
-    },
-    size_M_a() {
-      let self = this
-      self.s_m = !self.s_m
-      if (self.s_m) {
-        self.a_M_border = '1px solid red'
-        self.a_M_color = 'red'
-        self.a_size = '"M"'
-        self.please = '已'
-      } else {
-        self.a_M_border = '1px solid sliver'
-        self.a_M_color = 'black'
-        self.a_size = '尺寸'
-        self.please = '请'
       }
     },
     color() {
       let self = this
       self.check = !self.check
       if (self.check) {
-        self.border = '1px solid red'
-        self.color = 'red'
-        self.scolor = '"白色"'
-        // self.please = '已'
+        self.a_border = '1px solid red'
+        self.a_color = 'red'
+        self.a_scolor = '"白色"'
+        self.please = '已'
       } else {
-        self.border = '1px solid sliver'
-        self.color = 'black'
-        self.scolor = '颜色'
+        self.a_border = '1px solid sliver'
+        self.a_color = 'black'
+        self.a_scolor = '颜色'
         self.please = '请'
       }
     },
@@ -416,35 +322,14 @@ export default class Index extends wepy.page {
       if (self.s_m) {
         self.M_border = '1px solid red'
         self.M_color = 'red'
-        self.size = '"M"'
+        self.a_size = '"M"'
         self.please = '已'
       } else {
         self.M_border = '1px solid sliver'
         self.M_color = 'black'
-        self.size = '尺寸'
+        self.a_size = '尺寸'
         self.please = '请'
       }
-    },
-    showModal_a() {
-    // 显示遮罩层
-    // 实例化一个动画
-      var animation = wepy.createAnimation({
-        duration: 200, // 动画持续时间，单位ms，默认值 400
-        timingFunction: 'linear', // 动画一直较为均匀
-        delay: 0
-      })
-      this.animation = animation
-      animation.translateY(300).step()
-      this.setData({
-        animationData: animation.export(),
-        showModalStatus_a: true
-      })
-      setTimeout(function () {
-        animation.translateY(0).step()
-        this.setData({
-          animationData: animation.export()
-        })
-      }.bind(this), 200)
     },
     showModal() {
     // 显示遮罩层
@@ -516,9 +401,9 @@ export default class Index extends wepy.page {
     self.title = data.title
     self.image = data.pic
     self.price = data.price
-    console.log(self.title, '22222')
-    console.log(self.image, '图片')
-    console.log(self.price, '价格')
+    console.log(data.title, '22222')
+    console.log(data.image, '图片')
+    console.log(data.price, '价格')
   }
 }
 </script>

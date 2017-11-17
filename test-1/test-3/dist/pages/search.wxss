@@ -14,5 +14,5 @@ input{
   padding:3px;
   color:silver;
   font-size: 15px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }

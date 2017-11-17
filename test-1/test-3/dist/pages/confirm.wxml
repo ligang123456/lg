@@ -1,0 +1,8 @@
+
+  <view class="container">
+    <view class="address" bindtap="myaddress">收货地址</view>
+    <view class="menue">
+      <text class="price">总价:¥{{price}}</text>
+      <text class="corder">提交订单</text>
+    </view>
+  </view>

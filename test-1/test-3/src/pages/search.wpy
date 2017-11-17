@@ -14,7 +14,7 @@ input{
   padding:3px;
   color:silver;
   font-size: 15px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 </style>
 
@@ -34,6 +34,10 @@ input{
 </template>
 
 <script>
-export default {
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '搜索'
+  }
 }
 </script>

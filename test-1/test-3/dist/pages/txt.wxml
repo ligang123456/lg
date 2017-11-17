@@ -1,12 +1,7 @@
 
   <view>
     <view class="commodity_screen" bindtap="hideModal"  wx:if="{{showModalStatus}}"/>
-    <view animation="{{animationData}}" class="commodity_attr_box"  wx:if="{{showModalStatus}}">
-      <image src="../images/head.jpeg" style="width:50px;height:50px"/>
-      <view class="box1">颜色:</view>
-      <view class="box2">尺寸:</view>
-      <view class="box3">数量:</view>
-    </view>
+    <view animation="{{animationData}}" class="commodity_attr_box"  wx:if="{{showModalStatus}}"/>
     <view bindtap="showModal">显示</view>
-    <!-- <vie bindtap="hideModal">消失</view> -->
+    <view bindtap="hideModal">隐藏</view>
   </view>

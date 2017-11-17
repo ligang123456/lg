@@ -228,7 +228,7 @@ export default class Index extends wepy.page {
     // 连接后台
     wepy.request({
       url: 'http://127.0.0.1:7001/user',
-      method: 'GET',
+      method: 'POST',
       success: function(res) {
         self.home = res.data
         self.setData({

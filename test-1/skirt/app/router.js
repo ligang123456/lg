@@ -2,5 +2,5 @@
 
 module.exports = app => {
   // app.get('/', 'home.index');
-  app.get('/user', 'home.get');
+  app.post('/user', 'home.get');
 };

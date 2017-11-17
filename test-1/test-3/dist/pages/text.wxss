@@ -113,6 +113,7 @@
     align-items: center;
     width: 100%;
 }
+
 .ta,
 .tb {
     border: 1px solid silver;
@@ -126,14 +127,13 @@
 }
 
 .price {
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 30px;
+    margin-top: 20px;
     margin-left: -200px;
 }
 
 .title {
     margin-top: 15px;
-    font-size: 15px;
 }
 
 .attribute {

@@ -45,6 +45,7 @@ export default class extends wepy.app {
       'pages/mynickname',
       'pages/mycode',
       'pages/kla',
+      'pages/confirm',
       'pages/klb',
       'pages/mypay',
       'pages/mygoods',

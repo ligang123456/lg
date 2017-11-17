@@ -1,0 +1,98 @@
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menue{
+  position: fixed;
+  bottom: 0px;
+  border:1px solid silver;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.price{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 30px;
+  border: 1px solid silver;
+  /* flex: 1; */
+  padding: 5px;
+  font-size: 15px;
+}
+.corder{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 30px;
+  border: 1px solid silver;
+  background-color: orangered;
+  /* flex: 1; */
+  padding: 5px;
+  font-size: 15px;
+}
+
+</style>
+
+<template>
+  <view class="container">
+    <view class="address" @tap="myaddress">收货地址</view>
+    <view class="menue">
+      <text class="price">总价:¥{{price}}</text>
+      <text class="corder">提交订单</text>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '订单处理'
+  }
+  data = {
+    price: 3999
+    // myname: '收货人',
+    // mynumber: '手机号码',
+    // myregion: '地区信息',
+    // myaddress: '详细地址',
+    // region: ['', '']
+  }
+  methods = {
+    myaddress() {
+      wepy.chooseAddress({
+        success: function (res) {
+          console.log(res.myname)
+          console.log(res.postalCode)
+          console.log(res.provinceName)
+          console.log(res.cityName)
+          console.log(res.countyName)
+          console.log(res.detailInfo)
+          console.log(res.nationalCode)
+          console.log(res.telNumber)
+        }
+      })
+    }
+  }
+  onLoad() {
+    let res = this
+    console.log(res.myname)
+          console.log(res.postalCode)
+          console.log(res.provinceName)
+          console.log(res.cityName)
+          console.log(res.countyName)
+          console.log(res.detailInfo)
+          console.log(res.nationalCode)
+          console.log(res.telNumber)
+  }
+}
+</script>

@@ -1,6 +1,7 @@
 module.exports = [
   {
-    pic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
+    // pic: 'http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg',
+    pic: 'http://i03.pictn.sogoucdn.com/33e697ad39393d3b',
     title: '2017韩式婚纱',
     price: 3999,
     number: 0,
