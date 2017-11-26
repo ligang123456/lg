@@ -7,43 +7,43 @@ module.exports = [
     number: 0,
     acollect: ''
   }, {
-    pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2269117905,883006692&fm=27&gp=0.jpg',
+    pic: 'http://i02.pic.sogou.com/897efff4f5f9db9f',
     title: '2017韩式婚纱',
     price: 3999,
     number: 0,
     acollect: ''
   }, {
-    pic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2685210028,3457372075&fm=27&gp=0.jpg',
-    int: '2017韩式婚纱',
-    price: 3999,
-    number: 0,
-    acollect: ''
-  }, {
-    pic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1943435865,804430348&fm=27&gp=0.jpg',
-    int: '2017韩式婚纱',
-    k_price: 3999,
-    k_number: 0,
-    acollect: ''
-  }, {
-    pic: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3960877383,1051484866&fm=27&gp=0.jpg',
+    pic: 'http://i02.pic.sogou.com/ea3d899e01bd40ae',
     title: '2017韩式婚纱',
     price: 3999,
     number: 0,
     acollect: ''
   }, {
-    pic: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1453502849,2727599889&fm=27&gp=0.jpg',
+    pic: 'http://i01.pic.sogou.com/c25589f7ea4be937',
     title: '2017韩式婚纱',
     price: 3999,
     number: 0,
     acollect: ''
   }, {
-    pic: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1161813563,3069512331&fm=27&gp=0.jpg',
+    pic: 'http://i03.pic.sogou.com/67f9a1bf1b762fda',
     title: '2017韩式婚纱',
     price: 3999,
     number: 0,
     acollect: ''
   }, {
-    pic: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2650753610,2725677441&fm=27&gp=0.jpg',
+    pic: 'http://i03.pic.sogou.com/62a9aca047d94efe',
+    title: '2017韩式婚纱',
+    price: 3999,
+    number: 0,
+    acollect: ''
+  }, {
+    pic: 'http://i04.pic.sogou.com/be15067f1a7c3934',
+    title: '2017韩式婚纱',
+    price: 3999,
+    number: 0,
+    acollect: ''
+  }, {
+    pic: 'http://i04.pic.sogou.com/b3be22f24311c4f7',
     title: '2017韩式婚纱',
     price: 3999,
     number: 0,

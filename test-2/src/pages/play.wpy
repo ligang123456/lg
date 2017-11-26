@@ -4,11 +4,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(http://img4.imgtn.bdimg.com/it/u=163844659,2212480365&fm=27&gp=0.jpg);
+    // background-image: url(http://img4.imgtn.bdimg.com/it/u=163844659,2212480365&fm=27&gp=0.jpg);
     //border: 10px solid silver;
     padding: 0;
     margin: 0px;
-    background-color: red;
+    background-color: teal;
+    // background: hsla(52, 52, 52); 
+    // opacity: 0.8; // 透明度
 }
 .buttom{
     display: flex;
@@ -16,12 +18,34 @@
     align-items: center;
     justify-content: center; 
 }
+.title{
+  margin-top: 20px;
+  // border: 1px solid black;
+  // padding: 30px;
+  color: silver;
+  text-shadow: 3px 3px 3px black;
+}
+// .vpic{
+//   padding-top: -10px;
+//   display: flex;
+//   border-radius: 50%;
+//   background-color: black;
+// }
 .pic{
+    // padding: 10px;
     width: 220px;
     height: 220px;
     border-radius: 50%;
     margin-top: 30px;
-    border: 25px solid rgba(66, 66, 66, 0.3);
+    border: 25px solid hsla(66, 66, 66, 0.3);
+    // border: 25px solid rgba(55, 55, 55, 0.3);
+    filter: saturate(3.6);  // 饱和度
+    filter: hue-rotate(360deg); // 色相旋转
+    filter: drop-shadow(0px 0px 30px #00BFFF); // 阴影
+    box-shadow: 0px 5px 10px brown;
+    // background-color: blue;
+    // filter: opacity(55%); // 透明度
+    // filter: sepia(0.77); // 褐色
     //animation: rotate 10s linear infinite;
 }
 .rotate-360{
@@ -38,7 +62,7 @@
   100% {transform: rotate(360deg);}
 }
 .play{
-    width: 100%;
+    // width: 100%;
     margin-bottom: 0;
     padding: 10px;
     display: flex;
@@ -72,7 +96,7 @@ audio{
     margin-top: 10px;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -91,9 +115,11 @@ audio{
 }
 </style>
 <template>
-  <view class="container">
-      <view class="title" style="margin-top:20px">此时此刻</view>
+  <view class="container" style="height: {{height}}px; width: {{width}}px">
+      <view class="title">{{title}}</view>
+      <!-- <view class = "vpic"> -->
       <image class="pic {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}" src="{{pic}}"></image>
+      <!-- </view> -->
    <view class="buttom">
        <view class="collect"></view>  
        <view class="progress">
@@ -103,7 +129,7 @@ audio{
      <audio  src="{{src}}" id="myAudio">
          <image class="cycle" src="../images/random.png"></image>
          <image class="forward" src="../images/forward.png"></image>
-         <image class="apic" src="{{play ? '../images/pause.png' : apic}}" @tap="onReady"></image>
+         <image class="apic" src="{{play ? '../images/pause.png' : apic}}" @tap="on"></image>
          <image class="backward" src="../images/backward.png"></image>
          <image class="collect" src="{{collect ? '../images/collects.png' : copic}}" @tap="collect"></image>
      </audio>
@@ -113,6 +139,7 @@ audio{
 </template>
 
 <script>
+import music from '../data/list.js'
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
@@ -120,12 +147,21 @@ export default class Index extends wepy.page {
   }
   data = {
     // src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
-    src: 'http://ac-5g9r20ds.clouddn.com/e54ad7f0a834b9c07ec6.mp3',
-    pic: 'http://img5.imgtn.bdimg.com/it/u=3435509739,602925644&fm=27&gp=0.jpg',
+    // src: 'http://music.163.com/song/media/outer/url?id=476592630.mp3',亡
+    // src: 'http://music.163.com/song/media/outer/url?id=26662115.mp3',战
+    // src: 'http://music.163.com/song/media/outer/url?id=483671599.mp3',光
+    // pic: 'http://img5.imgtn.bdimg.com/it/u=3435509739,602925644&fm=27&gp=0.jpg',
+    src: '',
+    pic: '',
     apic: '../images/play.png',
     copic: '../images/collect.png',
-    play: false,
-    collect: false
+    title: '',
+    music: [],
+    play: true,
+    collect: false,
+    id: 0,
+    pauseStatus: false
+    // index: ''
   }
   methods = {
     collect() {
@@ -133,27 +169,47 @@ export default class Index extends wepy.page {
       self.collect = !self.collect
     }
   }
-  onReady(e) {
+  on(e) {
     let self = this
+    // const index = e.currentTarget.id
+    // console.log(, 'id') // id
     self.play = !self.play
     if (self.play) {
         // 使用 wx.createAudioContext 获取 audio 上下文 context
       this.audioCtx = wepy.createAudioContext('myAudio')
       // this.audioCtx.setSrc('http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46')
       this.audioCtx.play()
+      // self.src = music[index].src // 音乐链接地址
       self.pauseStatus = false
     } else {
       this.audioCtx.pause()
       self.pauseStatus = true
     }
   }
-  onLoad() {
+  onLoad(data) {
     let self = this
     self.pauseStatus = true
     setTimeout(function() {
       self.pauseStatus = false
       self.setData({pauseStatus: false})
     }, 2000)
+    self.title = data.title // 歌名
+    self.pic = data.pic  // 专辑图片
+    let id = data.id
+    console.log(id, 'ID')
+    self.music = music
+    self.music = self.music
+    self.src = self.music[id].src
+    console.log(self.src, 'srccccccccccccccc')
+    console.log(data.title, '歌名')
+    console.log(self.pic, '专辑图片')
+     // 获取系统信息(高度，宽度)
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
   }
 }
 </script>

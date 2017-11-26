@@ -8,6 +8,7 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      // 'pages/test',
       'pages/music',
       'pages/video',
       'pages/radio',
@@ -24,7 +25,7 @@ export default class extends wepy.app {
     tabBar: {
       color: 'black',
       selectedColor: '#1afa29',
-      backgroundColor: 'white',
+      backgroundColor: '#696969',
       backgroundTextStyle: 'light',
       list: [{
         pagePath: 'pages/music',

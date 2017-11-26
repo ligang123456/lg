@@ -12,25 +12,28 @@
     </view>
 
      <view class="main">
-      <view class="body">
-      <view class="play">
-          <audio src="{{src}}" id="myAudio">
-            <image class="ppic" src="{{play ? '../images/lpause.png' : ppic}}" bindtap="on">></image>
-          </audio>
-          <text class="ptext">{{ptext}}</text>
-      </view>
+        <view class="body">
+          <!-- <view class="play">
+              <audio  src="{{src}}" id="myAudio">
+                <image class="ppic" src="{{play ? '../images/lpause.png' : ppic}}" bindtap="on">></image>
+              </audio>
+              <text class="ptext">{{ptext}}</text>
+          </view> -->
 
-       <view class="list">
-         <view class="list_one" bindtap="play">
-          <image class="fpic" src="{{fpic}}"/> 
-          <view class="first"> 
-            <text class="fname">此时此刻</text>
-            <text class="fauthor">许巍</text>
+          <!-- <view class="list"> -->
+          <view class="list"  wx:for="{{music}}" wx:key="index" id="{{index}}" bindtap="play">
+            <audio src="{{item.src}}" id="myAudio"/>
+            <view class="list_one">
+              <image class="fpic" src="{{item.pic}}"/>
+              <view class="first"> 
+                <text class="fname">{{item.name}}</text>
+                <text class="fauthor">{{item.autor}}</text>
+              </view>
+            </view> 
           </view>
-         </view> 
-       </view>
-      </view>
-      <text class="update" style="font-size:10px;color:silver;margin-top:20px">更新于：1天前</text>
-      </view>
+          <!-- </view> -->
+        </view>
+     <text class="update">更新于：1天前</text>
+     </view>
 
   </view>

@@ -4,9 +4,10 @@
 }
 .body {
   //border: 1px solid black;
-  width: 90%;
+  width: 100%;
   background-color: #ffffff;
   //height: 500px;
+  padding: 5px;
 }
 .main {
   margin-top: 20px;
@@ -14,8 +15,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding-bottom: 20px;
+  // width: 100%;
+  // padding-bottom: 20px;
+  padding: 10px;
 }
 .logo {
   // width: 100%;
@@ -47,12 +49,18 @@ audio {
   flex-direction: column;
   justify-content: center;
   //   margin-top: 30px;
-  // padding-left: 10px;
+  padding-left: 10px;
 }
-.mine {
-  // padding-right: 10px;
-  //margin-left: 20px;
+.update{
+  font-size: 10px;
+  color: silver;
+  position: fixed;
+  bottom: 10px;
 }
+// .mine {
+//   // padding-right: 10px;
+//   //margin-left: 20px;
+// }
 .collect {
   border-left: 1px solid silver;
   // padding-left: 10px;
@@ -107,31 +115,35 @@ audio {
     </view>
 
      <view class="main">
-      <view class="body">
-      <view class="play">
-          <audio  src="{{src}}" id="myAudio">
-            <image class="ppic" src="{{play ? '../images/lpause.png' : ppic}}" @tap="on">></image>
-          </audio>
-          <text class="ptext">{{ptext}}</text>
-      </view>
+        <view class="body">
+          <!-- <view class="play">
+              <audio  src="{{src}}" id="myAudio">
+                <image class="ppic" src="{{play ? '../images/lpause.png' : ppic}}" @tap="on">></image>
+              </audio>
+              <text class="ptext">{{ptext}}</text>
+          </view> -->
 
-       <view class="list">
-         <view class="list_one" @tap="play">
-          <image class="fpic" src="{{fpic}}"></image> 
-          <view class="first"> 
-            <text class="fname">此时此刻</text>
-            <text class="fauthor">许巍</text>
+          <!-- <view class="list"> -->
+          <view class="list" wx:for="{{music}}" wx:key="index" id="{{index}}" @tap="play">
+            <audio  src="{{item.src}}" id="myAudio"></audio>
+            <view class="list_one" >
+              <image class="fpic" src="{{item.pic}}"></image>
+              <view class="first"> 
+                <text class="fname">{{item.name}}</text>
+                <text class="fauthor">{{item.autor}}</text>
+              </view>
+            </view> 
           </view>
-         </view> 
-       </view>
-      </view>
-      <text class="update" style="font-size:10px;color:silver;margin-top:20px">更新于：1天前</text>
-      </view>
+          <!-- </view> -->
+        </view>
+     <text class="update">更新于：1天前</text>
+     </view>
 
   </view>
 </template>
 
 <script>
+import music from '../data/list.js'
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
@@ -139,34 +151,58 @@ export default class Index extends wepy.page {
     navigationBarBackgroundColor: '#FFFAFA'
   }
   data = {
-    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
-    lpic:
-      'http://img4.imgtn.bdimg.com/it/u=4101404142,3036343052&fm=200&gp=0.jpg',
-    play: false,
-    ppic: '../images/lplay.png',
-    fpic:
-      'http://img4.imgtn.bdimg.com/it/u=4101404142,3036343052&fm=200&gp=0.jpg',
-    ptext: '播放全部'
+    // src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
+    src: '',
+    lpic: 'http://img4.imgtn.bdimg.com/it/u=4101404142,3036343052&fm=200&gp=0.jpg',
+    // play: false,
+    // ppic: '../images/lplay.png',
+    // pic: 'http://img4.imgtn.bdimg.com/it/u=4101404142,3036343052&fm=200&gp=0.jpg',
+    // ptext: '播放全部',
+    music: []
   }
   methods = {
-    play() {
+    play(e) {
+      const index = e.currentTarget.id
+      console.log(index, 'list.wpy')
       wepy.navigateTo({
-        url: '../pages/play'
+        // url: '../pages/play'
+        url: `./play?pic=${music[index].pic}&title=${music[index].name}&id=${index}`
       })
     }
   }
 
-  on(e) {
+  // onReady(e) {
+  //   let self = this
+  //   const index = e.currentTarget.id
+  //   this.audioCtx = wepy.createAudioContext('myAudio')
+  //     // this.audioCtx.setSrc('http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46')
+  //   this.audioCtx.play()
+  //   console.log(self.music, '111')
+  //   wepy.navigateTo({
+  //       // url: '../pages/play'
+  //       url: `./play?pic=${music[index].pic}&title=${music[index].name}&src=${music[index].src}`
+  //     })
+  //   // let self = this
+  //   // self.play = !self.play
+  //   // if (self.play) {
+  //   //     // 使用 wx.createAudioContext 获取 audio 上下文 context
+  //   //   this.audioCtx = wepy.createAudioContext('myAudio')
+  //   //   // this.audioCtx.setSrc('http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46')
+  //   //   this.audioCtx.play()
+  //   // } else {
+  //   //   this.audioCtx.pause()
+  //   // }
+  //   // wepy.playBackgroundAudio({
+  //   //   dataUrl: 'http://music.163.com/song/media/outer/url?id=26662115.mp3',
+  //   //   title: 'The Dawn (亡灵序曲完美钢琴版) [Cover Dreamtale]',
+  //   //   singer: 'Mike Zhou',
+  //   //   // 图片地址地址
+  //   //   coverImgUrl: 'http://pic.baike.soso.com/ugc/baikepic2/26301/20170823205318-1534206785_jpg_300_225_10953.jpg/300'
+  //   // })
+  // }
+  onLoad() {
     let self = this
-    self.play = !self.play
-    if (self.play) {
-        // 使用 wx.createAudioContext 获取 audio 上下文 context
-      this.audioCtx = wepy.createAudioContext('myAudio')
-      // this.audioCtx.setSrc('http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46')
-      this.audioCtx.play()
-    } else {
-      this.audioCtx.pause()
-    }
+    self.music = music
   }
 }
 </script>
