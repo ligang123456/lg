@@ -13,7 +13,7 @@
      <audio src="{{src}}" id="myAudio">
          <image class="cycle" src="../images/random.png"/>
          <image class="forward" src="../images/forward.png"/>
-         <image class="apic" src="{{play ? '../images/pause.png' : apic}}" bindtap="on"/>
+         <image class="apic" src="{{play ? '../images/pause.png' : apic}}" bindtap="onRead"/>
          <image class="backward" src="../images/backward.png"/>
          <image class="collect" src="{{collect ? '../images/collects.png' : copic}}" bindtap="collect"/>
      </audio>

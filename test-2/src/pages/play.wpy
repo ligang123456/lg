@@ -129,7 +129,7 @@ audio{
      <audio  src="{{src}}" id="myAudio">
          <image class="cycle" src="../images/random.png"></image>
          <image class="forward" src="../images/forward.png"></image>
-         <image class="apic" src="{{play ? '../images/pause.png' : apic}}" @tap="on"></image>
+         <image class="apic" src="{{play ? '../images/pause.png' : apic}}" @tap="onRead"></image>
          <image class="backward" src="../images/backward.png"></image>
          <image class="collect" src="{{collect ? '../images/collects.png' : copic}}" @tap="collect"></image>
      </audio>
@@ -157,7 +157,7 @@ export default class Index extends wepy.page {
     copic: '../images/collect.png',
     title: '',
     music: [],
-    play: true,
+    play: false,
     collect: false,
     id: 0,
     pauseStatus: false
@@ -169,7 +169,7 @@ export default class Index extends wepy.page {
       self.collect = !self.collect
     }
   }
-  on(e) {
+  onRead(e) {
     let self = this
     // const index = e.currentTarget.id
     // console.log(, 'id') // id
@@ -182,6 +182,7 @@ export default class Index extends wepy.page {
       // self.src = music[index].src // 音乐链接地址
       self.pauseStatus = false
     } else {
+      this.audioCtx = wepy.createAudioContext('myAudio')
       this.audioCtx.pause()
       self.pauseStatus = true
     }
@@ -192,7 +193,7 @@ export default class Index extends wepy.page {
     setTimeout(function() {
       self.pauseStatus = false
       self.setData({pauseStatus: false})
-    }, 2000)
+    }, 3000)
     self.title = data.title // 歌名
     self.pic = data.pic  // 专辑图片
     let id = data.id
