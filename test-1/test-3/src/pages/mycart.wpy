@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   background-color: #FFFFF0	;
-  /* background-color:salmon; */
   padding: 0;
 }
 .main{
@@ -14,13 +13,9 @@
 }
 .kgoods{
   display: flex;
-  /* flex-direction: row; */
-  /* justify-content: center; */
   align-items: center;
   margin: 10px;
   border: 1px solid silver;
-  /* background-color: cornsilk; */
-  /* padding: 3px; */
 }
 .pic{
   /* display: flex; */
@@ -49,8 +44,6 @@
 .introduce {
   font-size: 14px;
   color: #B8B8B8;
-  /* margin-top: 0.5rem; */
-  /* margin-left: 10px; */
 }
 
 .price {

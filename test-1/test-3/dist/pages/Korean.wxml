@@ -9,6 +9,6 @@
         <text class="k_number">{{item.number}}</text>
         <image class="k_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" bindtap="collect"/>
       </view>
-     </view> 
+    </view> 
   </view>
   </view>

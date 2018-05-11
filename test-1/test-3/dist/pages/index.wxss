@@ -5,11 +5,8 @@
   justify-content: center;
   align-items: center;
   background-color: silver;
-  /* height: 90%; */
 }
 .logo {
-  /* position: fixed;
-  top: 0px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -40,10 +37,6 @@ text {
 }
 
 .move {
-  /* display: fixed; */
-  /* flex-direction: row; */
-  /* justify-content: center;
-  align-items: center; */
   margin-top: 10px;
   width: 100%;
 }
@@ -88,7 +81,6 @@ text {
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
-  /* height: 50.8%; */
   width: 100%;
 }
 .korean{

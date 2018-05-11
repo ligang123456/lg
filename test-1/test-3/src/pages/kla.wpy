@@ -6,15 +6,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* background-color: #000; */
   opacity: 0.2;
   overflow: hidden;
   z-index: 1000;
-  /* color: #fff; */
 }
 /*对话框 */
 .commodity_attr_box {
-  /* height: 750rpx; */
   width: 100%;
   overflow: hidden;
   position: fixed;
@@ -22,7 +19,6 @@
   left: 0;
   z-index: 2000;
   background: seashell;
-  /* padding-top: 20rpx; */
   font-size: 15px;
   /* opacity: 0.8; */
 }
@@ -152,27 +148,22 @@
 }
 
 .numbers {
-    /* margin-top: 50px; */
     margin-left: 0px;
 }
 
 .subtraction {
-    /* margin-top: 10px; */
     height: 25px;
-    /* margin-left: 10px; */
     width: 45px;
     border: 1px solid silver;
 }
 
 .number {
-    /* margin-top: 50px; */
     height: 25px;
     width: 70px;
     border: 1px solid silver;
 }
 
 .add {
-    /* margin-top: 50px; */
     height: 25px;
     width: 45px;
     border: 1px solid silver;
@@ -287,7 +278,6 @@ export default class Index extends wepy.page {
     image: '',
     showLoading: true,
     check: false,
-    // size_M: false,
     a_M_color: 'black',
     a_M_border: '1px solid silver',
     // size_M: false,
@@ -475,7 +465,7 @@ export default class Index extends wepy.page {
         delay: 0
       })
       this.animation = animation
-      animation.translateY(300).step()
+      animation.translateY(3000).step()
       this.setData({
         animationData: animation.export()
       })
@@ -485,7 +475,7 @@ export default class Index extends wepy.page {
           animationData: animation.export(),
           showModalStatus: false
         })
-      }.bind(this), 200)
+      }.bind(this), 20000)
     }
   }
     // showLoading() {

@@ -82,7 +82,7 @@ image {
         <text class="k_number">{{item.number}}</text>
         <image class="k_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" @tap="collect"></image>
       </view>
-     </view> 
+    </view> 
   </view>
   </view>
 </template>
@@ -130,7 +130,7 @@ export default class Korean extends wepy.page {
       wepy.navigateTo({
         url: `./kla?pic=${korean[index].pic}&title=${korean[index].title}&price=${korean[index].price}`
       })
-      console.log(self.korean[index], '111111')
+      console.log(self.china[index], '111111')
     }
     // lagoods(e) {
     //   let self = this

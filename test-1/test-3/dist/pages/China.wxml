@@ -5,7 +5,7 @@
       <view class="cgoods"  wx:for="{{china}}" wx:key="index">
         <image class="c_pic" src="{{item.pic}}" id="{{index}}" bindtap="lagoods"/>
         <text class="c_introduce">{{item.title}}</text>
-        <text class="c_price">{{item.price}}</text>
+        <text class="c_price">¥{{item.price}}</text>
         <text class="c_number">{{item.number}}</text>
         <image class="c_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" bindtap="collect"/>
       </view>

@@ -78,7 +78,7 @@ image {
       <view class="cgoods" wx:for="{{china}}" wx:key="index">
         <image class="c_pic" src="{{item.pic}}" id="{{index}}" @tap="lagoods"></image>
         <text class="c_introduce">{{item.title}}</text>
-        <text class="c_price">{{item.price}}</text>
+        <text class="c_price">¥{{item.price}}</text>
         <text class="c_number">{{item.number}}</text>
         <image class="c_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" @tap="collect"></image>
       </view>
@@ -92,7 +92,7 @@ import china from '../data/china.js'
 import wepy from 'wepy'
 export default class China extends wepy.page {
   config = {
-    navigationBarTitleText: '韩式婚纱/wedding'
+    navigationBarTitleText: '中式婚纱/wedding'
   }
   data = {
     notcollect: '../images/acollect.png',
@@ -127,7 +127,7 @@ export default class China extends wepy.page {
       let self = this
       const index = e.currentTarget.id
       wepy.navigateTo({
-        url: `./kla?image=${china[index].pic}&title=${china[index].title}&price=${china[index].price}`
+        url: `./kla?pic=${china[index].pic}&title=${china[index].title}&price=${china[index].price}`
       })
       console.log(self.china[index], '111111')
     }

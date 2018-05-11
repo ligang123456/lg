@@ -5,7 +5,7 @@
       <view class="fgoods"  wx:for="{{fresh}}" wx:key="index">
         <image class="f_pic" src="{{item.pic}}" id="{{index}}" bindtap="lagoods"/>
         <text class="f_introduce">{{item.title}}</text>
-        <text class="f_price">{{item.f_price}}</text>
+        <text class="f_price" style="color: red">¥{{item.price}}</text>
         <text class="f_number">{{item.number}}</text>
         <image class="f_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" bindtap="collect"/>
       </view>

@@ -24,7 +24,7 @@
           <image class="hpic" src="{{item.pic}}"/>
           <text class="htext">{{item.title}}</text>
         </view>
-      </view>    
+      </view>
     </view>
     </view>
   </view>

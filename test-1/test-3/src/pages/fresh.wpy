@@ -9,7 +9,6 @@
 
 .f_goods {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -31,16 +30,11 @@ image {
 }
 
 .fgoods {
-  /* width: 8.75rem; */
-  /* margin-top: 1rem; */
-  /* margin-left: 0.625rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid silver;
-  /* border: 3px solid;
-  border-image: url(http://img1.imgtn.bdimg.com/it/u=2553322381,2925312760&fm=27&gp=0.jpg)30 30 round; */
   margin: 7px;
   background-color: #ffffff;
 }
@@ -78,7 +72,7 @@ image {
       <view class="fgoods" wx:for="{{fresh}}" wx:key="index">
         <image class="f_pic" src="{{item.pic}}" id="{{index}}" @tap="lagoods"></image>
         <text class="f_introduce">{{item.title}}</text>
-        <text class="f_price">{{item.f_price}}</text>
+        <text class="f_price" style="color: red">¥{{item.price}}</text>
         <text class="f_number">{{item.number}}</text>
         <image class="f_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" @tap="collect"></image>
       </view>
@@ -106,7 +100,6 @@ export default class Fresh extends wepy.page {
       let self = this
       let index = e.currentTarget.id
       self.fresh[index].acollect = !self.fresh[index].acollect
-      // self.lacollect = '../images/收藏-选中.png'
       if (self.fresh[index].acollect) {
         self.fresh[index].f_number++
       } else {
@@ -120,32 +113,23 @@ export default class Fresh extends wepy.page {
         case 0 : wepy.navigateTo({
           url: '../pages/kla'
         }); break
-        case 1 : wepy.navigateTo({
-          url: '../pages/klb'
-        }); break
+        // case 1 : wepy.navigateTo({
+        //   url: '../pages/klb'
+        // }); break
       }
       let self = this
       const index = e.currentTarget.id
       wepy.navigateTo({
-        url: `./kla?image=${fresh[index].pic}&title=${fresh[index].title}&price=${fresh[index].price}`
+        url: `./kla?pic=${fresh[index].pic}&title=${fresh[index].title}&price=${fresh[index].price}`
       })
       console.log(self.fresh[index], '111111')
     }
-    // lagoods(e) {
-    //   let self = this
-    //   const index = e.currentTarget.id
-    //   wepy.navigateTo({
-    //     url: `./kla`
-    //   })
-    //   console.log(self.korean[index], '111111')
-    // }
   }
   onLoad() {
     wepy.showToast({
       title: '加载中',
       icon: 'loading',
       duration: 1000
-      // image: '../images/ahome.png'
     })
     let self = this
     self.fresh = fresh

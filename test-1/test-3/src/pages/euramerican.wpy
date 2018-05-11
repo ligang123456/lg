@@ -78,7 +78,7 @@ image {
       <view class="egoods" wx:for="{{euramerican}}" wx:key="index">
         <image class="e_pic" src="{{item.pic}}" id="{{index}}" @tap="lagoods"></image>
         <text class="e_introduce">{{item.title}}</text>
-        <text class="e_price">{{item.price}}</text>
+        <text class="e_price">¥{{item.price}}</text>
         <text class="e_number">{{item.number}}</text>
         <image class="e_collect" src="{{item.acollect ? '../images/bcollect.png' : notcollect}}" id="{{index}}" @tap="collect"></image>
       </view>
@@ -127,7 +127,7 @@ export default class Euramerican extends wepy.page {
       let self = this
       const index = e.currentTarget.id
       wepy.navigateTo({
-        url: `./kla?image=${euramerican[index].pic}&title=${euramerican[index].title}&price=${euramerican[index].price}`
+        url: `./kla?pic=${euramerican[index].pic}&title=${euramerican[index].title}&price=${euramerican[index].price}`
       })
       console.log(self.euramerican[index], '111111')
     }

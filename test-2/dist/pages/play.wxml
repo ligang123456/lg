@@ -2,7 +2,7 @@
   <view class="container" style="height: {{height}}px; width: {{width}}px">
       <view class="title">{{title}}</view>
       <!-- <view class = "vpic"> -->
-      <image class="pic {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}" src="{{pic}}"/>
+      <image class="pic {{pauseStatus === false ? 'p' : 'img' || 'rotate-360' || 'rotate-360-paused'}}" src="{{pic}}"/>
       <!-- </view> -->
    <view class="buttom">
        <view class="collect"/>  

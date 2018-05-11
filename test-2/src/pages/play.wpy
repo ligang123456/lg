@@ -52,6 +52,32 @@
     // filter: sepia(0.77); // 褐色
     //animation: rotate 10s linear infinite;
 }
+.p{
+  -webkit-filter: blur(4px);
+    filter: blur(4px);
+}
+.img{
+  // -webkit-filter: blur(4px);
+  //   filter: blur(4px);
+    // -webkit-filter: brightness(0.30);
+    // filter: brightness(0.30);
+    // -webkit-filter: contrast(180%);
+    // filter: contrast(180%);
+    // -webkit-filter: grayscale(100%);
+    // filter: grayscale(100%);
+    // -webkit-filter: hue-rotate(180deg);
+    // filter: hue-rotate(180deg);
+    // -webkit-filter: invert(100%);
+    // filter: invert(100%);
+    // -webkit-filter: opacity(50%);
+    // filter: opacity(50%);
+    // -webkit-filter: saturate(7);
+    // filter: saturate(7);
+    -webkit-filter: sepia(100%);
+    filter: sepia(100%);
+    // -webkit-filter: drop-shadow(8px 8px 10px green);
+    // filter: drop-shadow(8px 8px 10px green);
+}
 .rotate-360{
   animation: rotate 10s linear infinite;
 }
@@ -122,7 +148,7 @@ audio{
   <view class="container" style="height: {{height}}px; width: {{width}}px">
       <view class="title">{{title}}</view>
       <!-- <view class = "vpic"> -->
-      <image class="pic {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}" src="{{pic}}"></image>
+      <image class="pic {{pauseStatus === false ? 'p' : 'img' || 'rotate-360' || 'rotate-360-paused'}}" src="{{pic}}"></image>
       <!-- </view> -->
    <view class="buttom">
        <view class="collect"></view>  
